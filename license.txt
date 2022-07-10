@@ -1,13 +1,20 @@
-All material appearing on the colorala.com website is protected by copyright.
+The material appearing on the colorala.com website is protected by copyright.
+
+Excluding:
+
+- pickr library by simonwep (simonwep.github.io/pickr);
+- jsPDF library by parallax (github.com/parallax/jsPDF);
+- icons (fontawesome.com, remixicon.com);
+- lottie animations (lottiefiles.com)
 
 The creator of the colorala.com application is Maciej Kuran-Janowski.
 www.maciejkuran.com
 
-You may not copy the source code, reproduce or create derivative works for commercial as well as non-commercial purposes - unless you obtain direct permission. 
+You may not copy the source code, reproduce or create derivative works for commercial as well as non-commercial purposes - unless you obtain direct permission.
 
 You may use the source code only for learning, private purposes, without publishing anywhere and claiming it as your product.
 
-colorala.com is a project wishing to engage web developers. I remain open to the proposal of cooperation. Any developer's contribution will be appreciated and highlighted as a contributor.
+<b>colorala.com is a project wishing to engage web developers. I remain open to the proposal of cooperation. Any developer's contribution will be appreciated and highlighted as a contributor.</b>
 
 To discuss further development of the application, please contact:
 maciejkuran@gmail.com
