@@ -40,7 +40,7 @@ maciejkuran@gmail.com
 - Automatic saving 'My Palette' to browser's local storage.
 
 <p align="center">
-  <img width="400" src="/flowchart.jpg">
+  <img width="1000" src="/flowchart.jpg">
 </p>
 
 ## License
