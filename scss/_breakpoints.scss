@@ -1,0 +1,403 @@
+@media (max-width: 1310.98px) {
+  h1 {
+    font-size: 6rem;
+    line-height: 75px;
+  }
+  .welcome-section {
+    p {
+      font-size: 1.6rem;
+      margin-top: 1rem;
+    }
+
+    img {
+      max-width: 3rem;
+    }
+
+    button {
+      font-size: 1.6rem;
+    }
+  }
+
+  .colors-animation {
+    max-width: 500px;
+  }
+
+  footer {
+    .footer-links {
+      a {
+        font-size: 1.5rem;
+      }
+    }
+
+    p {
+      font-size: 1.5rem;
+
+      a {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 1199.98px) {
+}
+
+@media (max-width: 1098.98px) {
+  h1 {
+    font-size: 5.5rem;
+    line-height: 70px;
+  }
+
+  .welcome-section {
+    p {
+      font-size: 1.5rem;
+    }
+
+    button {
+      font-size: 1.5rem;
+    }
+  }
+
+  header {
+    padding: 1.5rem;
+    img {
+      max-width: 18rem;
+    }
+  }
+
+  nav {
+    margin-right: 3rem;
+  }
+
+  .how-it-works-info {
+    transform: translate(-18rem, 4rem);
+  }
+}
+
+@media (max-width: 991.98px) {
+  h1 {
+    font-size: 4.5rem;
+    line-height: 60px;
+  }
+  .welcome-section {
+    min-width: 60%;
+    p {
+      font-size: 1.6rem;
+    }
+    img {
+      max-width: 2rem;
+    }
+  }
+
+  .colors-animation {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .welcome-section {
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  footer {
+    flex-direction: column;
+
+    p {
+      font-size: 1.1rem;
+      text-align: center;
+      margin-left: 0rem;
+
+      a {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 693.98px) {
+  header {
+    img {
+      max-width: 14rem;
+    }
+
+    a {
+      font-size: 1.8rem;
+    }
+  }
+
+  .intro-app {
+    h1 {
+      font-size: 1.6rem;
+    }
+
+    button {
+      font-size: 1.6rem;
+    }
+  }
+  .colors-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .color {
+    // height: calc((100vh - 235px) / 3.5);
+    // height: calc((100vh - 235px) / 4);
+    height: 19vh;
+  }
+
+  .action-buttons-wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    margin-top: 1.3rem;
+
+    button {
+      margin-bottom: 0;
+      margin: 0 1.2rem 0 1.2rem;
+    }
+  }
+
+  .action-label-info-popup {
+    transform: translate(0rem, -4rem);
+  }
+
+  .how-it-works-info {
+    transform: translate(-8rem, 4rem);
+    max-width: 90rem;
+  }
+
+  .ri-lock-unlock-fill,
+  .ri-lock-fill {
+    font-size: 2.1rem;
+  }
+}
+
+@media (max-width: 620px) {
+  h3 {
+    font-size: 2.5rem;
+  }
+  .home-page-content {
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .main-wrapper {
+    flex-direction: column;
+  }
+
+  .from-creator-content {
+    width: 90%;
+  }
+
+  .cookies-container {
+    width: 80%;
+  }
+  .colors-animation {
+    margin-left: 0;
+  }
+
+  .nav-icon {
+    animation: loveanimation 2s;
+    font-size: 3rem;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+    position: absolute;
+  }
+
+  @keyframes loveanimation {
+    from {
+      color: var(--color-darkblue);
+    }
+
+    to {
+      color: red;
+    }
+  }
+
+  .add-to-palette-local-storage-info-popup {
+    min-width: 80%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  footer {
+    bottom: -4rem;
+  }
+  .overlay-modal {
+    height: 108%;
+  }
+
+  .main-wrapper {
+    justify-content: flex-start;
+    padding: 3rem 3rem 0 3rem;
+  }
+
+  .welcome-section {
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  header {
+    padding: 1rem;
+
+    img {
+      max-width: 13rem;
+    }
+
+    a {
+      font-size: 1.5rem;
+      margin-left: 0;
+    }
+  }
+
+  .hex-code-copy-wrapper {
+    margin-top: 2rem;
+    padding: 0.6rem 1.1rem 0.6rem 1.1rem;
+
+    p {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+  }
+
+  .action-buttons-wrapper {
+    margin-top: 0.7rem;
+    padding: 0.6rem;
+  }
+
+  h1 {
+    font-size: 3.6rem;
+    line-height: 45px;
+  }
+
+  .colors-container-my-palette {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .export-btn {
+    font-size: 1.5rem;
+  }
+
+  .my-palette {
+    min-width: 30rem;
+  }
+
+  .close-my-palette-btn {
+    font-size: 2.2rem;
+  }
+
+  .my-palette-label-counter {
+    font-size: 1.5rem;
+  }
+
+  .how-it-works-info {
+    transform: translate(-5rem, 4rem);
+    padding: 2rem;
+  }
+
+  li {
+    font-size: 1.3rem;
+  }
+
+  .intro-app {
+    padding: 0.9rem;
+    h1 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    button {
+      font-size: 1.4rem;
+    }
+  }
+
+  .generate-colors-btn {
+    padding: 1.1rem;
+  }
+
+  .color-picker-custom-class {
+    font-size: 1.1rem;
+  }
+
+  .from-creator-btn-app-page {
+    font-size: 1.2rem;
+    padding: 0.6rem;
+  }
+
+  .website-nav {
+    margin-right: 0rem;
+  }
+
+  .get-started-btn {
+    font-size: 1.5rem;
+    padding: 1.3rem 2rem 1.3rem 2rem;
+  }
+}
+
+@media (max-width: 339.98px) {
+  .welcome-section {
+    h1 {
+      font-size: 2.8rem;
+    }
+    p {
+      font-size: 1.4rem;
+    }
+  }
+
+  h1 {
+    font-size: 2.6rem;
+    line-height: 35px;
+  }
+
+  footer {
+    bottom: -15rem;
+    p {
+      font-size: 0.9rem;
+
+      a {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  header {
+    img {
+      max-width: 10rem;
+    }
+
+    a {
+      font-size: 1.3rem;
+    }
+  }
+
+  .color {
+    height: calc((100vh - 175px) / 4);
+  }
+
+  .intro-app {
+    padding: 1.2rem;
+  }
+
+  .hex-code-copy-wrapper {
+    margin-top: 1rem;
+    padding: 0.6rem 0.8rem 0.6rem 0.8rem;
+
+    p {
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+  }
+
+  .action-buttons-wrapper {
+    margin-top: 1rem;
+    padding: 0.4rem;
+  }
+
+  .my-palette {
+    max-width: 60rem;
+    max-height: 37rem;
+    transform: translate(1rem, 5rem);
+  }
+}

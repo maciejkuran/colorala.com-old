@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Palette Generator - colorala</title>
+    <link rel="icon" type="image/x-icon" href="/img/Colorala avatar.png" />
+    <meta
+      name="description"
+      content="Press space to generate colors or use the button below.Create a beautiful color palette with colorala. "
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <div class="body-app-container">
+      <header>
+        <a href="/"
+          ><img
+            src="/img/Colorala logo.png"
+            alt="color palette generator colorala logo "
+        /></a>
+        <div class="nav-wrapper">
+          <nav>
+            <a class="how-it-works-open" href="">How it works ?</a>
+            <a class="my-palette-open" href=""
+              ><i class="fa-solid fa-heart nav-icon"></i
+            ></a>
+          </nav>
+          <div class="how-it-works-info hide">
+            <div class="flex-how-it-works">
+              <button class="close close-how-it-works-info-btn">
+                <i class="fa-solid fa-circle-xmark"></i>
+              </button>
+            </div>
+            <ul>
+              <li>
+                <i class="fa-solid fa-palette"></i> Generate or manually pick a
+                color
+              </li>
+              <li>
+                <i class="fa-solid fa-heart"></i> Add a color you loved to 'My
+                Palette' or
+              </li>
+              <li><i class="fa-solid fa-copy"></i> copy to clipboard</li>
+              <li>
+                <i class="fa-solid fa-file-export"></i> Export your palette to
+                PDF
+              </li>
+            </ul>
+          </div>
+          <div class="my-palette hide">
+            <div class="flex-my-palette">
+              <button class="export-btn">
+                <i class="fa-solid fa-file-export export-icon"></i>Export
+                palette to PDF
+              </button>
+              <button class="close close-my-palette-btn">
+                <i class="fa-solid fa-circle-xmark"></i>
+              </button>
+            </div>
+            <p class="my-palette-label-counter">0 colors in your library! 😌</p>
+            <div class="colors-container-my-palette"></div>
+          </div>
+        </div>
+      </header>
+      <main class="main-app">
+        <a class="from-creator-btn from-creator-btn-app-page" href=""
+          >From Creator 😀</a
+        >
+        <div class="intro-app">
+          <h1>
+            Press <span class="highlight">space</span> to generate colors or use
+            the <span class="highlight">button</span> below
+          </h1>
+          <button class="generate-colors-btn">Generate</button>
+        </div>
+
+        <div class="colors-container">
+          <div class="color color-1 unlocked">
+            <div class="hex-code-copy-wrapper">
+              <p class="hex-label hex-label1">#011627</p>
+              <button class="copy-hex-btn copy-hex-btn1">
+                <i class="fa-solid fa-copy"></i>
+              </button>
+            </div>
+            <div class="action-buttons-wrapper">
+              <p class="added-to-palette-confirmation-label">Added</p>
+              <p class="action-label-info-popup add-color-to-palette-label">
+                Add color to palette
+              </p>
+              <button class="add-to-palette-btn">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+              <p class="action-label-info-popup manual-color-picker-label">
+                Manual color picker
+              </p>
+              <button class="color-picker1"></button>
+              <p class="action-label-info-popup lock-unlock-color-label">
+                Lock/unlock color
+              </p>
+              <button class="lock-unlock-color-btn">
+                <i class="ri-lock-unlock-fill"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="color color-2 unlocked">
+            <div class="hex-code-copy-wrapper">
+              <p class="hex-label hex-label2">#ff3366</p>
+              <button class="copy-hex-btn copy-hex-btn2">
+                <i class="fa-solid fa-copy"></i>
+              </button>
+            </div>
+            <div class="action-buttons-wrapper">
+              <p class="added-to-palette-confirmation-label">Added</p>
+              <p class="action-label-info-popup add-color-to-palette-label">
+                Add color to palette
+              </p>
+              <button class="add-to-palette-btn">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+              <p class="action-label-info-popup manual-color-picker-label">
+                Manual color picker
+              </p>
+              <button class="color-picker2"></button>
+              <p class="action-label-info-popup lock-unlock-color-label">
+                Lock/unlock color
+              </p>
+              <button class="lock-unlock-color-btn">
+                <i class="ri-lock-unlock-fill"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="color color-3 unlocked">
+            <div class="hex-code-copy-wrapper">
+              <p class="hex-label hex-label3">#70ffb8</p>
+              <button class="copy-hex-btn copy-hex-btn3">
+                <i class="fa-solid fa-copy"></i>
+              </button>
+            </div>
+            <div class="action-buttons-wrapper">
+              <p class="added-to-palette-confirmation-label">Added</p>
+              <p class="action-label-info-popup add-color-to-palette-label">
+                Add color to palette
+              </p>
+              <button class="add-to-palette-btn">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+              <p class="action-label-info-popup manual-color-picker-label">
+                Manual color picker
+              </p>
+              <button class="color-picker3"></button>
+              <p class="action-label-info-popup lock-unlock-color-label">
+                Lock/unlock color
+              </p>
+              <button class="lock-unlock-color-btn">
+                <i class="ri-lock-unlock-fill"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="color color-4 unlocked">
+            <div class="hex-code-copy-wrapper">
+              <p class="hex-label hex4-label hex-label4">#e2fbfc</p>
+              <button class="copy-hex-btn copy-hex-btn4">
+                <i class="fa-solid fa-copy"></i>
+              </button>
+            </div>
+            <div class="action-buttons-wrapper">
+              <p class="added-to-palette-confirmation-label">Added</p>
+              <p class="action-label-info-popup add-color-to-palette-label">
+                Add color to palette
+              </p>
+              <button class="add-to-palette-btn">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+              <p class="action-label-info-popup manual-color-picker-label">
+                Manual color picker
+              </p>
+              <button class="color-picker4"></button>
+              <p class="action-label-info-popup lock-unlock-color-label">
+                Lock/unlock color
+              </p>
+              <button class="lock-unlock-color-btn">
+                <i class="ri-lock-unlock-fill"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="overlay-modal hide"></div>
+    <div class="cookies-container hide">
+      <div>
+        <h3>Cookies!</h3>
+        <img src="/img/cookies img.png" alt="" />
+      </div>
+      <p>
+        By using colorala website, you agree to the use of cookies.
+        <a target="_blank" href="/privacy-policy"
+          >Find out more about cookies</a
+        >
+        or launch the app now!
+      </p>
+      <button class="accept-cookies-btn">ACCEPT</button>
+    </div>
+    <div class="from-creator-content">
+      <div class="close-from-creator-content-area">
+        <button class="close-from-creator-content-btn">
+          <i class="fa-solid fa-circle-xmark"></i>
+        </button>
+      </div>
+      <h3>Dear Community,</h3>
+      <p>
+        Thank you 💗 for using my app. I created it with you in mind 🥰. Colors
+        complement our lives. They make us feel comfortable and confident. You
+        can use my app to build a color palette for a website, but it doesn't
+        exclude other projects.
+      </p>
+      <p>
+        You can <b>develop this application directly with me</b> or send your
+        <b>suggestions for the improvement/development of other features</b>.
+      </p>
+      <p>Become a member of colorala and develop this project with me.</p>
+      <a href="mailto:maciejkuran@gmail.com">contact me 📧</a>
+      <p><i>Maciej Kuran-Janowski</i></p>
+    </div>
+    <div class="add-to-palette-local-storage-info-popup hide">
+      <div class="close-local-storage-info-content-area">
+        <button class="close-about-local-storage-popup-btn">
+          <i class="fa-solid fa-circle-xmark"></i>
+        </button>
+      </div>
+      <h3>Hello there 😉</h3>
+      <img
+        src="/img/colorala how to save to palette animation.gif"
+        alt="colorala how to save color to palette"
+      />
+      <p>
+        When creating your color palette, save the colors in
+        <b>'My Palette'</b>. All colors are
+        <strong>saved in your browser's local storage</strong>. Unless you
+        delete the data from your browser, the
+        <b> added colors will NOT disappear! </b> 🟢
+      </p>
+      <p>Export your palette to <b>PDF format</b> at any time.</p>
+    </div>
+    <script type="module" src="/js/media-queries.js"></script>
+    <script type="module" src="/js/manual-color-picker.js"></script>
+    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/generate-pdf.js"></script>
+    <script type="module" src="/js/popups.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+      integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+      integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>
