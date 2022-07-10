@@ -9,6 +9,7 @@ The coolest free color palette generator! Create your beautiful color palette wi
 Live app ❤ https://colorala.com
 
 Version: 1.0
+
 Creator: Maciej Kuran-Janowski
 
 https://user-images.githubusercontent.com/103118542/178158450-751bed6e-3ce1-4d99-91a6-f4f534f5b37b.mp4
@@ -37,3 +38,23 @@ maciejkuran@gmail.com
 - Removing unwanted color from 'My Palette';
 - Exporting 'My Palette' to PDF file;
 - Automatic saving 'My Palette' to browser's local storage.
+
+<p align="center">
+  <img width="400" src="/flowchart.jpg">
+</p>
+
+## License
+
+All material appearing on the colorala.com website is protected by copyright.
+
+The creator of the colorala.com application is Maciej Kuran-Janowski.
+www.maciejkuran.com
+
+You may not copy the source code, reproduce or create derivative works for commercial as well as non-commercial purposes - unless you obtain direct permission.
+
+You may use the source code only for learning, private purposes, without publishing anywhere and claiming it as your product.
+
+<b>colorala.com is a project wishing to engage web developers. I remain open to the proposal of cooperation. Any developer's contribution will be appreciated and highlighted as a contributor.</b>
+
+To discuss further development of the application, please contact:
+maciejkuran@gmail.com
