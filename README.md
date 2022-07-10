@@ -45,7 +45,14 @@ maciejkuran@gmail.com
 
 ## License
 
-All material appearing on the colorala.com website is protected by copyright.
+The material appearing on the colorala.com website is protected by copyright.
+
+Excluding:
+
+- pickr library by simonwep (simonwep.github.io/pickr);
+- jsPDF library by parallax (github.com/parallax/jsPDF);
+- icons (fontawesome.com, remixicon.com);
+- lottie animations (lottiefiles.com)
 
 The creator of the colorala.com application is Maciej Kuran-Janowski.
 www.maciejkuran.com
