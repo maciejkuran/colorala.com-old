@@ -11,10 +11,7 @@ Live app ❤ https://colorala.com
 Version: 1.0
 Creator: Maciej Kuran-Janowski
 
-  <video width="1000" autoplay>
-      <source src="/img/Spot colorala.mp4" type="video/mp4">
-    Your browser does not support the video.
-    </video>
+https://user-images.githubusercontent.com/103118542/178158352-23edecc0-42f0-4af4-a3b1-68a4f28a5dea.mp4
 
 ## Dear Community
 
