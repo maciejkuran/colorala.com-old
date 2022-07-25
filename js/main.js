@@ -129,10 +129,12 @@ const lockUnlockColorLabels = document.querySelectorAll(
   '.lock-unlock-color-label'
 );
 
+const mediaQueryMobile = window.matchMedia('(max-width: 700px)');
+
 const showInfoPopups = (buttons, labels) => {
   buttons.forEach((btn, i) => {
     btn.addEventListener('mouseover', function (e) {
-      if (buttons[i]) {
+      if (buttons[i] && !mediaQueryMobile.matches) {
         labels[i].style.display = 'flex';
       }
       setTimeout(() => {

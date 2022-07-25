@@ -222,11 +222,13 @@
 }
 
 @media (max-width: 575.98px) {
+  p,
+  a,
+  .highlight {
+    font-size: 1.6rem;
+  }
   footer {
     bottom: -4rem;
-  }
-  .overlay-modal {
-    height: 108%;
   }
 
   .main-wrapper {
