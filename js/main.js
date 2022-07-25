@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const bodyAppContainer = document.querySelector('.body-app-container');
   setTimeout(() => {
     //Load everything on delay
-    bodyAppContainer.style.display = 'inline';
+    bodyAppContainer.style.opacity = '1';
     generateColors();
   }, 100);
 });

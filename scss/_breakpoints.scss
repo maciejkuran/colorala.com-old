@@ -58,14 +58,14 @@
     }
   }
 
-  header {
+  .app-nav {
     padding: 1.5rem;
     img {
       max-width: 18rem;
     }
   }
 
-  nav {
+  .nav-subwrapper {
     margin-right: 3rem;
   }
 
@@ -117,7 +117,7 @@
 }
 
 @media (max-width: 693.98px) {
-  header {
+  .app-nav {
     img {
       max-width: 14rem;
     }
@@ -242,7 +242,7 @@
     }
   }
 
-  header {
+  .app-nav {
     padding: 1rem;
 
     img {
@@ -364,7 +364,7 @@
     }
   }
 
-  header {
+  .app-nav {
     img {
       max-width: 10rem;
     }

@@ -4,6 +4,6 @@
 const homePageContainer = document.querySelector('.general-container');
 document.addEventListener('DOMContentLoaded', function () {
   setTimeout(() => {
-    homePageContainer.style.display = 'inline';
-  }, 450);
+    homePageContainer.style.opacity = '1';
+  }, 300);
 });

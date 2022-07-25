@@ -1,7 +1,7 @@
 //home-page styles
 
 .general-container {
-  display: none;
+  opacity: 0;
 }
 
 .home-page-content {
@@ -106,10 +106,10 @@ footer {
 }
 
 .body-app-container {
-  display: none;
+  opacity: 0;
 }
 
-header {
+.app-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -129,7 +129,7 @@ header {
   }
 }
 
-nav {
+.nav-subwrapper {
   margin-right: 8rem;
 }
 

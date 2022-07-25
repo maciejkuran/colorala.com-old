@@ -30,19 +30,19 @@
   </head>
   <body>
     <div class="body-app-container">
-      <header>
+      <nav class="app-nav">
         <a href="/"
           ><img
             src="/img/Colorala logo.png"
             alt="color palette generator colorala logo "
         /></a>
         <div class="nav-wrapper">
-          <nav>
+          <div class="nav-subwrapper">
             <a class="how-it-works-open" href="">How it works ?</a>
             <a class="my-palette-open" href=""
               ><i class="fa-solid fa-heart nav-icon"></i
             ></a>
-          </nav>
+          </div>
           <div class="how-it-works-info hide">
             <div class="flex-how-it-works">
               <button class="close close-how-it-works-info-btn">
@@ -79,20 +79,17 @@
             <div class="colors-container-my-palette"></div>
           </div>
         </div>
-      </header>
-      <main class="main-app">
-        <section>
-          <a class="from-creator-btn from-creator-btn-app-page" href=""
-            >From Creator 😀</a
-          >
+      </nav>
 
-          <div class="intro-app">
+      <main class="main-app">
+        <section class="app-first-section">
+          <header class="intro-app">
             <h1>
               Press <span class="highlight">space</span> to generate colors or
               use the <span class="highlight">button</span> below
             </h1>
             <button class="generate-colors-btn">Generate</button>
-          </div>
+          </header>
         </section>
 
         <section>
@@ -212,6 +209,10 @@
         </section>
       </main>
     </div>
+
+    <a class="from-creator-btn from-creator-btn-app-page" href=""
+      >From Creator 😀</a
+    >
     <div class="overlay-modal hide"></div>
     <div class="cookies-container hide">
       <div>
