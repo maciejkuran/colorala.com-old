@@ -21,80 +21,107 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+
+    <!-- //////////////
+    Scripts executed in order - async -->
+    <script
+      defer
+      src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+      integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+      integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script defer type="module" src="/js/components.js"></script>
+    <script defer type="module" src="/js/main.js"></script>
+    <script defer type="module" src="/js/generate-pdf.js"></script>
+    <script defer type="module" src="/js/popups.js"></script>
+    <!--/////////////////// -->
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body class="excluded">
     <app-nav></app-nav>
     <div class="overlay-modal hide"></div>
-    <div class="general-container">
-      <div class="home-page-content">
-        <main class="main-wrapper">
-          <header class="welcome-section">
-            <h1>
-              The coolest<br />
-              <span>color palette</span><br />
-              generator!
-            </h1>
-            <p>
-              Create a beautiful color palette with
-              <b class="highlight">colorala</b>
-              <span
-                ><img
-                  src="/img/Colorala icon.png"
-                  alt="color palette generator colorala logo "
-              /></span>
-            </p>
-            <a href="/color-palette-generator"
-              ><button class="classic-button">Let's start</button></a
-            >
-          </header>
-          <div>
-            <lottie-player
-              src="https://assets2.lottiefiles.com/packages/lf20_b5mxg937.json"
-              background="transparent"
-              speed="1"
-              loop
-              autoplay
-              class="colors-animation"
-            ></lottie-player>
-          </div>
-        </main>
 
-        <div class="from-creator-content">
-          <div class="close-from-creator-content-area">
-            <button class="close-from-creator-content-btn">
-              <i class="fa-solid fa-circle-xmark"></i>
-            </button>
-          </div>
-          <h3>Dear Community,</h3>
+    <div class="home-page-content">
+      <main class="main-wrapper">
+        <header class="welcome-section">
+          <h1>
+            The coolest<br />
+            <span>color palette</span><br />
+            generator!
+          </h1>
           <p>
-            Thank you 💗 for using my app. I created it with you in mind 🥰.
-            Colors complement our lives. They make us feel comfortable and
-            confident. You can use my app to build a color palette for a
-            website, but it doesn't exclude other projects.
+            Create a beautiful color palette with
+            <b class="highlight">colorala</b>
+            <span
+              ><img
+                src="/img/Colorala icon.png"
+                alt="color palette generator colorala logo "
+            /></span>
           </p>
-          <p>
-            You can <b>develop this application directly with me</b> or send
-            your
-            <b>suggestions for the improvement/development of other features</b
-            >.
-          </p>
-          <p>Become a member of colorala and develop this project with me.</p>
-          <a href="mailto:maciejkuran@gmail.com">contact me 📧</a>
-          <p><i>Maciej Kuran-Janowski</i></p>
+          <a href="/color-palette-generator"
+            ><button class="classic-button">Let's start</button></a
+          >
+        </header>
+        <div>
+          <lottie-player
+            src="https://assets2.lottiefiles.com/packages/lf20_b5mxg937.json"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay
+            class="colors-animation"
+          ></lottie-player>
         </div>
-        <footer>
-          <div class="footer-links">
-            <a class="from-creator-btn" href="">From Creator 😀</a>
-            <a href="/privacy-policy">Privacy Policy</a>
-          </div>
-          <p>
-            Copyright ©,
-            <a target="_blank" href="https://maciejkuran.com">maciejkuran.com</a
-            >, All Rights Reserved
-          </p>
-        </footer>
+      </main>
+
+      <div class="from-creator-content">
+        <div class="close-from-creator-content-area">
+          <button class="close-from-creator-content-btn">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </button>
+        </div>
+        <h3>Dear Community,</h3>
+        <p>
+          Thank you 💗 for using my app. I created it with you in mind 🥰.
+          Colors complement our lives. They make us feel comfortable and
+          confident. You can use my app to build a color palette for a website,
+          but it doesn't exclude other projects.
+        </p>
+        <p>
+          You can <b>develop this application directly with me</b> or send your
+          <b>suggestions for the improvement/development of other features</b>.
+        </p>
+        <p>Become a member of colorala and develop this project with me.</p>
+        <a href="mailto:maciejkuran@gmail.com">contact me 📧</a>
+        <p><i>Maciej Kuran-Janowski</i></p>
       </div>
+      <footer>
+        <div class="footer-links">
+          <a class="from-creator-btn" href="">From Creator 😀</a>
+          <a href="/privacy-policy">Privacy Policy</a>
+        </div>
+        <p>
+          Copyright ©,
+          <a target="_blank" href="https://maciejkuran.com">maciejkuran.com</a>,
+          All Rights Reserved
+        </p>
+      </footer>
     </div>
     <div class="cookies-container">
       <div>
@@ -110,26 +137,5 @@
       </p>
       <button class="accept-cookies-btn classic-button">ACCEPT</button>
     </div>
-    <script type="module" src="/js/home-page.js"></script>
-    <script src="/js/components.js"></script>
-    <script type="module" src="/js/generate-pdf.js"></script>
-    <script type="module" src="/js/main.js"></script>
-    <script type="module" src="/js/popups.js"></script>
-
-    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
-      integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
-      integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   </body>
 </html>

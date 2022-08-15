@@ -125,10 +125,6 @@ li {
   margin-bottom: 1.5rem;
 }
 
-.general-container {
-  opacity: 0;
-}
-
 .home-page-content {
   position: relative;
   min-height: 100vh;
@@ -141,12 +137,6 @@ li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .main-wrapper {
@@ -248,6 +238,8 @@ footer p a {
       -ms-flex-align: center;
           align-items: center;
   padding: 2rem;
+  max-width: 170rem;
+  margin: auto;
 }
 .app-nav img {
   max-width: 22rem;

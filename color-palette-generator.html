@@ -25,6 +25,36 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <!-- //////////////
+    Scripts executed in order - async -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+      integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+      integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script defer type="module" src="/js/components.js"></script>
+    <script defer type="module" src="/js/media-queries.js"></script>
+    <script defer type="module" src="/js/manual-color-picker.js"></script>
+    <script defer type="module" src="/js/main.js"></script>
+    <script defer type="module" src="/js/generate-pdf.js"></script>
+    <script defer type="module" src="/js/popups.js"></script>
 
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
@@ -218,28 +248,5 @@
       </p>
       <p>Export your palette to <b>PDF format</b> at any time.</p>
     </div>
-    <script src="/js/components.js"></script>
-    <script type="module" src="/js/media-queries.js"></script>
-    <script type="module" src="/js/manual-color-picker.js"></script>
-    <script type="module" src="/js/main.js"></script>
-    <script type="module" src="/js/generate-pdf.js"></script>
-    <script type="module" src="/js/popups.js"></script>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
-      integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
-
-    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
-      integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
   </body>
 </html>

@@ -1,9 +1,5 @@
 //home-page styles
 
-.general-container {
-  opacity: 0;
-}
-
 .home-page-content {
   position: relative;
   min-height: 100vh;
@@ -11,8 +7,6 @@
   margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .main-wrapper {
@@ -112,6 +106,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
+  max-width: 170rem;
+  margin: auto;
 
   img {
     max-width: 22rem;
