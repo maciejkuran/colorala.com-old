@@ -5,7 +5,7 @@ const addIntroDivToDOM = () => {
   const mainTag = document.querySelector('.main-app');
   const html = `<div class="intro-app-mobile">
     <h1>👉Push the <span class="highlight">button</span> to start!</h1>
-    <button class="classic-button generate-colors-btn">Generate</button>
+    <button class="primary-button generate-colors-btn">Generate</button>
   </div>`;
 
   if (mainTag) mainTag.insertAdjacentHTML('afterbegin', html);

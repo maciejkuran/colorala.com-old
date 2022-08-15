@@ -82,3 +82,52 @@ class appNav extends HTMLElement {
 }
 
 customElements.define('app-nav', appNav);
+
+class fromCreatorPopup extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `<div class="from-creator-content">
+    <div class="close-from-creator-content-area">
+      <button class="close-from-creator-content-btn">
+        <i class="fa-solid fa-circle-xmark"></i>
+      </button>
+    </div>
+    <h3>Dear Community,</h3>
+    <p>
+      Thank you 💗 for using my app. I created it with you in mind 🥰.
+      Colors complement our lives. They make us feel comfortable and
+      confident. You can use my app to build a color palette for a website,
+      but it doesn't exclude other projects.
+    </p>
+    <p>
+      You can <b>develop this application directly with me</b> or send your
+      <b>suggestions for the improvement/development of other features</b>.
+    </p>
+    <p>Become a member of colorala and develop this project with me.</p>
+    <a href="mailto:maciejkuran@gmail.com">contact me 📧</a>
+    <p><i>Maciej Kuran-Janowski</i></p>
+  </div>`;
+  }
+}
+
+customElements.define('from-creator-popup', fromCreatorPopup);
+
+class cookiesPopup extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `<div class="cookies-container">
+    <div>
+      <h3>Cookies!</h3>
+      <img src="/img/cookies img.png" alt="" />
+    </div>
+    <p>
+      By using colorala website, you agree to the use of cookies.
+      <a target="_blank" href="/privacy-policy"
+        >Find out more about cookies</a
+      >
+      or launch the app now!
+    </p>
+    <button class="accept-cookies-btn primary-button">ACCEPT</button>
+  </div>`;
+  }
+}
+
+customElements.define('cookies-popup', cookiesPopup);

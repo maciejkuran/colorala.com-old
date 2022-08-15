@@ -84,20 +84,34 @@ button {
   font-size: 2rem;
 }
 
-.classic-button {
+.primary-button {
   font-size: 2rem;
   font-weight: 600;
   color: white;
   color: var(--color-black);
-  padding: 1.6rem 4rem 1.6rem 4rem;
+  padding: 2rem 4rem 2rem 4rem;
   border-radius: 12px;
   border: 1.5px solid rgb(224, 223, 223);
 }
 
-.classic-button:hover {
+.primary-button:hover {
   border: 1.5px solid var(--color-darkblue);
   color: var(--color-darkblue);
   transition: 500ms;
+}
+
+.secondary-button {
+  @extend .primary-button;
+  border: none;
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
+
+.secondary-button:hover {
+  border: none;
+  color: var(--color-white);
+  background: none;
+  background-color: var(--color-darkgrey);
 }
 
 li {

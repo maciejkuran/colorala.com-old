@@ -86,21 +86,34 @@ button {
   font-size: 2rem;
 }
 
-.classic-button {
+.primary-button, .secondary-button {
   font-size: 2rem;
   font-weight: 600;
   color: white;
   color: var(--color-black);
-  padding: 1.6rem 4rem 1.6rem 4rem;
+  padding: 2rem 4rem 2rem 4rem;
   border-radius: 12px;
   border: 1.5px solid rgb(224, 223, 223);
 }
 
-.classic-button:hover {
+.primary-button:hover, .secondary-button:hover {
   border: 1.5px solid var(--color-darkblue);
   color: var(--color-darkblue);
   -webkit-transition: 500ms;
   transition: 500ms;
+}
+
+.secondary-button {
+  border: none;
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
+
+.secondary-button:hover {
+  border: none;
+  color: var(--color-white);
+  background: none;
+  background-color: var(--color-darkgrey);
 }
 
 li {
@@ -127,7 +140,7 @@ li {
 
 .home-page-content {
   position: relative;
-  min-height: 100vh;
+  min-height: 95vh;
   max-width: 140rem;
   margin: auto;
   display: -webkit-box;
@@ -152,6 +165,7 @@ li {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 10rem;
+  margin-top: 6rem;
 }
 
 .welcome-section {
@@ -168,6 +182,10 @@ li {
   max-width: 5rem;
 }
 .welcome-section button {
+  margin: 2rem 1rem 0 0;
+}
+.welcome-section p {
+  max-width: 45rem;
   margin-top: 2rem;
 }
 
@@ -176,23 +194,6 @@ li {
   max-width: 600px;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  background-color: var(--color-lightgrey);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 12px;
-}
 footer .footer-links a {
   margin-right: 1.5rem;
   font-size: 1.8rem;
@@ -248,6 +249,12 @@ footer p a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .app-nav li {
   margin-left: 3rem;
@@ -542,7 +549,7 @@ footer p a {
 }
 
 .color {
-  height: calc(100vh - 236px);
+  height: calc(100vh - 245px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -632,7 +639,7 @@ footer p a {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(40, 40, 40, 0.262745098);
+  background-color: rgba(40, 40, 40, 0.1058823529);
   height: 100%;
   width: 100%;
 }
@@ -841,8 +848,52 @@ footer p a {
 }
 
 .github-icon {
-  font-size: 3rem;
+  font-size: 4rem;
   color: var(--color-black);
+}
+
+.section-divider {
+  margin-bottom: 8rem;
+}
+
+.home-section-1 {
+  background-color: var(--color-lightgrey);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 6rem 0;
+}
+
+.home-section-1-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 100rem;
+  background-color: var(--color-white);
+  padding: 4rem;
+  border-radius: 12px;
+}
+.home-section-1-wrapper h4 {
+  color: red;
+}
+.home-section-1-wrapper p {
+  margin-bottom: 1.5rem;
+}
+.home-section-1-wrapper img {
+  max-width: 40rem;
+  margin-left: 3rem;
 }
 
 .custom-class .pcr-swatches {
@@ -1067,18 +1118,14 @@ footer p a {
     font-size: 2.5rem;
   }
   .home-page-content {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    margin-top: 0;
   }
   .main-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    margin-top: 2rem;
   }
   .from-creator-content {
     width: 90%;
@@ -1210,14 +1257,11 @@ a,
   }
 }
 @media (max-width: 339.98px) {
-  .welcome-section h1 {
-    font-size: 2.8rem;
-  }
   .welcome-section p {
     font-size: 1.4rem;
   }
   h1 {
-    font-size: 2.6rem;
+    font-size: 3rem;
     line-height: 35px;
   }
   footer {
