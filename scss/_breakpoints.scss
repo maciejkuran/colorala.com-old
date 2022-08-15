@@ -48,16 +48,6 @@
     line-height: 70px;
   }
 
-  .welcome-section {
-    p {
-      font-size: 1.5rem;
-    }
-
-    button {
-      font-size: 1.5rem;
-    }
-  }
-
   .app-nav {
     padding: 1.5rem;
     img {
@@ -93,10 +83,9 @@
 }
 
 @media (max-width: 767.98px) {
-  .welcome-section {
-    p {
-      font-size: 1.5rem;
-    }
+  h2,
+  h3 {
+    font-size: 2.5rem;
   }
 
   footer {
@@ -273,12 +262,6 @@
     padding: 3rem 3rem 0 3rem;
   }
 
-  .welcome-section {
-    p {
-      font-size: 1.5rem;
-    }
-  }
-
   .app-nav {
     padding: 1rem;
 
@@ -366,17 +349,6 @@
 }
 
 @media (max-width: 339.98px) {
-  .welcome-section {
-    p {
-      font-size: 1.4rem;
-    }
-  }
-
-  h1 {
-    font-size: 3rem;
-    line-height: 35px;
-  }
-
   footer {
     bottom: -15rem;
     p {
