@@ -164,7 +164,7 @@ footer {
   background-color: var(--color-lightgrey);
   padding: 2rem;
   border-radius: 12px;
-  transform: translateY(4rem);
+  transform: translateY(5rem);
   z-index: 2;
 }
 
@@ -206,6 +206,11 @@ footer {
 .arrow-down-icon {
   font-size: 3rem;
   position: absolute;
+  transition: 500ms;
+}
+
+.arrow-down-icon-red {
+  color: red;
 }
 
 .my-palette-open {

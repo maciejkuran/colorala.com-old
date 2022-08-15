@@ -215,6 +215,10 @@ const myPaletteContent = document.querySelector('.my-palette');
 const overlayModal = document.querySelector('.overlay-modal');
 const closeBtn = document.querySelectorAll('.close');
 
+const toolsBtn = document.querySelector('.tools-popup-btn');
+const toolsContainer = document.querySelector('.tools-container');
+const arrowDownIcon = document.querySelector('.arrow-down-icon');
+
 //Displaying content
 const displayContent = (el, el2) => {
   el.classList.remove('hide');
@@ -231,6 +235,7 @@ const hideContent = (el, el2) => {
 // Event handlers on nav btns
 myPalette.addEventListener('click', e => {
   e.preventDefault();
+  toolsContainer.classList.add('hide');
   displayContent(myPaletteContent, overlayModal);
 });
 //CLosing on buttons click
@@ -242,6 +247,20 @@ closeBtn.forEach(btn => {
 //Closing on overlay click
 overlayModal.addEventListener('click', e => {
   hideContent(myPaletteContent, overlayModal);
+});
+
+//Toggling tools container
+toolsBtn.addEventListener('click', e => {
+  e.preventDefault();
+  e.stopPropagation();
+  toolsContainer.classList.toggle('hide');
+  arrowDownIcon.classList.toggle('arrow-down-icon-red');
+});
+
+document.querySelector('body').addEventListener('click', e => {
+  e.stopPropagation();
+  toolsContainer.classList.add('hide');
+  arrowDownIcon.classList.remove('arrow-down-icon-red');
 });
 
 ////ADDING COLOR TO MY PALETTE

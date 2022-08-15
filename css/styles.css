@@ -324,8 +324,8 @@ footer p a {
   background-color: var(--color-lightgrey);
   padding: 2rem;
   border-radius: 12px;
-  -webkit-transform: translateY(4rem);
-          transform: translateY(4rem);
+  -webkit-transform: translateY(5rem);
+          transform: translateY(5rem);
   z-index: 2;
 }
 
@@ -369,6 +369,12 @@ footer p a {
 .arrow-down-icon {
   font-size: 3rem;
   position: absolute;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.arrow-down-icon-red {
+  color: red;
 }
 
 .my-palette-open {
