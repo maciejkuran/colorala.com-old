@@ -140,9 +140,9 @@ const showInfoPopups = (buttons, labels) => {
       if (buttons[i] && !mediaQueryMobile.matches) {
         labels[i].style.display = 'flex';
       }
-      setTimeout(() => {
-        labels[i].style.display = 'none';
-      }, 700);
+      // setTimeout(() => {
+      //   labels[i].style.display = 'none';
+      // }, 700);
     });
   });
 };
@@ -150,6 +150,20 @@ const showInfoPopups = (buttons, labels) => {
 showInfoPopups(addToPaletteBtns, addToPaletteLabels);
 showInfoPopups(colorPickerBtns, colorPickerLabels);
 showInfoPopups(lockUnlockColorBtns, lockUnlockColorLabels);
+
+const hideInfoPopups = (buttons, labels) => {
+  buttons.forEach((btn, i) => {
+    btn.addEventListener('mouseout', function (e) {
+      if (buttons[i] && !mediaQueryMobile.matches) {
+        labels[i].style.display = 'none';
+      }
+    });
+  });
+};
+
+hideInfoPopups(addToPaletteBtns, addToPaletteLabels);
+hideInfoPopups(colorPickerBtns, colorPickerLabels);
+hideInfoPopups(lockUnlockColorBtns, lockUnlockColorLabels);
 
 ////COPY TO CLIPBOARD
 const copyHEXbtns = document.querySelectorAll('.copy-hex-btn');
