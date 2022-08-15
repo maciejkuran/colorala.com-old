@@ -708,3 +708,38 @@ footer {
     font-size: 5rem;
   }
 }
+
+.what-is-new {
+  position: absolute;
+  bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  border-radius: 12px;
+
+  button {
+    font-size: 3rem;
+  }
+
+  h4 {
+    span {
+      color: red;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.additional-info {
+  margin-top: 3rem;
+  font-size: 1.5rem;
+  color: var(--color-middlegrey);
+  max-width: 30rem;
+
+  a {
+    font-size: 1.5rem;
+  }
+}

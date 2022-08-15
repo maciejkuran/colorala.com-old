@@ -80,6 +80,7 @@ a:hover {
 button {
   cursor: pointer;
   outline: none;
+  border: none;
   -moz-appearance: none;
   -webkit-appearance: none;
   background: transparent;
@@ -945,6 +946,46 @@ footer p a {
   font-size: 5rem;
 }
 
+.what-is-new {
+  position: absolute;
+  bottom: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 1rem;
+  border-radius: 12px;
+}
+.what-is-new button {
+  font-size: 3rem;
+}
+.what-is-new h4 span {
+  color: red;
+  font-size: 1.3rem;
+}
+
+.additional-info {
+  margin-top: 3rem;
+  font-size: 1.5rem;
+  color: var(--color-middlegrey);
+  max-width: 30rem;
+}
+.additional-info a {
+  font-size: 1.5rem;
+}
+
 .custom-class .pcr-swatches {
   display: none;
 }
@@ -1233,6 +1274,9 @@ h3 {
   }
   .add-to-palette-local-storage-info-popup {
     min-width: 80%;
+  }
+  .what-is-new {
+    bottom: 0;
   }
 }
 @media (max-width: 575.98px) {

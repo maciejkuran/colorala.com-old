@@ -1,5 +1,18 @@
 'use strict';
 
+// -> home page smooth scrolling to section-1
+const whatsNewBtn = document.querySelector('.whatsNewBtn');
+const section1 = document.querySelector('.home-section-1');
+
+const scrollIntoSection = () => {
+  whatsNewBtn.addEventListener('click', e => {
+    e.preventDefault();
+    section1.scrollIntoView({ behavior: 'smooth' });
+  });
+};
+
+scrollIntoSection();
+
 ////GENERATING RANDOM NUMBER - functions
 const randomNb = (min, max) => {
   return Math.trunc(Math.random() * (max - min) + 1);
@@ -134,36 +147,27 @@ const lockUnlockColorLabels = document.querySelectorAll(
 
 const mediaQueryMobile = window.matchMedia('(max-width: 700px)');
 
-const showInfoPopups = (buttons, labels) => {
+const infoPopups = (buttons, labels, handlerType, styling) => {
   buttons.forEach((btn, i) => {
-    btn.addEventListener('mouseover', function (e) {
+    btn.addEventListener(handlerType, () => {
       if (buttons[i] && !mediaQueryMobile.matches) {
-        labels[i].style.display = 'flex';
-      }
-      // setTimeout(() => {
-      //   labels[i].style.display = 'none';
-      // }, 700);
-    });
-  });
-};
-
-showInfoPopups(addToPaletteBtns, addToPaletteLabels);
-showInfoPopups(colorPickerBtns, colorPickerLabels);
-showInfoPopups(lockUnlockColorBtns, lockUnlockColorLabels);
-
-const hideInfoPopups = (buttons, labels) => {
-  buttons.forEach((btn, i) => {
-    btn.addEventListener('mouseout', function (e) {
-      if (buttons[i] && !mediaQueryMobile.matches) {
-        labels[i].style.display = 'none';
+        labels[i].style.display = styling;
       }
     });
   });
 };
 
-hideInfoPopups(addToPaletteBtns, addToPaletteLabels);
-hideInfoPopups(colorPickerBtns, colorPickerLabels);
-hideInfoPopups(lockUnlockColorBtns, lockUnlockColorLabels);
+const initInfoPopups = () => {
+  infoPopups(addToPaletteBtns, addToPaletteLabels, 'mouseover', 'flex');
+  infoPopups(colorPickerBtns, colorPickerLabels, 'mouseover', 'flex');
+  infoPopups(lockUnlockColorBtns, lockUnlockColorLabels, 'mouseover', 'flex');
+
+  infoPopups(addToPaletteBtns, addToPaletteLabels, 'mouseout', 'none');
+  infoPopups(colorPickerBtns, colorPickerLabels, 'mouseout', 'none');
+  infoPopups(lockUnlockColorBtns, lockUnlockColorLabels, 'mouseout', 'none');
+};
+
+initInfoPopups();
 
 ////COPY TO CLIPBOARD
 const copyHEXbtns = document.querySelectorAll('.copy-hex-btn');
