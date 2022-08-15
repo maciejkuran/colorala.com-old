@@ -17,9 +17,14 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body class="excluded">
+    <app-nav></app-nav>
     <div class="overlay-modal hide"></div>
     <div class="general-container">
       <div class="home-page-content">
@@ -39,7 +44,9 @@
                   alt="color palette generator colorala logo "
               /></span>
             </p>
-            <a href="/color-palette-generator"><button>Let's start</button></a>
+            <a href="/color-palette-generator"
+              ><button class="classic-button">Let's start</button></a
+            >
           </header>
           <div>
             <lottie-player
@@ -101,10 +108,21 @@
         >
         or launch the app now!
       </p>
-      <button class="accept-cookies-btn">ACCEPT</button>
+      <button class="accept-cookies-btn classic-button">ACCEPT</button>
     </div>
     <script type="module" src="/js/home-page.js"></script>
+    <script src="/js/components.js"></script>
+    <script type="module" src="/js/generate-pdf.js"></script>
+    <script type="module" src="/js/main.js"></script>
     <script type="module" src="/js/popups.js"></script>
+
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+      integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"

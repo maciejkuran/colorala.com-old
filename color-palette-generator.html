@@ -30,64 +30,15 @@
   </head>
   <body>
     <div class="body-app-container">
-      <nav class="app-nav">
-        <a href="/"
-          ><img
-            src="/img/Colorala logo.png"
-            alt="color palette generator colorala logo "
-        /></a>
-        <div class="nav-wrapper">
-          <div class="nav-subwrapper">
-            <a class="how-it-works-open" href="">How it works ?</a>
-            <a class="my-palette-open" href=""
-              ><i class="fa-solid fa-heart nav-icon"></i
-            ></a>
-          </div>
-          <div class="how-it-works-info hide">
-            <div class="flex-how-it-works">
-              <button class="close close-how-it-works-info-btn">
-                <i class="fa-solid fa-circle-xmark"></i>
-              </button>
-            </div>
-            <ul>
-              <li>
-                <i class="fa-solid fa-palette"></i> Generate or manually pick a
-                color
-              </li>
-              <li>
-                <i class="fa-solid fa-heart"></i> Add a color you loved to 'My
-                Palette' or
-              </li>
-              <li><i class="fa-solid fa-copy"></i> copy to clipboard</li>
-              <li>
-                <i class="fa-solid fa-file-export"></i> Export your palette to
-                PDF
-              </li>
-            </ul>
-          </div>
-          <div class="my-palette hide">
-            <div class="flex-my-palette">
-              <button class="export-btn">
-                <i class="fa-solid fa-file-export export-icon"></i>Export
-                palette to PDF
-              </button>
-              <button class="close close-my-palette-btn">
-                <i class="fa-solid fa-circle-xmark"></i>
-              </button>
-            </div>
-            <p class="my-palette-label-counter">0 colors in your library! 😌</p>
-            <div class="colors-container-my-palette"></div>
-          </div>
-        </div>
-      </nav>
+      <app-nav></app-nav>
 
       <main class="main-app">
         <header class="intro-app">
           <h1>
-            Press <span class="highlight">space</span> to generate colors or use
-            the <span class="highlight">button</span> below
+            👉Press <span class="highlight">space</span> to generate colors or
+            use the <span class="highlight">button</span> below
           </h1>
-          <button class="generate-colors-btn">Generate</button>
+          <button class="classic-button generate-colors-btn">Generate</button>
         </header>
 
         <section>
@@ -267,6 +218,7 @@
       </p>
       <p>Export your palette to <b>PDF format</b> at any time.</p>
     </div>
+    <script src="/js/components.js"></script>
     <script type="module" src="/js/media-queries.js"></script>
     <script type="module" src="/js/manual-color-picker.js"></script>
     <script type="module" src="/js/main.js"></script>

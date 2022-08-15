@@ -11,6 +11,7 @@
   --color-2ndlightgrey: #e4e2e2;
   --color-lightgrey: #f9f9f9;
   --color-white: white;
+  --color-black: black;
   --color-anthracite: #42445a;
   --color-green: #89ffa6;
 }
@@ -42,29 +43,35 @@ html {
 
 h1 {
   font-size: 7rem;
-  color: var(--color-darkblue);
+  color: var(--color-black);
   line-height: 90px;
 }
 
 h2,
 h3 {
   font-size: 3rem;
-  color: var(--color-darkblue);
+  color: var(--color-black);
+}
+
+h4 {
+  font-size: 1.8rem;
+  color: var(--color-black);
 }
 
 p {
   line-height: 30px;
   font-size: 1.8rem;
+  color: var(--color-black);
 }
 
 a {
   font-size: 1.8rem;
   text-decoration: none;
-  color: var(--color-middlegrey);
+  color: var(--color-darkblue);
 }
 
 a:hover {
-  color: var(--color-darkblue);
+  color: var(--color-black);
   transition: 500ms;
 }
 
@@ -73,17 +80,22 @@ button {
   outline: none;
   -moz-appearance: none;
   -webkit-appearance: none;
+  background: transparent;
   font-size: 2rem;
-  font-weight: 600;
-  background-color: #ffffff00;
-  color: var(--color-darkgrey);
-  padding: 1.6rem 5rem 1.6rem 5rem;
-  border-radius: 12px;
-  border: 1px solid var(--color-middlegrey);
 }
 
-button:hover {
-  border: 1px solid var(--color-darkblue);
+.classic-button {
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  color: var(--color-black);
+  padding: 1.6rem 4rem 1.6rem 4rem;
+  border-radius: 12px;
+  border: 1.5px solid rgb(224, 223, 223);
+}
+
+.classic-button:hover {
+  border: 1.5px solid var(--color-darkblue);
   color: var(--color-darkblue);
   transition: 500ms;
 }

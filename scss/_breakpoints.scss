@@ -64,14 +64,6 @@
       max-width: 18rem;
     }
   }
-
-  .nav-subwrapper {
-    margin-right: 3rem;
-  }
-
-  .how-it-works-info {
-    transform: translate(-18rem, 4rem);
-  }
 }
 
 @media (max-width: 991.98px) {
@@ -124,6 +116,25 @@
 
     a {
       font-size: 1.8rem;
+    }
+  }
+
+  .tools-container {
+    min-width: 95vw;
+    padding: 1rem;
+  }
+
+  .tool {
+    img {
+      width: 4rem;
+      height: 3rem;
+    }
+    h4 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 20px;
     }
   }
 
@@ -196,7 +207,7 @@
     margin-left: 0;
   }
 
-  .nav-icon {
+  .heart-icon {
     animation: loveanimation 2s;
     font-size: 3rem;
     animation-iteration-count: infinite;
@@ -248,11 +259,6 @@
     img {
       max-width: 13rem;
     }
-
-    a {
-      font-size: 1.5rem;
-      margin-left: 0;
-    }
   }
 
   .hex-code-copy-wrapper {
@@ -293,11 +299,6 @@
 
   .my-palette-label-counter {
     font-size: 1.5rem;
-  }
-
-  .how-it-works-info {
-    transform: translate(-5rem, 4rem);
-    padding: 2rem;
   }
 
   li {
@@ -366,11 +367,7 @@
 
   .app-nav {
     img {
-      max-width: 10rem;
-    }
-
-    a {
-      font-size: 1.3rem;
+      max-width: 9rem;
     }
   }
 

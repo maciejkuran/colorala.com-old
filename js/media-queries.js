@@ -4,10 +4,11 @@
 const addIntroDivToDOM = () => {
   const mainTag = document.querySelector('.main-app');
   const html = `<div class="intro-app-mobile">
-    <h1>Push the <span class="highlight">button</span> to start!</h1>
-    <button class="generate-colors-btn">Generate</button>
+    <h1>👉Push the <span class="highlight">button</span> to start!</h1>
+    <button class="classic-button generate-colors-btn">Generate</button>
   </div>`;
-  mainTag.insertAdjacentHTML('afterbegin', html);
+
+  if (mainTag) mainTag.insertAdjacentHTML('afterbegin', html);
 };
 
 addIntroDivToDOM();
@@ -19,14 +20,9 @@ const manipulateDOM = () => {
 
   const mediaQuery = window.matchMedia('(max-width: 700px)');
   if (mediaQuery.matches) {
-    myPaletteNav.innerHTML = `<i class="fa-solid fa-heart nav-icon"></i
-      >`;
-
     introAppDesktop.style.display = 'none';
     introAppMobile.style.display = 'flex';
   } else {
-    myPaletteNav.innerHTML = `My Palette<i class="fa-solid fa-heart nav-icon"></i
-      >`;
     introAppDesktop.style.display = 'flex';
     introAppMobile.style.display = 'none';
   }

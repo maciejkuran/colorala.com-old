@@ -87,8 +87,11 @@ generateColorsBtn.forEach(btn => {
 });
 
 //on DOMContentLoaded
+
 document.addEventListener('DOMContentLoaded', function () {
   const bodyAppContainer = document.querySelector('.body-app-container');
+
+  if (!bodyAppContainer) return;
   setTimeout(() => {
     //Load everything on delay
     bodyAppContainer.style.opacity = '1';
@@ -188,10 +191,8 @@ const copyHEX = () => {
 copyHEX();
 
 ////NAV ELEMENTS - DISPLAYING / HIDING
-const howItWorks = document.querySelector('.how-it-works-open');
 const myPalette = document.querySelector('.my-palette-open');
 
-const howItWorksContent = document.querySelector('.how-it-works-info');
 const myPaletteContent = document.querySelector('.my-palette');
 const overlayModal = document.querySelector('.overlay-modal');
 const closeBtn = document.querySelectorAll('.close');
@@ -210,10 +211,6 @@ const hideContent = (el, el2) => {
 };
 
 // Event handlers on nav btns
-howItWorks.addEventListener('click', e => {
-  e.preventDefault();
-  displayContent(howItWorksContent, overlayModal);
-});
 myPalette.addEventListener('click', e => {
   e.preventDefault();
   displayContent(myPaletteContent, overlayModal);
@@ -221,13 +218,11 @@ myPalette.addEventListener('click', e => {
 //CLosing on buttons click
 closeBtn.forEach(btn => {
   btn.addEventListener('click', e => {
-    hideContent(howItWorksContent, overlayModal);
     hideContent(myPaletteContent, overlayModal);
   });
 });
 //Closing on overlay click
 overlayModal.addEventListener('click', e => {
-  hideContent(howItWorksContent, overlayModal);
   hideContent(myPaletteContent, overlayModal);
 });
 
