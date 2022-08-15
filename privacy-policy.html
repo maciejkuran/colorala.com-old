@@ -14,25 +14,38 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <script
+      defer
+      src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+      integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+      integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script defer type="module" src="/js/components.js"></script>
+    <script defer type="module" src="/js/main.js"></script>
+    <script defer type="module" src="/js/generate-pdf.js"></script>
+
+    <!--/////////////////// -->
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <nav class="app-nav">
-      <a href="/"
-        ><img
-          src="/img/Colorala logo.png"
-          alt="color palette generator colorala logo "
-      /></a>
-      <div class="nav-wrapper">
-        <nav class="website-nav">
-          <a href="/color-palette-generator"
-            ><button class="primary-button get-started-btn">
-              GET STARTED
-            </button></a
-          >
-        </nav>
-      </div>
-    </nav>
+    <app-nav></app-nav>
+
     <main class="content-container">
       <header>
         <h1>Privacy Policy 👁‍🗨</h1>
@@ -103,5 +116,6 @@
         </p>
       </section>
     </main>
+    <div class="overlay-modal hide"></div>
   </body>
 </html>
