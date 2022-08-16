@@ -311,9 +311,19 @@ const addColorToPalette = btns => {
 
       let heartIcon = Array.from(e.target.children)[0];
 
+      const setHighlight = setTimeout(() => {
+        heartIcon.classList.add('heart-highlight');
+      }, 100);
+      //FIXME: WORKING BUT REFACTOR
+
+      setTimeout(() => {
+        document
+          .querySelectorAll('.heart')
+          .forEach(heart => heart.classList.remove('heart-highlight'));
+      }, 1000);
+
       checkData(getHEX);
       hexCopy();
-      console.log(heartIcon);
 
       if (counter() === 1)
         colorCounterLabel.textContent = `${counter()} color in your library! 😀`;
