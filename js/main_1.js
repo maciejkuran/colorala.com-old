@@ -287,30 +287,21 @@ const insertDynamicElements = content => {
   ////////
   const colorWrapper = document.createElement('div');
   colorWrapper.classList.add('color-wrapper-my-palette');
-
-  const firstChild = document.createElement('div');
-  firstChild.classList.add('color-my-palette');
-  firstChild.style.backgroundColor = content;
-  colorWrapper.prepend(firstChild);
-
-  const secondChild = document.createElement('div');
-  secondChild.classList.add('divider-my-palette');
-  const pTag = document.createElement('p');
-  pTag.classList.add('label-hex-code-my-palette');
-  pTag.innerHTML = content;
-  const copyBtn = document.createElement('button');
-  copyBtn.classList.add('copy-hex-my-palette-btn');
-  copyBtn.innerHTML = '<i class="fa-solid fa-copy off-pointer-event"></i>';
-  secondChild.prepend(pTag);
-  secondChild.append(copyBtn);
-  colorWrapper.append(secondChild);
-
-  const removeBtn = document.createElement('button');
-  removeBtn.classList.add('remove-color-my-palette-btn');
-  // removeBtn.innerHTML = '<i class="fa-solid fa-x off-pointer-event"></i>';
-  removeBtn.innerHTML =
-    '<i class="ri-close-circle-line off-pointer-event"></i>';
-  colorWrapper.append(removeBtn);
+  colorWrapper.innerHTML = `
+  <div
+        class="color-my-palette"
+        style="background-color: ${content}"
+      ></div>
+      <div class="divider-my-palette">
+        <p class="label-hex-code-my-palette">${content}</p>
+        <button class="copy-hex-my-palette-btn">
+          <i class="fa-solid fa-copy off-pointer-event"></i>
+        </button>
+      </div>
+      <button class="remove-color-my-palette-btn">
+        <i class="ri-close-circle-line off-pointer-event"></i>
+      </button>
+`;
   myPaletteLibrary.prepend(colorWrapper);
 };
 
