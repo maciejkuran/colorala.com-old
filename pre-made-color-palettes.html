@@ -52,6 +52,35 @@
   </head>
   <body>
     <app-nav></app-nav>
+    <header class="pre-made-colors-header">
+      <h1 class="h1">Pre-made color palettes!</h1>
+      <div class="buttons-wrapper">
+        <button class="filter-btn allColorsBtn active-filter-btn">All</button>
+        <button class="filter-btn darkColorsBtn">Dark</button>
+        <button class="filter-btn lightColorsBtn">Light</button>
+        <button class="filter-btn mixColorsBtn">Mix</button>
+      </div>
+    </header>
+    <section class="pre-made-palettes-container">
+      <div class="palette">
+        <div data-id="0" class="single-pre-made-color">
+          <div class="hex-code-copy-wrapper">
+            <p class="hex-label hex-label3">#70ffb8</p>
+            <button class="copy-hex-btn copy-hex-btn3">
+              <i class="fa-solid fa-copy"></i>
+            </button>
+            <p class="added-to-palette-confirmation-label">Added</p>
+            <p class="action-label-info-popup add-color-to-palette-label">
+              Add color to palette
+            </p>
+            <button class="add-to-palette-btn">
+              <i class="fa-solid fa-heart"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <from-creator-popup></from-creator-popup>
 
     <a class="from-creator-btn from-creator-btn-app-page" href=""
@@ -59,5 +88,21 @@
     >
     <div class="overlay-modal hide"></div>
     <cookies-popup></cookies-popup>
+
+    <div class="color-wrapper-my-palette">
+      <div
+        class="color-my-palette"
+        style="background-color: rgb(120, 27, 246)"
+      ></div>
+      <div class="divider-my-palette">
+        <p class="label-hex-code-my-palette">#781BF6</p>
+        <button class="copy-hex-my-palette-btn">
+          <i class="fa-solid fa-copy off-pointer-event"></i>
+        </button>
+      </div>
+      <button class="remove-color-my-palette-btn">
+        <i class="ri-close-circle-line off-pointer-event"></i>
+      </button>
+    </div>
   </body>
 </html>

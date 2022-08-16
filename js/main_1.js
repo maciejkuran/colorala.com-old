@@ -284,6 +284,7 @@ const myPaletteLibrary = document.querySelector('.colors-container-my-palette');
 const colorCounterLabel = document.querySelector('.my-palette-label-counter');
 
 const insertDynamicElements = content => {
+  ////////
   const colorWrapper = document.createElement('div');
   colorWrapper.classList.add('color-wrapper-my-palette');
 

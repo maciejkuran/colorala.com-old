@@ -10,6 +10,7 @@
   --color-middlegrey: #949495;
   --color-2ndlightgrey: #e4e2e2;
   --color-lightgrey: #f9f9f9;
+  --color-lightgrey-2: rgb(238, 238, 238);
   --color-white: white;
   --color-black: black;
   --color-anthracite: #42445a;
@@ -45,6 +46,10 @@ h1 {
   font-size: 7rem;
   color: var(--color-black);
   line-height: 90px;
+}
+
+.h1 {
+  font-size: 3.5rem;
 }
 
 h2,

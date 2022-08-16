@@ -11,6 +11,7 @@
   --color-middlegrey: #949495;
   --color-2ndlightgrey: #e4e2e2;
   --color-lightgrey: #f9f9f9;
+  --color-lightgrey-2: rgb(238, 238, 238);
   --color-white: white;
   --color-black: black;
   --color-anthracite: #42445a;
@@ -46,6 +47,10 @@ h1 {
   font-size: 7rem;
   color: var(--color-black);
   line-height: 90px;
+}
+
+.h1 {
+  font-size: 3.5rem;
 }
 
 h2,
@@ -990,6 +995,49 @@ footer p a {
 }
 .additional-info a {
   font-size: 1.5rem;
+}
+
+.pre-made-colors-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.filter-btn {
+  background-color: var(--color-lightgrey);
+  margin: 0 1rem;
+  padding: 0.5rem 2rem;
+  border-radius: 12px;
+}
+
+.filter-btn:hover {
+  background-color: var(--color-lightgrey-2);
+  -webkit-transition: 600;
+  transition: 600;
+}
+
+.active-filter-btn {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.active-filter-btn:hover {
+  background-color: var(--color-darkgrey);
+}
+
+.pre-made-palettes-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .custom-class .pcr-swatches {
