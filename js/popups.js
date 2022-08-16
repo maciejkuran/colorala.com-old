@@ -78,7 +78,7 @@ const closeWelcomePopup = () => {
   const closeBtn = document.querySelector(
     '.close-about-local-storage-popup-btn'
   );
-  if (document.body.className !== 'excluded') {
+  if (closeBtn) {
     closeBtn.addEventListener('click', () => {
       localStorage.setItem('colorala-welcome-message', 'read');
       popupContainer.classList.add('hide');

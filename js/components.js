@@ -113,7 +113,7 @@ customElements.define('from-creator-popup', fromCreatorPopup);
 
 class cookiesPopup extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = `<div class="cookies-container">
+    this.innerHTML = `<div class="cookies-container hide">
     <div>
       <h3>Cookies!</h3>
       <img src="/img/cookies img.png" alt="" />
@@ -131,6 +131,33 @@ class cookiesPopup extends HTMLElement {
 }
 
 customElements.define('cookies-popup', cookiesPopup);
+
+class localStoragePopup extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `<div class="add-to-palette-local-storage-info-popup hide">
+    <div class="close-local-storage-info-content-area">
+      <button class="close-about-local-storage-popup-btn">
+        <i class="fa-solid fa-circle-xmark"></i>
+      </button>
+    </div>
+    <h3>Hello there 😉</h3>
+    <img
+      src="/img/colorala how to save to palette animation.gif"
+      alt="colorala how to save color to palette"
+    />
+    <p>
+      When creating your color palette, save the colors in
+      <b>'My Palette'</b>. All colors are
+      <strong>saved in your browser's local storage</strong>. Unless you
+      delete the data from your browser, the
+      <b> added colors will NOT disappear! </b> 🟢
+    </p>
+    <p>Export your palette to <b>PDF format</b> at any time.</p>
+  </div>`;
+  }
+}
+
+customElements.define('about-local-storage-popup', localStoragePopup);
 
 class appFooter extends HTMLElement {
   connectedCallback() {

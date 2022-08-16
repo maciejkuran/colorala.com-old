@@ -5,10 +5,12 @@ const whatsNewBtn = document.querySelector('.whatsNewBtn');
 const section1 = document.querySelector('.home-section-1');
 
 const scrollIntoSection = () => {
-  whatsNewBtn.addEventListener('click', e => {
-    e.preventDefault();
-    section1.scrollIntoView({ behavior: 'smooth' });
-  });
+  if (whatsNewBtn) {
+    whatsNewBtn.addEventListener('click', e => {
+      e.preventDefault();
+      section1.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
 };
 
 scrollIntoSection();
