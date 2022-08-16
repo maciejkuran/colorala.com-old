@@ -124,23 +124,18 @@ const backgrounds = document.querySelectorAll('.color');
 const HEXlabels = document.querySelectorAll('.hex-label');
 const copyHEXbtn = document.querySelectorAll('.copy-hex-btn');
 const addToPaletteBtns = document.querySelectorAll('.add-to-palette-btn');
-const confirmationLabels = document.querySelectorAll(
-  '.added-to-palette-confirmation-label'
-);
 
 const applyColorFromManual = () => {
   let outputColor = '';
   saveBtns.forEach((btn, i) => {
-    btn.addEventListener('click', function () {
+    btn.addEventListener('click', function (e) {
       if (saveBtns[i] && backgrounds[i].classList.contains('unlocked')) {
         outputColor = results[i].value;
         backgrounds[i].style.backgroundColor = outputColor;
         HEXlabels[i].textContent = outputColor;
-        confirmationLabels[i].style.display = 'none';
+
         copyHEXbtn.forEach(btn => {
           btn.style.color = '#1A3253';
-          addToPaletteBtns[i].style.color = '#42445a';
-          addToPaletteBtns[i].classList.remove('heart-animation');
         });
       } else {
         outputColor = ' ';

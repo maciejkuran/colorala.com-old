@@ -459,41 +459,37 @@ footer {
   width: 100%;
 }
 
-.heart-animation {
+.heart-highlight {
   color: red;
-  animation: heartWhenClicked 4s;
-  pointer-events: none;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease;
-  animation-fill-mode: both;
-  animation-direction: alternate;
-}
-
-@keyframes heartWhenClicked {
-  from {
-    color: red;
-  }
-
-  to {
-    color: var(--color-anthracite);
-  }
-}
-
-.off-pointer-event {
-  pointer-events: none;
 }
 
 .added-to-palette-confirmation-label {
-  display: none;
   position: absolute;
-  transform: translate(-1rem, -2rem);
-  color: var(--color-darkblue);
+  transform: translate(-50%, -50%);
+  top: -10%;
+  left: 50%;
+  transition: all 0.2s ease-in-out;
+  color: var(--color-black);
   background-color: var(--color-green);
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-weight: 500;
   line-height: 2rem;
-  padding: 0 0.5rem 0 0.5rem;
+  padding: 1.3rem 3rem;
   border-radius: 12px;
+}
+
+.added-to-palette-confirmation-label-active {
+  top: 5%;
+}
+
+.added-to-palette-error-label {
+  @extend .added-to-palette-confirmation-label;
+  background-color: red;
+  color: var(--color-white);
+}
+
+.added-to-palette-error-label-active {
+  top: 5%;
 }
 
 .from-creator-btn-app-page {
@@ -780,4 +776,8 @@ footer {
 .pre-made-palettes-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+}
+
+.off-pointer-event {
+  pointer-events: none;
 }

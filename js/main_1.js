@@ -71,7 +71,6 @@ lockColor();
 //Generate colors in DOM
 const generateColors = () => {
   const colorAreas = document.querySelectorAll('.color');
-  const unlockIcons = document.querySelectorAll('.ri-lock-unlock-fill');
   let randomColor = '';
 
   colorAreas.forEach((area, i) => {
@@ -82,7 +81,6 @@ const generateColors = () => {
       area.style.backgroundColor = randomColor;
       hexLabels[i].textContent = randomColor;
       addToPaletteBtns[i].style.color = '#42445a';
-      confirmationLabels[i].style.display = 'none';
     } else {
       randomColor = ' ';
       area.style.backgroundColor = ' ';
@@ -305,46 +303,68 @@ const insertDynamicElements = content => {
   myPaletteLibrary.prepend(colorWrapper);
 };
 
-const confirmationLabels = document.querySelectorAll(
-  '.added-to-palette-confirmation-label'
-);
+const addColorToPalette = btns => {
+  btns.forEach(btn => {
+    btn.addEventListener('click', e => {
+      let getHEX =
+        e.target.parentElement.previousElementSibling.children[0].textContent;
 
-const addColorToPalette = () => {
-  addToPaletteBtns.forEach((btn, i) => {
-    addToPaletteBtns[i].addEventListener('click', e => {
-      addToPaletteBtns[i].classList.add('heart-animation');
-      if (addToPaletteBtns[i].classList.contains('heart-animation')) {
-        confirmationLabels[i].style.display = 'inline';
+      let heartIcon = Array.from(e.target.children)[0];
 
-        insertDynamicElements(hexLabels[i].textContent);
-        saveToLocalStorage(hexLabels[i].textContent);
-        hexCopy();
-        removeAnimation();
-      }
+      checkData(getHEX);
+      hexCopy();
+      console.log(heartIcon);
 
-      if (counter() === 1) {
+      if (counter() === 1)
         colorCounterLabel.textContent = `${counter()} color in your library! 😀`;
-      } else if (counter() > 1) {
+
+      if (counter() > 1)
         colorCounterLabel.textContent = `${counter()} colors in your library! 😀`;
-      }
     });
   });
 };
 
-addColorToPalette();
+addColorToPalette(addToPaletteBtns);
 
-//Removing added to palette animation
-const removeAnimation = () => {
-  colorAreas.forEach((area, i) => {
-    setTimeout(() => {
-      confirmationLabels.forEach(label => {
-        label.style.display = 'none';
-      });
-      addToPaletteBtns.forEach(btn => {
-        btn.classList.remove('heart-animation');
-      });
-    }, 3000);
-  });
+//Checking if recently added color already exists in the palette. If yes, do not add and display error message
+const addedConfirmationLabel = document.querySelector(
+  '.added-to-palette-confirmation-label'
+);
+const addedErrorLabel = document.querySelector('.added-to-palette-error-label');
+
+const checkData = hex => {
+  let data;
+  if (localStorage.getItem('myPalette') === null) {
+    data = [];
+  } else {
+    data = JSON.parse(localStorage.getItem('myPalette'));
+  }
+
+  if (data.indexOf(hex) === -1 || data === '[]') {
+    insertDynamicElements(hex);
+    saveToLocalStorage(hex);
+    displayStatus(
+      addedConfirmationLabel,
+      'added-to-palette-confirmation-label-active'
+    );
+  }
+  if (data.indexOf(hex) > -1)
+    displayStatus(addedErrorLabel, 'added-to-palette-error-label-active');
+};
+
+//Displaying status message when added to palette
+const displayStatus = (el, classname) => {
+  const display = setTimeout(() => {
+    el.classList.add(classname);
+  }, 100);
+
+  hideStatus(el, classname);
+};
+
+const hideStatus = (el, classname) => {
+  const hide = setTimeout(() => {
+    el.classList.remove(classname);
+  }, 1100);
 };
 
 ////REMOVING COLOR FROM PALETTE
