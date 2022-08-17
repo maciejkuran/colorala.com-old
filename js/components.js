@@ -1,17 +1,19 @@
 class appNav extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = `<nav class="app-nav">
+    this.innerHTML = `
+    <nav class="app-nav">
     <a href="/"
       ><img
         src="/img/Colorala logo.png"
-        alt="color palette generator colorala logo "
+        alt="color palette generator colorala logo"
     /></a>
     <div class="nav-wrapper">
       <div class="nav-subwrapper">
         <ul>
           <li>
-            <a class="tools-popup-btn" href="">Tools</a
-            ><i class="ri-arrow-drop-down-line arrow-down-icon"></i>
+            <a class="tools-popup-btn" href=""
+              >Tools<i class="ri-arrow-drop-down-line arrow-down-icon"></i></a
+            >
           </li>
           <li>
             <a class="my-palette-open" href=""
@@ -66,8 +68,8 @@ class appNav extends HTMLElement {
       <div class="my-palette hide">
         <div class="flex-my-palette">
           <button class="export-btn">
-            <i class="fa-solid fa-file-export export-icon"></i>Export
-            palette to PDF
+            <i class="fa-solid fa-file-export export-icon"></i>Export palette
+            to PDF
           </button>
           <button class="close close-my-palette-btn">
             <i class="fa-solid fa-circle-xmark"></i>

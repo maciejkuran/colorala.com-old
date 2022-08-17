@@ -149,11 +149,13 @@ const mediaQueryMobile = window.matchMedia('(max-width: 700px)');
 
 const infoPopups = (buttons, labels, handlerType, styling) => {
   buttons.forEach((btn, i) => {
-    btn.addEventListener(handlerType, () => {
-      if (buttons[i] && !mediaQueryMobile.matches) {
-        labels[i].style.display = styling;
-      }
-    });
+    if (btn) {
+      btn.addEventListener(handlerType, () => {
+        if (buttons[i] && !mediaQueryMobile.matches) {
+          labels[i].style.display = styling;
+        }
+      });
+    }
   });
 };
 
@@ -311,17 +313,7 @@ const addColorToPalette = btns => {
 
       let heartIcon = Array.from(e.target.children)[0];
 
-      const setHighlight = setTimeout(() => {
-        heartIcon.classList.add('heart-highlight');
-      }, 100);
-      //FIXME: WORKING BUT REFACTOR
-
-      setTimeout(() => {
-        document
-          .querySelectorAll('.heart')
-          .forEach(heart => heart.classList.remove('heart-highlight'));
-      }, 1000);
-
+      highlightHeart(heartIcon);
       checkData(getHEX);
       hexCopy();
 
@@ -336,7 +328,7 @@ const addColorToPalette = btns => {
 
 addColorToPalette(addToPaletteBtns);
 
-//Checking if recently added color already exists in the palette. If yes, do not add and display error message
+//Checking if recently added color already exists in the palette. If yes, do not add to palette and display error message
 const addedConfirmationLabel = document.querySelector(
   '.added-to-palette-confirmation-label'
 );
@@ -375,6 +367,19 @@ const hideStatus = (el, classname) => {
   const hide = setTimeout(() => {
     el.classList.remove(classname);
   }, 1100);
+};
+
+//Highlighting heart when clicked on btn
+const highlightHeart = el => {
+  const setHighlight = setTimeout(() => {
+    el.classList.add('heart-highlight');
+  }, 100);
+
+  setTimeout(() => {
+    document
+      .querySelectorAll('.heart')
+      .forEach(heart => heart.classList.remove('heart-highlight'));
+  }, 1000);
 };
 
 ////REMOVING COLOR FROM PALETTE
