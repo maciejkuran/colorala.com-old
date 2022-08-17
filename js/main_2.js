@@ -65,5 +65,5 @@ singleColorContainer.forEach(container => {
 });
 
 singleColorContainer.forEach(container => {
-  container.addEventListener('mouseout', hideBar);
+  container.addEventListener('mouseleave', hideBar);
 });
