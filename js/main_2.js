@@ -41,27 +41,24 @@ const singleColorContainer = document.querySelectorAll(
 const showBar = e => {
   let target = e.target;
   let bar = e.target.children[0];
-  e.stopPropagation();
 
   if (!target) return;
 
   if (target && bar) {
-    console.log(target);
     bar.classList.add('single-color-internal-wrapper-active');
   }
 };
 
 const bars = document.querySelectorAll('.single-color-internal-wrapper');
 
-const hideBar = e => {
-  e.stopPropagation();
+const hideBar = () => {
   bars.forEach(bar =>
     bar.classList.remove('single-color-internal-wrapper-active')
   );
 };
 
 singleColorContainer.forEach(container => {
-  container.addEventListener('mouseover', showBar);
+  container.addEventListener('mouseenter', showBar);
 });
 
 singleColorContainer.forEach(container => {
