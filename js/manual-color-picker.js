@@ -129,7 +129,7 @@ const applyColorFromManual = () => {
   let outputColor = '';
   saveBtns.forEach((btn, i) => {
     btn.addEventListener('click', function (e) {
-      if (saveBtns[i] && backgrounds[i].classList.contains('unlocked')) {
+      if (saveBtns[i] && !backgrounds[i].classList.contains('locked')) {
         outputColor = results[i].value;
         backgrounds[i].style.backgroundColor = outputColor;
         HEXlabels[i].textContent = outputColor;

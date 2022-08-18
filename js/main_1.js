@@ -43,30 +43,21 @@ const RGBtoHEX = () => {
 
 ////IMPLEMENTING LOCK/UNLOCK COLOR FUNCTIONALITY
 const lockUnlockColorBtns = document.querySelectorAll('.lock-unlock-color-btn');
-const unlockedBtns = document.querySelectorAll('.ri-lock-unlock-fill');
-const colorAreas = document.querySelectorAll('.color');
 
-const lockColor = () => {
-  lockUnlockColorBtns.forEach((button, i) => {
-    button.addEventListener('click', function (e) {
-      if (unlockedBtns[i].className === 'ri-lock-unlock-fill') {
-        unlockedBtns[i].classList.replace(
-          'ri-lock-unlock-fill',
-          'ri-lock-fill'
-        );
-        colorAreas[i].classList.replace('unlocked', 'locked');
-      } else {
-        unlockedBtns[i].classList.replace(
-          'ri-lock-fill',
-          'ri-lock-unlock-fill'
-        );
-        colorAreas[i].classList.replace('locked', 'unlocked');
-      }
-    });
-  });
+const lockColor = e => {
+  let target = e.target;
+  let grandParent = e.target.parentElement.parentElement.parentElement;
+
+  if (target.className === 'ri-lock-unlock-fill') {
+    target.classList.replace('ri-lock-unlock-fill', 'ri-lock-fill');
+    grandParent.classList.add('locked');
+  } else {
+    target.classList.replace('ri-lock-fill', 'ri-lock-unlock-fill');
+    grandParent.classList.remove('locked');
+  }
 };
 
-lockColor();
+lockUnlockColorBtns.forEach(btn => btn.addEventListener('click', lockColor));
 
 //Generate colors in DOM
 const generateColors = () => {
@@ -74,7 +65,7 @@ const generateColors = () => {
   let randomColor = '';
 
   colorAreas.forEach((area, i) => {
-    if (colorAreas[i].classList.contains('unlocked')) {
+    if (!colorAreas[i].classList.contains('locked')) {
       randomColor = RGBtoHEX();
 
       area.style.backgroundColor = randomColor;
