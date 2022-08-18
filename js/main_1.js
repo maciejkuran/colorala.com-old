@@ -270,20 +270,21 @@ export const insertDynamicElements = content => {
   const colorWrapper = document.createElement('div');
   colorWrapper.classList.add('color-wrapper-my-palette');
   colorWrapper.innerHTML = `
-  <div
-        class="color-my-palette"
-        style="background-color: ${content}"
-      ></div>
-      <div class="divider-my-palette">
-        <p class="label-hex-code-my-palette">${content}</p>
-        <button class="copy-hex-my-palette-btn">
-          <i class="fa-solid fa-copy off-pointer-event"></i>
+    <div
+          class="color-my-palette"
+          style="background-color: ${content}"
+        ></div>
+        <div class="divider-my-palette">
+          <p class="label-hex-code-my-palette">${content}</p>
+          <button class="copy-hex-my-palette-btn">
+            <i class="fa-solid fa-copy off-pointer-event"></i>
+          </button>
+        </div>
+        <button class="remove-color-my-palette-btn">
+          <i class="ri-close-circle-line off-pointer-event"></i>
         </button>
-      </div>
-      <button class="remove-color-my-palette-btn">
-        <i class="ri-close-circle-line off-pointer-event"></i>
-      </button>
-`;
+  `;
+
   myPaletteLibrary.prepend(colorWrapper);
 };
 
@@ -296,6 +297,8 @@ export const displayCounter = () => {
     colorCounterLabel.textContent = `${counter()} colors in your library! 😀`;
 };
 
+//Variable that stores hex codes from my palette;
+
 const addColorToPalette = btns => {
   btns.forEach(btn => {
     btn.addEventListener('click', e => {
@@ -303,12 +306,10 @@ const addColorToPalette = btns => {
         e.target.parentElement.previousElementSibling.children[0].textContent;
 
       let heartIcon = Array.from(e.target.children)[0];
-
       highlightHeart(heartIcon);
       checkData(getHEX);
-      hexCopy();
-
       displayCounter();
+      copyHEXfromPalette();
     });
   });
 };
@@ -381,35 +382,26 @@ const deleteItemFromPalette = e => {
     removeFromLocalStorage(container);
   }
 
-  if (counter() === 0) {
-    colorCounterLabel.textContent = `${counter()} colors in your library! 😌`;
-  } else {
-    colorCounterLabel.textContent = `${counter()} colors in your library! 😀`;
-  }
+  displayCounter();
 };
 
 // Event handler
 myPaletteContent.addEventListener('click', deleteItemFromPalette);
 
 ////COPY TO CLIPBOARD - MY PALETTE COLORS
-const hexCopy = () => {
+//prettier-ignore
+const copyHEXfromPalette = e => {
   const copyHEXMyPaletteBtns = document.querySelectorAll(
     '.copy-hex-my-palette-btn'
   );
-  const hexLabelsMyPalette = document.querySelectorAll(
-    '.label-hex-code-my-palette'
-  );
 
-  copyHEXMyPaletteBtns.forEach((btn, i) => {
+  copyHEXMyPaletteBtns.forEach(btn =>
     btn.addEventListener('click', e => {
-      e.stopPropagation();
-
-      if (copyHEXMyPaletteBtns[i]) {
-        copyToClipboard(hexLabelsMyPalette[i].textContent);
-        copyHEXMyPaletteBtns[i].style.color = '#54E98A';
-      }
-    });
-  });
+      let hex = e.target.previousElementSibling.textContent;
+      copyToClipboard(hex);
+      displayStatus(copiedLabel, 'copied-to-clipboard-label-active' )
+    })
+  );
 };
 
 ////LOCAL STORAGE
@@ -437,14 +429,10 @@ const getFromLocalStorage = () => {
 
   colors.forEach(color => {
     insertDynamicElements(color);
-    hexCopy();
-
-    if (counter() === 1) {
-      colorCounterLabel.textContent = `${colors.length} color in your library! 😀`;
-    } else if (counter() > 1) {
-      colorCounterLabel.textContent = `${colors.length} colors in your library! 😀`;
-    }
+    displayCounter();
   });
+
+  copyHEXfromPalette();
 };
 
 document.addEventListener('DOMContentLoaded', getFromLocalStorage);
