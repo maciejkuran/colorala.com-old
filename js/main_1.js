@@ -100,7 +100,6 @@ generateColorsBtn.forEach(btn => {
 });
 
 //on DOMContentLoaded
-
 document.addEventListener('DOMContentLoaded', function () {
   const bodyAppContainer = document.querySelector('.body-app-container');
 
@@ -268,7 +267,7 @@ document.querySelector('body').addEventListener('click', e => {
 ////ADDING COLOR TO MY PALETTE
 
 //Implementing counter
-const counter = () => {
+export const counter = () => {
   const labelsMyPalette = document.querySelectorAll(
     '.label-hex-code-my-palette'
   );
@@ -283,7 +282,7 @@ const counter = () => {
 const myPaletteLibrary = document.querySelector('.colors-container-my-palette');
 const colorCounterLabel = document.querySelector('.my-palette-label-counter');
 
-const insertDynamicElements = content => {
+export const insertDynamicElements = content => {
   ////////
   const colorWrapper = document.createElement('div');
   colorWrapper.classList.add('color-wrapper-my-palette');
@@ -305,6 +304,15 @@ const insertDynamicElements = content => {
   myPaletteLibrary.prepend(colorWrapper);
 };
 
+//Display counter in DOM
+export const displayCounter = () => {
+  if (counter() === 1)
+    colorCounterLabel.textContent = `${counter()} color in your library! 😀`;
+
+  if (counter() > 1)
+    colorCounterLabel.textContent = `${counter()} colors in your library! 😀`;
+};
+
 const addColorToPalette = btns => {
   btns.forEach(btn => {
     btn.addEventListener('click', e => {
@@ -317,11 +325,7 @@ const addColorToPalette = btns => {
       checkData(getHEX);
       hexCopy();
 
-      if (counter() === 1)
-        colorCounterLabel.textContent = `${counter()} color in your library! 😀`;
-
-      if (counter() > 1)
-        colorCounterLabel.textContent = `${counter()} colors in your library! 😀`;
+      displayCounter();
     });
   });
 };
@@ -334,7 +338,7 @@ const addedConfirmationLabel = document.querySelector(
 );
 const addedErrorLabel = document.querySelector('.added-to-palette-error-label');
 
-const checkData = hex => {
+export const checkData = hex => {
   let data;
   if (localStorage.getItem('myPalette') === null) {
     data = [];
@@ -355,7 +359,7 @@ const checkData = hex => {
 };
 
 //Displaying status message when added to palette
-const displayStatus = (el, classname) => {
+export const displayStatus = (el, classname) => {
   const display = setTimeout(() => {
     el.classList.add(classname);
   }, 100);
@@ -363,14 +367,14 @@ const displayStatus = (el, classname) => {
   hideStatus(el, classname);
 };
 
-const hideStatus = (el, classname) => {
+export const hideStatus = (el, classname) => {
   const hide = setTimeout(() => {
     el.classList.remove(classname);
   }, 1100);
 };
 
 //Highlighting heart when clicked on btn
-const highlightHeart = el => {
+export const highlightHeart = el => {
   const setHighlight = setTimeout(() => {
     el.classList.add('heart-highlight');
   }, 100);
@@ -429,7 +433,7 @@ const hexCopy = () => {
 
 ////LOCAL STORAGE
 //Saving data to local storage
-const saveToLocalStorage = color => {
+export const saveToLocalStorage = color => {
   let colors;
   if (localStorage.getItem('myPalette') === null) {
     colors = [];

@@ -61,13 +61,15 @@ const popupContainer = document.querySelector(
 );
 
 const showWelcomePopup = () => {
+  if (!popupContainer) return;
+
   setTimeout(() => {
     if (
       !localStorage.getItem('colorala-welcome-message') &&
-      localStorage.getItem('colorala-cookies-accepted') &&
-      document.body.className !== 'excluded'
+      localStorage.getItem('colorala-cookies-accepted')
     ) {
       popupContainer.classList.remove('hide');
+
       backgroundOverlay.classList.remove('hide');
       backgroundOverlay.style.pointerEvents = 'all';
     }

@@ -464,7 +464,7 @@ footer {
 }
 
 .added-to-palette-confirmation-label {
-  position: absolute;
+  position: fixed;
   transform: translate(-50%, -50%);
   top: -10%;
   left: 50%;
@@ -829,4 +829,8 @@ footer {
 .copy-hex-btn {
   margin-right: 1rem;
   color: var(--color-anthracite);
+}
+
+.fa-heart {
+  pointer-events: none;
 }
