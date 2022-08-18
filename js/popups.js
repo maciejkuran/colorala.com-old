@@ -6,26 +6,28 @@ const fromCreatorCloseBtn = document.querySelector(
 const fromCreatorContent = document.querySelector('.from-creator-content');
 const backgroundOverlay = document.querySelector('.overlay-modal');
 
-const displayFromCreatorContent = () => {
-  fromCreatorOpenBtn.addEventListener('click', e => {
-    backgroundOverlay.style.pointerEvents = 'all';
-    e.preventDefault();
-    fromCreatorContent.style.display = 'inline';
-    backgroundOverlay.classList.remove('hide');
-  });
-
-  fromCreatorCloseBtn.addEventListener('click', () => {
-    fromCreatorContent.style.display = 'none';
-    backgroundOverlay.classList.add('hide');
-  });
-
-  backgroundOverlay.addEventListener('click', () => {
-    fromCreatorContent.style.display = 'none';
-    backgroundOverlay.classList.add('hide');
-  });
+const displayFromCreatorContent = e => {
+  e.preventDefault();
+  fromCreatorContent.classList.remove('hide');
+  backgroundOverlay.classList.remove('hide');
 };
 
-displayFromCreatorContent();
+fromCreatorOpenBtn.addEventListener('click', displayFromCreatorContent);
+
+const closeFromCreatorContent = classname => {
+  fromCreatorContent.classList.add(classname);
+  backgroundOverlay.classList.add(classname);
+};
+
+fromCreatorCloseBtn.addEventListener(
+  'click',
+  closeFromCreatorContent.bind(null, 'hide')
+);
+
+backgroundOverlay.addEventListener(
+  'click',
+  closeFromCreatorContent.bind(null, 'hide')
+);
 
 ////Cookies notification
 const cookiesContainer = document.querySelector('.cookies-container');

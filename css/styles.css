@@ -722,8 +722,7 @@ footer p a {
 }
 
 .from-creator-content {
-  display: none;
-  z-index: 2;
+  z-index: 3;
   position: fixed;
   max-width: 50rem;
   top: 50%;

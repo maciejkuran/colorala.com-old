@@ -87,7 +87,7 @@ customElements.define('app-nav', appNav);
 
 class fromCreatorPopup extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = `<div class="from-creator-content">
+    this.innerHTML = `<div class="from-creator-content hide">
     <div class="close-from-creator-content-area">
       <button class="close-from-creator-content-btn">
         <i class="fa-solid fa-circle-xmark"></i>

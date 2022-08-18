@@ -120,29 +120,22 @@ const pickr4 = Pickr.create({
 //Applying color to DOM from manual color picker
 const saveBtns = document.querySelectorAll('.pcr-save');
 const results = document.querySelectorAll('.pcr-result');
-const backgrounds = document.querySelectorAll('.color');
+const colorItems = document.querySelectorAll('.color');
 const HEXlabels = document.querySelectorAll('.hex-label');
 const copyHEXbtn = document.querySelectorAll('.copy-hex-btn');
 const addToPaletteBtns = document.querySelectorAll('.add-to-palette-btn');
 
-const applyColorFromManual = () => {
-  let outputColor = '';
-  saveBtns.forEach((btn, i) => {
-    btn.addEventListener('click', function (e) {
-      if (saveBtns[i] && !backgrounds[i].classList.contains('locked')) {
-        outputColor = results[i].value;
-        backgrounds[i].style.backgroundColor = outputColor;
-        HEXlabels[i].textContent = outputColor;
+const applyColorFromPicker = e => {
+  let target = e.target;
+  let hex = target.parentElement.children[0].value;
+  let clickedIndex = [...saveBtns].map(btn => [...saveBtns].indexOf(target))[0];
 
-        copyHEXbtn.forEach(btn => {
-          btn.style.color = '#1A3253';
-        });
-      } else {
-        outputColor = ' ';
-        backgrounds[i].style.backgroundColor = ' ';
-      }
-    });
-  });
+  if (!colorItems[clickedIndex].classList.contains('locked')) {
+    colorItems[clickedIndex].style.backgroundColor = hex;
+    HEXlabels[clickedIndex].textContent = hex;
+  } else {
+    colorItems[clickedIndex].style.backgroundColor = ' ';
+  }
 };
 
-applyColorFromManual();
+saveBtns.forEach(btn => btn.addEventListener('click', applyColorFromPicker));

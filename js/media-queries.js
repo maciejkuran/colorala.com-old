@@ -14,7 +14,6 @@ const addIntroDivToDOM = () => {
 addIntroDivToDOM();
 
 const manipulateDOM = () => {
-  const myPaletteNav = document.querySelector('.my-palette-open');
   const introAppDesktop = document.querySelector('.intro-app');
   const introAppMobile = document.querySelector('.intro-app-mobile');
 
