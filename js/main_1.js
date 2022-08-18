@@ -280,8 +280,6 @@ export const displayCounter = () => {
     colorCounterLabel.textContent = `${counter()} colors in your library! 😀`;
 };
 
-//Variable that stores hex codes from my palette;
-
 const addColorToPalette = btns => {
   btns.forEach(btn => {
     btn.addEventListener('click', e => {
