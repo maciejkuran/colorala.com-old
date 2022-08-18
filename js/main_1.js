@@ -175,7 +175,7 @@ const copyHEXbtns = document.querySelectorAll('.copy-hex-btn');
 const hexLabels = document.querySelectorAll('.hex-label');
 
 //General copy function
-const copyToClipboard = text => {
+export const copyToClipboard = text => {
   if (navigator.clipboard) {
     return navigator.clipboard.writeText(text);
   }

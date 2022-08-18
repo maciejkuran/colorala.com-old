@@ -285,40 +285,6 @@ footer p a {
   color: var(--color-darkblue);
 }
 
-.heart-icon {
-  color: var(--color-darkblue);
-  -webkit-animation: loveanimation 2s;
-          animation: loveanimation 2s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-timing-function: ease;
-          animation-timing-function: ease;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
-  position: absolute;
-}
-
-@-webkit-keyframes loveanimation {
-  from {
-    font-size: 2.5rem;
-  }
-  to {
-    font-size: 3rem;
-    color: red;
-  }
-}
-
-@keyframes loveanimation {
-  from {
-    font-size: 2.5rem;
-  }
-  to {
-    font-size: 3rem;
-    color: red;
-  }
-}
 .tools-popup-btn {
   color: var(--color-black);
   font-weight: 600;
@@ -675,7 +641,7 @@ footer p a {
   color: red;
 }
 
-.added-to-palette-confirmation-label, .added-to-palette-error-label {
+.added-to-palette-confirmation-label, .copied-to-clipboard-label, .added-to-palette-error-label {
   position: fixed;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -692,17 +658,13 @@ footer p a {
   border-radius: 12px;
 }
 
-.added-to-palette-confirmation-label-active {
+.added-to-palette-confirmation-label-active, .copied-to-clipboard-label-active, .added-to-palette-error-label-active {
   top: 5%;
 }
 
 .added-to-palette-error-label {
   background-color: red;
   color: var(--color-white);
-}
-
-.added-to-palette-error-label-active {
-  top: 5%;
 }
 
 .from-creator-btn-app-page {
@@ -1095,6 +1057,45 @@ footer p a {
 }
 
 .fa-heart {
+  pointer-events: none;
+}
+
+.heart-icon {
+  color: var(--color-darkblue);
+  -webkit-animation: loveanimation 2s;
+          animation: loveanimation 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  position: absolute;
+  pointer-events: all;
+}
+
+@-webkit-keyframes loveanimation {
+  from {
+    font-size: 2.5rem;
+  }
+  to {
+    font-size: 3rem;
+    color: red;
+  }
+}
+
+@keyframes loveanimation {
+  from {
+    font-size: 2.5rem;
+  }
+  to {
+    font-size: 3rem;
+    color: red;
+  }
+}
+.copy-icon {
   pointer-events: none;
 }
 

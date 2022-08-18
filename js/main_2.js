@@ -1,6 +1,15 @@
 'use strict';
 
 import { palettes } from './pre-made-palettes.js';
+import { insertDynamicElements } from './main_1.js';
+import { checkData } from './main_1.js';
+import { saveToLocalStorage } from './main_1.js';
+import { displayStatus } from './main_1.js';
+import { hideStatus } from './main_1.js';
+import { highlightHeart } from './main_1.js';
+import { counter } from './main_1.js';
+import { displayCounter } from './main_1.js';
+import { copyToClipboard } from './main_1.js';
 
 ////Inserting palettes to DOM;
 const palettesContainer = document.querySelector(
@@ -19,7 +28,7 @@ const insertPalettes = () => {
       div.innerHTML = `<div class="single-color-internal-wrapper">
       <p class="hex-label">${color}</p>
       <button class="copy-hex-btn">
-        <i class="fa-solid fa-copy"></i>
+        <i class="fa-solid fa-copy copy-icon"></i>
       </button>
       <button class="add-pre-clr-to-palette-btn">
         <i class="fa-solid fa-heart heart"></i>
@@ -70,15 +79,6 @@ const addToPaletteBtns = document.querySelectorAll(
   '.add-pre-clr-to-palette-btn'
 );
 
-import { insertDynamicElements } from './main_1.js';
-import { checkData } from './main_1.js';
-import { saveToLocalStorage } from './main_1.js';
-import { displayStatus } from './main_1.js';
-import { hideStatus } from './main_1.js';
-import { highlightHeart } from './main_1.js';
-import { counter } from './main_1.js';
-import { displayCounter } from './main_1.js';
-
 const addColorToPalette = btns => {
   btns.forEach(btn => {
     //prettier-ignore
@@ -94,3 +94,16 @@ const addColorToPalette = btns => {
 };
 
 addColorToPalette(addToPaletteBtns);
+
+////Copy to clipboard
+const copyBtns = document.querySelectorAll('.copy-hex-btn');
+const copiedLabel = document.querySelector('.copied-to-clipboard-label');
+
+const copyHEX = e => {
+  let target = e.target;
+  let hex = e.target.previousElementSibling.textContent;
+  copyToClipboard(hex);
+  displayStatus(copiedLabel, 'copied-to-clipboard-label-active');
+};
+
+copyBtns.forEach(btn => btn.addEventListener('click', copyHEX));

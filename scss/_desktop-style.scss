@@ -133,27 +133,6 @@ footer {
   }
 }
 
-.heart-icon {
-  color: var(--color-darkblue);
-  animation: loveanimation 2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease;
-  animation-fill-mode: both;
-  animation-direction: alternate;
-  position: absolute;
-}
-
-@keyframes loveanimation {
-  from {
-    font-size: 2.5rem;
-  }
-
-  to {
-    font-size: 3rem;
-    color: red;
-  }
-}
-
 .tools-popup-btn {
   color: var(--color-black);
   font-weight: 600;
@@ -489,7 +468,15 @@ footer {
 }
 
 .added-to-palette-error-label-active {
-  top: 5%;
+  @extend .added-to-palette-confirmation-label-active;
+}
+
+.copied-to-clipboard-label {
+  @extend .added-to-palette-confirmation-label;
+}
+
+.copied-to-clipboard-label-active {
+  @extend .added-to-palette-confirmation-label-active;
 }
 
 .from-creator-btn-app-page {
@@ -832,5 +819,31 @@ footer {
 }
 
 .fa-heart {
+  pointer-events: none;
+}
+
+.heart-icon {
+  color: var(--color-darkblue);
+  animation: loveanimation 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+  position: absolute;
+  pointer-events: all;
+}
+
+@keyframes loveanimation {
+  from {
+    font-size: 2.5rem;
+  }
+
+  to {
+    font-size: 3rem;
+    color: red;
+  }
+}
+
+.copy-icon {
   pointer-events: none;
 }
