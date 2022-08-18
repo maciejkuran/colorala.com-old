@@ -86,7 +86,6 @@ const generateColors = () => {
       area.style.backgroundColor = ' ';
     }
   });
-  removingHighlightremoveBtns(copyHEXbtns);
 };
 
 //Event handlers for generating colors
@@ -173,6 +172,7 @@ initInfoPopups();
 ////COPY TO CLIPBOARD
 const copyHEXbtns = document.querySelectorAll('.copy-hex-btn');
 const hexLabels = document.querySelectorAll('.hex-label');
+const copiedLabel = document.querySelector('.copied-to-clipboard-label');
 
 //General copy function
 export const copyToClipboard = text => {
@@ -181,33 +181,16 @@ export const copyToClipboard = text => {
   }
 };
 
-//removing highlighted copy btn (when new copy btn is clicked, all previous are removed)
-const removingHighlightremoveBtns = buttons => {
-  buttons.forEach(btn => {
-    btn.style.color = '#1A3253';
-  });
+//Copy to clipboard DOM
+const copyHEX = e => {
+  let target = e.target;
+  let hex = target.previousElementSibling.textContent;
+
+  copyToClipboard(hex);
+  displayStatus(copiedLabel, 'copied-to-clipboard-label-active');
 };
 
-//copy to clipboard with DOM
-const copyHEX = () => {
-  copyHEXbtns.forEach((btn, i) => {
-    btn.addEventListener('click', e => {
-      const copyHEXMyPaletteBtns = document.querySelectorAll(
-        '.copy-hex-my-palette-btn'
-      );
-
-      removingHighlightremoveBtns(copyHEXMyPaletteBtns);
-      removingHighlightremoveBtns(copyHEXbtns);
-      if (btn.className === `copy-hex-btn copy-hex-btn${i + 1}`) {
-        copyToClipboard(hexLabels[i].textContent);
-        setTimeout(() => {
-          btn.style.color = '#54E98A';
-        }, 0);
-      }
-    });
-  });
-};
-copyHEX();
+copyHEXbtns.forEach(btn => btn.addEventListener('click', copyHEX));
 
 ////NAV ELEMENTS - DISPLAYING / HIDING
 const myPalette = document.querySelector('.my-palette-open');
@@ -419,8 +402,6 @@ const hexCopy = () => {
 
   copyHEXMyPaletteBtns.forEach((btn, i) => {
     btn.addEventListener('click', e => {
-      removingHighlightremoveBtns(copyHEXbtns);
-      removingHighlightremoveBtns(copyHEXMyPaletteBtns);
       e.stopPropagation();
 
       if (copyHEXMyPaletteBtns[i]) {
