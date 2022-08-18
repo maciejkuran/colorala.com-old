@@ -75,12 +75,10 @@ const generateColors = () => {
 
   colorAreas.forEach((area, i) => {
     if (colorAreas[i].classList.contains('unlocked')) {
-      addToPaletteBtns[i].classList.remove('heart-animation');
       randomColor = RGBtoHEX();
 
       area.style.backgroundColor = randomColor;
       hexLabels[i].textContent = randomColor;
-      addToPaletteBtns[i].style.color = '#42445a';
     } else {
       randomColor = ' ';
       area.style.backgroundColor = ' ';
