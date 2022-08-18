@@ -33,29 +33,29 @@ backgroundOverlay.addEventListener(
 const cookiesContainer = document.querySelector('.cookies-container');
 const cookiesAcceptBtn = document.querySelector('.accept-cookies-btn');
 
-const cookiesNotification = () => {
-  document.addEventListener('DOMContentLoaded', function () {
-    if (!localStorage.getItem('colorala-cookies-accepted')) {
-      backgroundOverlay.style.pointerEvents = 'none';
-      cookiesContainer.classList.remove('hide');
-      backgroundOverlay.classList.remove('hide');
-    } else {
-      cookiesContainer.classList.add('hide');
-      backgroundOverlay.classList.add('hide');
-      backgroundOverlay.style.pointerEvents = 'all';
-    }
-  });
+const showCookies = () => {
+  if (!localStorage.getItem('colorala-cookies-accepted')) {
+    backgroundOverlay.style.pointerEvents = 'none';
+    cookiesContainer.classList.remove('hide');
+    backgroundOverlay.classList.remove('hide');
+  } else {
+    cookiesContainer.classList.add('hide');
+    backgroundOverlay.classList.add('hide');
+    backgroundOverlay.style.pointerEvents = 'all';
+  }
 };
+
+document.addEventListener('DOMContentLoaded', showCookies);
 
 const acceptCookies = () => {
-  cookiesAcceptBtn.addEventListener('click', function () {
-    cookiesContainer.style.display = 'none';
-    backgroundOverlay.classList.add('hide');
-    localStorage.setItem('colorala-cookies-accepted', 'true');
+  cookiesContainer.classList.add('hide');
+  backgroundOverlay.classList.add('hide');
+  localStorage.setItem('colorala-cookies-accepted', 'true');
 
-    showWelcomePopup();
-  });
+  showWelcomePopup();
 };
+
+cookiesAcceptBtn.addEventListener('click', acceptCookies);
 
 ////Welcome popup - about adding to palette and local storage
 const popupContainer = document.querySelector(
@@ -78,31 +78,19 @@ const showWelcomePopup = () => {
   }, 500);
 };
 
-const closeWelcomePopup = () => {
-  const closeBtn = document.querySelector(
-    '.close-about-local-storage-popup-btn'
-  );
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      localStorage.setItem('colorala-welcome-message', 'read');
-      popupContainer.classList.add('hide');
-      backgroundOverlay.classList.add('hide');
-    });
-
-    backgroundOverlay.addEventListener('click', () => {
-      localStorage.setItem('colorala-welcome-message', 'read');
-      popupContainer.classList.add('hide');
-      backgroundOverlay.classList.add('hide');
-    });
+const closeWelcomePopup = e => {
+  if (e.target) {
+    localStorage.setItem('colorala-welcome-message', 'read');
+    popupContainer.classList.add('hide');
+    backgroundOverlay.classList.add('hide');
   }
 };
 
-cookiesNotification();
-acceptCookies();
-closeWelcomePopup();
+const closeBtn = document.querySelector('.close-about-local-storage-popup-btn');
+
+closeBtn.addEventListener('click', closeWelcomePopup);
+backgroundOverlay.addEventListener('click', closeWelcomePopup);
 
 //Event handler on DOMContentLoaded, if a user visited website again but haven't seen + accepted the popup for some reason  (popup accept isn't saved in the local storage)
 
-document.addEventListener('DOMContentLoaded', () => {
-  showWelcomePopup();
-});
+document.addEventListener('DOMContentLoaded', showWelcomePopup);
