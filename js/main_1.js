@@ -91,14 +91,10 @@ const generateColors = () => {
 //Event handlers for generating colors
 const generateColorsBtn = document.querySelectorAll('.generate-colors-btn');
 
-//btns on click
-generateColorsBtn.forEach(btn => {
-  btn.addEventListener('click', function (e) {
-    generateColors();
-  });
-});
+//btns on click - mobile and desktop
+generateColorsBtn.forEach(btn => btn.addEventListener('click', generateColors));
 
-//on DOMContentLoaded
+//on DOMContentLoaded - fixing script loading issues that caused colors jumping etc.
 document.addEventListener('DOMContentLoaded', function () {
   const bodyAppContainer = document.querySelector('.body-app-container');
 
