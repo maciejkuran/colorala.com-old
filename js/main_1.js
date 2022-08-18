@@ -124,46 +124,32 @@ document.addEventListener('keydown', e => {
   }
 });
 
-////IMPLEMENTING INFO-POPUPS ON 'MOUSEHOOVER'
-const addToPaletteBtns = document.querySelectorAll('.add-to-palette-btn');
-const addToPaletteLabels = document.querySelectorAll(
-  '.add-color-to-palette-label'
-);
+////IMPLEMENTING GUIDE INFO-POPUPS ON 'MOUSEHOOVER' OVER BTNS
+//Adding additional class to color picker library btn
+document
+  .querySelectorAll('.pickr')
+  .forEach(btn => btn.classList.add('action-button'));
 
-const colorPickerBtns = document.querySelectorAll('.pcr-button');
-const colorPickerLabels = document.querySelectorAll(
-  '.manual-color-picker-label'
-);
-
-const lockUnlockColorLabels = document.querySelectorAll(
-  '.lock-unlock-color-label'
-);
-
+const actionBtns = document.querySelectorAll('.action-button');
+const popups = document.querySelectorAll('.action-label-info-popup ');
 const mediaQueryMobile = window.matchMedia('(max-width: 700px)');
 
-const infoPopups = (buttons, labels, handlerType, styling) => {
-  buttons.forEach((btn, i) => {
-    if (btn) {
-      btn.addEventListener(handlerType, () => {
-        if (buttons[i] && !mediaQueryMobile.matches) {
-          labels[i].style.display = styling;
-        }
-      });
-    }
-  });
+const showInfoPopup = e => {
+  if (!mediaQueryMobile.matches) {
+    let target = e.target;
+    let popup = target.previousElementSibling;
+    popup.classList.add('action-label-info-popup-active');
+  }
 };
 
-const initInfoPopups = () => {
-  infoPopups(addToPaletteBtns, addToPaletteLabels, 'mouseover', 'flex');
-  infoPopups(colorPickerBtns, colorPickerLabels, 'mouseover', 'flex');
-  infoPopups(lockUnlockColorBtns, lockUnlockColorLabels, 'mouseover', 'flex');
-
-  infoPopups(addToPaletteBtns, addToPaletteLabels, 'mouseout', 'none');
-  infoPopups(colorPickerBtns, colorPickerLabels, 'mouseout', 'none');
-  infoPopups(lockUnlockColorBtns, lockUnlockColorLabels, 'mouseout', 'none');
+const hideInfoPopup = e => {
+  popups.forEach(popup =>
+    popup.classList.remove('action-label-info-popup-active')
+  );
 };
 
-initInfoPopups();
+actionBtns.forEach(btn => btn.addEventListener('mouseenter', showInfoPopup));
+actionBtns.forEach(btn => btn.addEventListener('mouseleave', hideInfoPopup));
 
 ////COPY TO CLIPBOARD
 const copyHEXbtns = document.querySelectorAll('.copy-hex-btn');
@@ -244,6 +230,7 @@ document.querySelector('body').addEventListener('click', e => {
 });
 
 ////ADDING COLOR TO MY PALETTE
+const addToPaletteBtns = document.querySelectorAll('.add-to-palette-btn');
 
 //Implementing counter
 export const counter = () => {

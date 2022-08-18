@@ -541,6 +541,12 @@ footer p a {
   border-radius: 12px;
 }
 
+.action-label-info-popup-active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .color {
   height: calc(100vh - 245px);
   display: -webkit-box;
