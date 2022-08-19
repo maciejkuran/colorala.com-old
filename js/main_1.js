@@ -15,6 +15,8 @@ const scrollIntoSection = () => {
 
 scrollIntoSection();
 
+///////////COLOR PALETTES GENERATOR
+
 ////GENERATING RANDOM NUMBER - functions
 const randomNb = (min, max) => {
   return Math.trunc(Math.random() * (max - min) + 1);

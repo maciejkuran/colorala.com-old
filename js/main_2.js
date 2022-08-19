@@ -1,3 +1,5 @@
+//////////////PRE-MADE-COLOR-PALETTES
+
 'use strict';
 
 import { palettes } from './pre-made-palettes.js';
