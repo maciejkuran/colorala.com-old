@@ -32,16 +32,17 @@ backgroundOverlay.addEventListener(
 ////Cookies notification
 const cookiesContainer = document.querySelector('.cookies-container');
 const cookiesAcceptBtn = document.querySelector('.accept-cookies-btn');
+const overlayCookies = document.querySelector('.overlay-modal-cookies');
 
 const showCookies = () => {
   if (!localStorage.getItem('colorala-cookies-accepted')) {
-    backgroundOverlay.style.pointerEvents = 'none';
+    // backgroundOverlay.style.pointerEvents = 'none';
     cookiesContainer.classList.remove('hide');
-    backgroundOverlay.classList.remove('hide');
+    overlayCookies.classList.remove('hide');
   } else {
     cookiesContainer.classList.add('hide');
-    backgroundOverlay.classList.add('hide');
-    backgroundOverlay.style.pointerEvents = 'all';
+    overlayCookies.classList.add('hide');
+    // backgroundOverlay.style.pointerEvents = 'all';
   }
 };
 
@@ -49,7 +50,7 @@ document.addEventListener('DOMContentLoaded', showCookies);
 
 const acceptCookies = () => {
   cookiesContainer.classList.add('hide');
-  backgroundOverlay.classList.add('hide');
+  overlayCookies.classList.add('hide');
   localStorage.setItem('colorala-cookies-accepted', 'true');
 
   showWelcomePopup();
@@ -88,7 +89,7 @@ const closeWelcomePopup = e => {
 
 const closeBtn = document.querySelector('.close-about-local-storage-popup-btn');
 
-closeBtn.addEventListener('click', closeWelcomePopup);
+closeBtn?.addEventListener('click', closeWelcomePopup);
 backgroundOverlay.addEventListener('click', closeWelcomePopup);
 
 //Event handler on DOMContentLoaded, if a user visited website again but haven't seen + accepted the popup for some reason  (popup accept isn't saved in the local storage)
