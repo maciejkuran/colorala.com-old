@@ -107,3 +107,20 @@ const copyHEX = e => {
 };
 
 copyBtns.forEach(btn => btn.addEventListener('click', copyHEX));
+
+////Filtering palettes
+const filterBtns = document.querySelectorAll('.filter-btn');
+const allPalettes = document.querySelectorAll('.pre-made-palettes-container');
+
+const filterPalettes = e => {
+  let target = e.target;
+  filterBtns.forEach(btn => btn.classList.remove('active-filter-btn'));
+  allPalettes.forEach(pal => pal.remove());
+
+  target.classList.add('active-filter-btn');
+  let tagName = e.target.textContent;
+
+  let filteredPalettes = palettes.filter(arr => arr.type.includes(tagName));
+};
+
+filterBtns.forEach(btn => btn.addEventListener('click', filterPalettes));
