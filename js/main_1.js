@@ -360,7 +360,7 @@ myPaletteContent.addEventListener('click', deleteItemFromPalette);
 
 ////COPY TO CLIPBOARD - MY PALETTE COLORS
 //prettier-ignore
-const copyHEXfromPalette = e => {
+export const copyHEXfromPalette = e => {
   const copyHEXMyPaletteBtns = document.querySelectorAll(
     '.copy-hex-my-palette-btn'
   );
