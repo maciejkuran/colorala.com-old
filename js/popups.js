@@ -36,13 +36,11 @@ const overlayCookies = document.querySelector('.overlay-modal-cookies');
 
 const showCookies = () => {
   if (!localStorage.getItem('colorala-cookies-accepted')) {
-    // backgroundOverlay.style.pointerEvents = 'none';
     cookiesContainer.classList.remove('hide');
     overlayCookies.classList.remove('hide');
   } else {
     cookiesContainer.classList.add('hide');
     overlayCookies.classList.add('hide');
-    // backgroundOverlay.style.pointerEvents = 'all';
   }
 };
 
