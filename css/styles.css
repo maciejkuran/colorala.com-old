@@ -633,16 +633,6 @@ footer p a {
   transition: 300ms;
 }
 
-.overlay-modal {
-  z-index: 2;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(40, 40, 40, 0.1058823529);
-  height: 100%;
-  width: 100%;
-}
-
 .heart-highlight {
   color: red;
 }
@@ -1107,6 +1097,16 @@ footer p a {
 }
 .copy-icon {
   pointer-events: none;
+}
+
+.overlay-modal, .overlay-modal-cookies {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(40, 40, 40, 0.1058823529);
+  min-height: 100%;
+  min-width: 100%;
 }
 
 .custom-class .pcr-swatches {
