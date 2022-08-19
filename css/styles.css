@@ -51,6 +51,11 @@ h1 {
 
 .h1 {
   font-size: 3.5rem;
+  line-height: 45px;
+}
+
+.h2 {
+  font-size: 2.3rem;
 }
 
 h2,
@@ -952,6 +957,13 @@ footer p a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 0 1rem;
+}
+.pre-made-colors-header .h2 {
+  font-size: 1.8rem;
+  color: var(--color-middlegrey);
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .filter-btn {
@@ -1415,12 +1427,15 @@ h3 {
   .what-is-new {
     bottom: 0;
   }
+  .pre-made-colors-header .h2 {
+    font-size: 1.5rem;
+  }
 }
 @media (max-width: 575.98px) {
   p,
 a,
 .highlight {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
   footer {
     bottom: -4rem;
