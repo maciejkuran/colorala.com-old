@@ -264,13 +264,19 @@
   .what-is-new {
     bottom: 0;
   }
+
+  .pre-made-colors-header {
+    .h2 {
+      font-size: 1.5rem;
+    }
+  }
 }
 
 @media (max-width: 575.98px) {
   p,
   a,
   .highlight {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
   footer {
     bottom: -4rem;
