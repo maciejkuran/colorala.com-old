@@ -59,7 +59,7 @@ class appNav extends HTMLElement {
             <img src="/img/live website preview.gif" alt="" />
             <div>
               <h4><span>NEW!</span> Website Colors Preview!</h4>
-              <p>Are you designing a website? Preview your colors!</p>
+              <p>Are you a website designer? Preview your colors!</p>
             </div>
           </div>
         </a>
