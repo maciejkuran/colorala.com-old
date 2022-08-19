@@ -574,7 +574,7 @@ footer p a {
   color: var(--color-anthracite);
 }
 .color button:hover {
-  color: var(--color-darkblue);
+  color: var(--color-black);
   -webkit-transition: 500ms;
   transition: 500ms;
 }
@@ -1046,6 +1046,11 @@ footer p a {
 }
 .single-color-internal-wrapper button {
   color: var(--color-anthracite);
+}
+.single-color-internal-wrapper button:hover {
+  color: var(--color-black);
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }
 .single-color-internal-wrapper .hex-label {
   margin-right: 1rem;

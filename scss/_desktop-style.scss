@@ -377,7 +377,7 @@ footer {
   }
 
   button:hover {
-    color: var(--color-darkblue);
+    color: var(--color-black);
     transition: 500ms;
   }
 }
@@ -804,6 +804,11 @@ footer {
   transition: all 0.2s ease-in-out;
   button {
     color: var(--color-anthracite);
+  }
+
+  button:hover {
+    color: var(--color-black);
+    transition: 500ms;
   }
 
   .hex-label {
