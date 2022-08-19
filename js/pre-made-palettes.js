@@ -45,19 +45,19 @@ const palette_4_light = new Palette(
 //Mix
 const palette_1_mix = new Palette(
   ['All', 'Mix'],
-  ['#ACC0D3', '#63B3C2', '#1F1C68', '#506D76']
+  ['#ACC0D3', '#D6F8FF', '#1F1C68', '#506D76']
 );
 const palette_2_mix = new Palette(
   ['All', 'Mix'],
-  ['#CFE1BC', '#628DFA', '#40513A', '#41E2D7']
+  ['#F4FFE8', '#628DFA', '#40513A', '#41E2D7']
 );
 const palette_3_mix = new Palette(
   ['All', 'Mix'],
-  ['#E37E7C', '#40C2F4', '#B5CB70', '#281032']
+  ['#E37E7C', '#E1F6FE', '#B5CB70', '#281032']
 );
 const palette_4_mix = new Palette(
   ['All', 'Mix'],
-  ['#7B60B6', '#AE8CF0', '#C97948', '#7860D0']
+  ['#D7CDED', '#AE8CF0', '#7500FF', '#7860D0']
 );
 const palette_5_mix = new Palette(
   ['All', 'Mix'],
@@ -65,5 +65,5 @@ const palette_5_mix = new Palette(
 );
 const palette_6_mix = new Palette(
   ['All', 'Mix'],
-  ['#303030', '#0068FF', '#EBEBEB', '#00FF70']
+  ['#303030', '#0068FF', '#E6E5D1', '#00FF70']
 );
