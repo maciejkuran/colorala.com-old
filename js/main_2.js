@@ -10,14 +10,15 @@ import { highlightHeart } from './main_1.js';
 import { counter } from './main_1.js';
 import { displayCounter } from './main_1.js';
 import { copyToClipboard } from './main_1.js';
+import { copyHEXfromPalette } from './main_1.js';
 
 ////Inserting palettes to DOM;
 const palettesContainer = document.querySelector(
   '.pre-made-palettes-container'
 );
 
-const insertPalettes = () => {
-  palettes.forEach(pal => {
+const insertPalettes = allPalettes => {
+  allPalettes.forEach(pal => {
     const palette = document.createElement('div');
     palette.classList.add('pre-made-palette');
 
@@ -40,39 +41,43 @@ const insertPalettes = () => {
   });
 };
 
-insertPalettes();
+insertPalettes(palettes);
 
 ////Show and hide bar (hex code and btns) on single palette's color hover
-const singleColorContainer = document.querySelectorAll(
-  '.single-color-container'
-);
 
-const showBar = e => {
-  let target = e.target;
-  let bar = e.target.children[0];
-
-  if (!target) return;
-
-  if (target && bar) {
-    bar.classList.add('single-color-internal-wrapper-active');
-  }
-};
-
-const bars = document.querySelectorAll('.single-color-internal-wrapper');
-
-const hideBar = () => {
-  bars.forEach(bar =>
-    bar.classList.remove('single-color-internal-wrapper-active')
+const initBar = () => {
+  const singleColorContainer = document.querySelectorAll(
+    '.single-color-container'
   );
+
+  const showBar = e => {
+    let target = e.target;
+    let bar = e.target.children[0];
+
+    if (!target) return;
+
+    if (target && bar) {
+      bar.classList.add('single-color-internal-wrapper-active');
+    }
+  };
+
+  const bars = document.querySelectorAll('.single-color-internal-wrapper');
+
+  const hideBar = () => {
+    bars.forEach(bar =>
+      bar.classList.remove('single-color-internal-wrapper-active')
+    );
+  };
+
+  singleColorContainer.forEach(container => {
+    container.addEventListener('mouseenter', showBar);
+  });
+
+  singleColorContainer.forEach(container => {
+    container.addEventListener('mouseleave', hideBar);
+  });
 };
-
-singleColorContainer.forEach(container => {
-  container.addEventListener('mouseenter', showBar);
-});
-
-singleColorContainer.forEach(container => {
-  container.addEventListener('mouseleave', hideBar);
-});
+initBar();
 
 ////Add color to palette
 const addToPaletteBtns = document.querySelectorAll(
@@ -88,6 +93,7 @@ const addColorToPalette = btns => {
       checkData(getHEX);
       highlightHeart(heart)
       displayCounter();
+      copyHEXfromPalette();
       },
     );
   });
@@ -96,31 +102,59 @@ const addColorToPalette = btns => {
 addColorToPalette(addToPaletteBtns);
 
 ////Copy to clipboard
-const copyBtns = document.querySelectorAll('.copy-hex-btn');
-const copiedLabel = document.querySelector('.copied-to-clipboard-label');
+const initCopying = () => {
+  const copyBtns = document.querySelectorAll('.copy-hex-btn');
+  const copiedLabel = document.querySelector('.copied-to-clipboard-label');
 
-const copyHEX = e => {
-  let target = e.target;
-  let hex = e.target.previousElementSibling.textContent;
-  copyToClipboard(hex);
-  displayStatus(copiedLabel, 'copied-to-clipboard-label-active');
+  const copyHEX = e => {
+    let target = e.target;
+    let hex = e.target.previousElementSibling.textContent;
+    copyToClipboard(hex);
+    displayStatus(copiedLabel, 'copied-to-clipboard-label-active');
+  };
+
+  copyBtns.forEach(btn => btn.addEventListener('click', copyHEX));
 };
 
-copyBtns.forEach(btn => btn.addEventListener('click', copyHEX));
+initCopying();
 
 ////Filtering palettes
 const filterBtns = document.querySelectorAll('.filter-btn');
-const allPalettes = document.querySelectorAll('.pre-made-palettes-container');
+
+//Updating 'add to palettes btns' in DOM and adding to palette functionality
+const updatePaletteBtns = () => {
+  const addToPaletteBtns = document.querySelectorAll(
+    '.add-pre-clr-to-palette-btn'
+  );
+  addColorToPalette(addToPaletteBtns);
+};
+
+//Removing all before displaying filtered ones
+const removePalettes = () => {
+  const allPalettes = document.querySelectorAll('.pre-made-palette');
+  allPalettes.forEach(pal => pal.remove());
+};
 
 const filterPalettes = e => {
   let target = e.target;
   filterBtns.forEach(btn => btn.classList.remove('active-filter-btn'));
-  allPalettes.forEach(pal => pal.remove());
+
+  removePalettes();
 
   target.classList.add('active-filter-btn');
   let tagName = e.target.textContent;
 
-  let filteredPalettes = palettes.filter(arr => arr.type.includes(tagName));
+  const filteredPalettes = palettes.filter(arr => arr.type.includes(tagName));
+  insertPalettes(filteredPalettes);
+
+  initFunctionality();
+};
+
+const initFunctionality = () => {
+  initBar();
+  updatePaletteBtns();
+  initCopying();
+  copyHEXfromPalette();
 };
 
 filterBtns.forEach(btn => btn.addEventListener('click', filterPalettes));
