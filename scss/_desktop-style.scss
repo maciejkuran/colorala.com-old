@@ -727,6 +727,14 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 1rem;
+
+  .h2 {
+    font-size: 1.8rem;
+    color: var(--color-middlegrey);
+    text-align: center;
+    margin-bottom: 2rem;
+  }
 }
 
 .filter-btn {
