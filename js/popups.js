@@ -80,7 +80,7 @@ const showWelcomePopup = () => {
 const closeWelcomePopup = e => {
   if (e.target) {
     localStorage.setItem('colorala-welcome-message', 'read');
-    popupContainer.classList.add('hide');
+    popupContainer?.classList.add('hide');
     backgroundOverlay.classList.add('hide');
   }
 };
@@ -88,7 +88,7 @@ const closeWelcomePopup = e => {
 const closeBtn = document.querySelector('.close-about-local-storage-popup-btn');
 
 closeBtn?.addEventListener('click', closeWelcomePopup);
-backgroundOverlay.addEventListener('click', closeWelcomePopup);
+backgroundOverlay?.addEventListener('click', closeWelcomePopup);
 
 //Event handler on DOMContentLoaded, if a user visited website again but haven't seen + accepted the popup for some reason  (popup accept isn't saved in the local storage)
 
