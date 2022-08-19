@@ -54,11 +54,11 @@ class appNav extends HTMLElement {
           </div>
         </a>
 
-        <a href="/website-colors-preview">
+        <a href="/website-color-preview">
           <div class="tool">
             <img src="/img/live website preview.gif" alt="" />
             <div>
-              <h4><span>NEW!</span> Website Colors Preview!</h4>
+              <h4><span>NEW!</span> Website Color Preview!</h4>
               <p>Are you a website designer? Preview your colors!</p>
             </div>
           </div>
