@@ -28,7 +28,7 @@ const palette_4_dark = new Palette(
 //Light
 const palette_1_light = new Palette(
   ['All', 'Light'],
-  ['#323333', '#B4979A', '#F0A2DC', '#FFD8F5']
+  ['#FFF5D4', '#B4979A', '#F0A2DC', '#FFD8F5']
 );
 const palette_2_light = new Palette(
   ['All', 'Light'],
