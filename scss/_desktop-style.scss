@@ -864,3 +864,21 @@ footer {
 .overlay-modal-cookies {
   @extend .overlay-modal;
 }
+
+//'wcp' stands for 'website color preview'
+.wcp-header {
+  @extend .pre-made-colors-header;
+}
+
+.wcp-nav {
+  margin-left: 2rem;
+
+  button {
+    font-size: 3.5rem;
+  }
+
+  button:hover {
+    color: var(--color-darkgrey);
+    transition: 500ms;
+  }
+}

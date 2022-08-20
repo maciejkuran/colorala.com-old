@@ -943,7 +943,7 @@ footer p a {
   font-size: 1.5rem;
 }
 
-.pre-made-colors-header {
+.pre-made-colors-header, .wcp-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -959,7 +959,7 @@ footer p a {
           align-items: center;
   margin: 0 1rem;
 }
-.pre-made-colors-header .h2 {
+.pre-made-colors-header .h2, .wcp-header .h2 {
   font-size: 1.8rem;
   color: var(--color-middlegrey);
   text-align: center;
@@ -1119,6 +1119,18 @@ footer p a {
   background-color: rgba(40, 40, 40, 0.1058823529);
   min-height: 100%;
   min-width: 100%;
+}
+
+.wcp-nav {
+  margin-left: 2rem;
+}
+.wcp-nav button {
+  font-size: 3.5rem;
+}
+.wcp-nav button:hover {
+  color: var(--color-darkgrey);
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }
 
 .custom-class .pcr-swatches {
