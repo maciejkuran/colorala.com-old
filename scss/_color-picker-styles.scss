@@ -1,5 +1,9 @@
 //color picker styles
 
+.pcr-app {
+  background-color: var(--color-lightgrey);
+}
+
 .custom-class .pcr-swatches {
   display: none;
 }
@@ -53,7 +57,6 @@
   background: var(--color-middlegrey);
 }
 
-//Changing default button for custom
 .pickr .pcr-button {
   height: 0;
   width: 0;
@@ -66,4 +69,12 @@
 
 .color-picker-custom-class {
   font-size: 1.3rem;
+}
+
+.pcr-app .pcr-interaction .pcr-save {
+  background: var(--color-black);
+}
+
+.pcr-app .pcr-interaction .pcr-save:hover {
+  background: var(--color-darkgrey);
 }

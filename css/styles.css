@@ -1133,6 +1133,10 @@ footer p a {
   transition: 500ms;
 }
 
+.pcr-app {
+  background-color: var(--color-lightgrey);
+}
+
 .custom-class .pcr-swatches {
   display: none;
 }
@@ -1202,6 +1206,14 @@ footer p a {
 
 .color-picker-custom-class {
   font-size: 1.3rem;
+}
+
+.pcr-app .pcr-interaction .pcr-save {
+  background: var(--color-black);
+}
+
+.pcr-app .pcr-interaction .pcr-save:hover {
+  background: var(--color-darkgrey);
 }
 
 @media (max-width: 1310.98px) {
