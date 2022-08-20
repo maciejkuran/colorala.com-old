@@ -1,6 +1,6 @@
 'use strict';
 
-/////////WEBSITE COLORS PREVIEW
+/////////'WEBSITE COLORS PREVIEW' functionality
 
 ////Creating a class and its instances to display dynamically available HTML elements for user's modification
 
@@ -11,7 +11,24 @@ const Element = class {
     this.name = name;
     this.classname = classname;
     this.placeholder = placeholder;
-    elements.push(this);
+
+    Element.addInstance(this);
+  }
+  //encoding 'name' values as they will be used in the HTML
+  set name(name) {
+    this._name = name.replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  static addInstance(item) {
+    elements.push(item);
+  }
+
+  static getInstances() {
+    return elements;
   }
 };
 
@@ -30,3 +47,11 @@ const element_10 = new Element('.p-section', '.classic-theme--p-section', '#D1D1
 const element_11 = new Element('<div>', '.classic-theme--div', '#F2F5F5');
 const element_12 = new Element('<i>', '.classic-theme--i', '#262626');
 const element_13 = new Element('<footer>', '.classic-theme--footer', '#262626');
+
+const App = class {
+  constructor() {
+    console.log(Element.getInstances());
+  }
+};
+
+const runApp = new App();
