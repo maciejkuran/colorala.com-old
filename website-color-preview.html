@@ -21,6 +21,10 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"
+    />
     <!-- //////////////
     Scripts executed in order - async -->
     <script
@@ -34,6 +38,10 @@
       defer
       src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"
     ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"
+    ></script>
 
     <script
       defer
@@ -43,9 +51,9 @@
       referrerpolicy="no-referrer"
     ></script>
     <script defer type="module" src="/js/components.js"></script>
-
+    <script defer type="module" src="/js/main_3.js"></script>
+    <script defer type="module" src="/js/color-picker.js"></script>
     <script defer type="module" src="/js/main_1.js"></script>
-    <script defer type="module" src="/js/main_2.js"></script>
     <script defer type="module" src="/js/generate-pdf.js"></script>
     <script defer type="module" src="/js/popups.js"></script>
 
@@ -53,16 +61,49 @@
   </head>
   <body>
     <app-nav></app-nav>
-    <header class="pre-made-colors-header">
-      <h1 class="h1">Pre-made color palettes!</h1>
+    <!-- NOTE: 'wcp' - stands for 'website color preview' -->
+    <header class="wcp-header">
+      <h1 class="h1">Website Color Preview!</h1>
+      <h2 class="h2">Check out what your color scheme looks like 🙃</h2>
       <div class="buttons-wrapper">
-        <button class="filter-btn active-filter-btn">All</button>
-        <button class="filter-btn">Dark</button>
-        <button class="filter-btn">Light</button>
-        <button class="filter-btn">Mix</button>
+        <button class="filter-btn active-filter-btn">Laptop</button>
+        <button class="filter-btn">Mobile</button>
       </div>
     </header>
-    <section class="pre-made-palettes-container"></section>
+
+    <nav class="wcp-nav">
+      <button class="wcp-icon wcp-hamburger-btn">
+        <i class="ri-menu-add-line"></i>
+      </button>
+      <button class="wcp-icon instruction-btn">
+        <i class="ri-information-fill"></i>
+      </button>
+      <button class="wcp-icon reset-btn">
+        <i class="ri-restart-line"></i>
+      </button>
+
+      <div class="wcp-settings-container"></div>
+      <div class="wcp-instructions-container">
+        <h4>How does it work? 🤔</h4>
+        <ul>
+          <li>
+            <i class="ri-arrow-right-s-line"></i>Choose between laptop/mobile
+          </li>
+          <li>
+            <i class="ri-arrow-right-s-line"></i>Click on the object itself in
+            order to change a color of a certain element or optionally ...
+          </li>
+          <li>
+            <i class="ri-arrow-right-s-line"></i>Click on the hamburger icon to
+            open all the settings and change colors there!
+          </li>
+          <li>
+            <i class="ri-arrow-right-s-line"></i>Use color picker or choose
+            colors straight from your library!
+          </li>
+        </ul>
+      </div>
+    </nav>
 
     <p class="added-to-palette-confirmation-label">Added ❤</p>
     <p class="added-to-palette-error-label">❌ Already Added</p>
