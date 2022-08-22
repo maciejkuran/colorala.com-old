@@ -23,7 +23,7 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
@@ -31,11 +31,11 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(186, 186, 186);
+  background: var(--color-2ndlightgrey);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(186, 186, 186);
+  background: var(--color-2ndlightgrey);
 }
 
 ::-webkit-scrollbar-corner {
@@ -78,6 +78,10 @@ a {
   font-size: 1.8rem;
   text-decoration: none;
   color: var(--color-darkblue);
+}
+
+i {
+  pointer-events: none;
 }
 
 a:hover {
@@ -148,4 +152,11 @@ li {
   p {
     margin-bottom: 1.5rem;
   }
+}
+
+input {
+  outline: none;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 1rem;
 }

@@ -797,7 +797,7 @@ footer {
   padding: 0.5rem 1rem;
   border-radius: 12px;
   transform: translateY(-7rem);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
   button {
     color: var(--color-anthracite);
   }
@@ -881,4 +881,167 @@ footer {
     color: var(--color-darkgrey);
     transition: 500ms;
   }
+}
+
+.wcp-settings-container {
+  background-color: var(--color-lightgrey);
+  min-width: 39rem;
+  max-height: 62vh;
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  row-gap: 1.2rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  transform: translateX(-50rem);
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+}
+
+.wcp-settings-container--active {
+  transform: translateX(0);
+}
+
+.wcp-setting-internal-container {
+  position: relative;
+  max-width: 34rem;
+}
+
+.wcp-setting {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-lightgrey-2);
+  border-radius: 12px;
+
+  div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .color-picker {
+      position: absolute;
+      transform: translate(14rem, -3rem);
+      line-height: 24px;
+    }
+
+    .your-palette-label {
+      position: absolute;
+      transform: translate((11rem, -3rem));
+      line-height: 24px;
+    }
+
+    button {
+      font-size: 2rem;
+      margin: 0 0.5rem;
+      margin-bottom: 0;
+    }
+
+    .fa-heart-circle-plus {
+      color: black;
+      pointer-events: none;
+    }
+
+    .fa-heart-circle-plus:hover {
+      color: red;
+      transition: 500ms;
+    }
+
+    .icon-active {
+      color: red;
+      transition: 500ms;
+    }
+
+    input {
+      max-width: 10rem;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.wcp-my-library-container {
+  background-color: var(--color-lightgrey);
+  filter: drop-shadow(0 0 0.8rem rgb(149, 149, 149));
+  padding: 1rem;
+  border-radius: 12px;
+  max-width: 40rem;
+  max-height: 30rem;
+  position: absolute;
+  z-index: 2;
+  overflow-y: scroll;
+
+  h4 {
+    margin-bottom: 1rem;
+  }
+}
+
+.wcp-my-library-colors-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.wcp-my-library-color-wrapper {
+  @extend .color-wrapper-my-palette;
+  background-color: var(--color-white);
+  padding: 0.5rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  div {
+    height: 6rem;
+    width: 6rem;
+  }
+
+  p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-darkblue);
+  }
+
+  button {
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: 1px solid var(--color-middlegrey);
+    padding: 0.3rem 1rem;
+    border-radius: 12px;
+  }
+
+  button:hover {
+    border: 1px solid var(--color-black);
+    transition: 500ms;
+  }
+}
+
+.ri-menu-add-line--active {
+  color: red;
+}
+
+.wcp-instructions-container {
+  position: absolute;
+  max-width: 37rem;
+  background-color: var(--color-lightgrey);
+  padding: 2rem;
+  border-radius: 12px;
+  transform: translateX(-45rem);
+  transition: all 0.3s ease-in-out;
+
+  h4 {
+    margin-bottom: 1rem;
+  }
+
+  li {
+    font-size: 1.4rem;
+  }
+}
+
+.wcp-instructions-container--active {
+  transform: translateX(0);
+}
+
+.ri-information--fill--active {
+  color: red;
 }
