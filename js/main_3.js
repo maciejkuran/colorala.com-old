@@ -111,17 +111,18 @@ const insertColors = () => {
      <button class="wcp-my-library-select-btn">select</button>`;
       libraryContainer.children[1].prepend(colorWrapper);
     });
-
-    console.log(libraryContainer.children[1]);
   });
 };
 
 insertColors();
 
-////Toggling settings bar
+////Toggling settings container
 const hamburgerBtn = document.querySelector('.wcp-hamburger-btn');
 
 const openSettings = e => {
+  //prettier-ignore
+  hideElement(instructionContainer, 'wcp-instructions-container--active', '.ri-information-fill', 'ri-information-fill--active')
+
   let target = e.target;
   target.children[0].classList.toggle('ri-menu-add-line--active');
   settingsContainer.classList.toggle('wcp-settings-container--active');
@@ -129,17 +130,31 @@ const openSettings = e => {
 
 hamburgerBtn.addEventListener('click', openSettings);
 
-////Toggling my library colors
+////Toggling my library colors container
 const libraryBtns = document.querySelectorAll('.wcp-open-palette-btn');
 const libraryContainers = document.querySelectorAll(
   '.wcp-my-library-container'
 );
 
 const openLibrary = e => {
+  const wcpPaletteIcons = document.querySelectorAll('.fa-heart-circle-plus');
+
   let target = e.target;
+
   let targetIndex = [...libraryBtns].findIndex(el => el === target);
+  libraryContainers[targetIndex];
+
   libraryContainers[targetIndex].classList.toggle('hide');
   target.children[0].classList.toggle('icon-active');
+
+  //Untoggling previously clicked library btn & container (hiding)
+  Array.from(libraryContainers)
+    .filter(el => el !== libraryContainers[targetIndex])
+    .forEach(cont => cont.classList.add('hide'));
+
+  Array.from(wcpPaletteIcons)
+    .filter(icon => icon !== target.children[0])
+    .forEach(i => i.classList.remove('icon-active'));
 };
 
 libraryBtns.forEach(btn => btn.addEventListener('click', openLibrary));
@@ -151,11 +166,21 @@ const instructionContainer = document.querySelector(
 );
 
 const openInstruction = e => {
-  console.log(e.target);
+  //prettier-ignore
+  hideElement(settingsContainer, 'wcp-settings-container--active', '.ri-menu-add-line', 'ri-menu-add-line--active')
+
   e.stopPropagation();
   let target = e.target;
   instructionContainer.classList.toggle('wcp-instructions-container--active');
-  target.children[0].classList.toggle('ri-information--fill--active');
+  target.children[0].classList.toggle('ri-information-fill--active');
 };
 
 instructionBtn.addEventListener('click', openInstruction);
+
+////Hiding wcp-nav containers
+const hideElement = (el, elClassnameActive, iClassname, iClassNameActive) => {
+  if (el.classList.contains(elClassnameActive)) {
+    el.classList.toggle(elClassnameActive);
+    document.querySelector(iClassname).classList.toggle(iClassNameActive);
+  }
+};
