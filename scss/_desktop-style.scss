@@ -866,6 +866,7 @@ footer {
 }
 
 //'wcp' stands for 'website color preview'
+
 .wcp-header {
   @extend .pre-made-colors-header;
 }
@@ -885,7 +886,7 @@ footer {
 
 .wcp-settings-container {
   background-color: var(--color-lightgrey);
-  min-width: 39rem;
+  max-width: 39rem;
   max-height: 62vh;
   overflow-y: scroll;
   display: grid;
@@ -895,7 +896,6 @@ footer {
   border-radius: 12px;
   transform: translateX(-50rem);
   transition: all 0.5s ease-in-out;
-  position: absolute;
 }
 
 .wcp-settings-container--active {
@@ -966,7 +966,7 @@ footer {
   border-radius: 12px;
   max-width: 40rem;
   max-height: 30rem;
-  position: absolute;
+  // position: absolute;
   z-index: 2;
   overflow-y: scroll;
 
@@ -1027,7 +1027,7 @@ footer {
   padding: 2rem;
   border-radius: 12px;
   transform: translateX(-45rem);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 
   h4 {
     margin-bottom: 1rem;
@@ -1042,6 +1042,6 @@ footer {
   transform: translateX(0);
 }
 
-.ri-information--fill--active {
+.ri-information-fill--active {
   color: red;
 }

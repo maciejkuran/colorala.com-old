@@ -1146,7 +1146,7 @@ footer p a {
 
 .wcp-settings-container {
   background-color: var(--color-lightgrey);
-  min-width: 39rem;
+  max-width: 39rem;
   max-height: 62vh;
   overflow-y: scroll;
   display: grid;
@@ -1158,7 +1158,6 @@ footer p a {
           transform: translateX(-50rem);
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  position: absolute;
 }
 
 .wcp-settings-container--active {
@@ -1237,7 +1236,6 @@ footer p a {
   border-radius: 12px;
   max-width: 40rem;
   max-height: 30rem;
-  position: absolute;
   z-index: 2;
   overflow-y: scroll;
 }
@@ -1303,8 +1301,8 @@ footer p a {
   border-radius: 12px;
   -webkit-transform: translateX(-45rem);
           transform: translateX(-45rem);
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 .wcp-instructions-container h4 {
   margin-bottom: 1rem;
@@ -1318,13 +1316,12 @@ footer p a {
           transform: translateX(0);
 }
 
-.ri-information--fill--active {
+.ri-information-fill--active {
   color: red;
 }
 
 .pcr-app {
   background-color: var(--color-lightgrey);
-  position: relative;
 }
 
 .custom-class .pcr-swatches {
