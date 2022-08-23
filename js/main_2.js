@@ -46,7 +46,6 @@ const insertPalettes = allPalettes => {
 insertPalettes(palettes);
 
 ////Show and hide bar (hex code and btns) on single palette's color hover
-
 const initBar = () => {
   const singleColorContainer = document.querySelectorAll(
     '.single-color-container'
