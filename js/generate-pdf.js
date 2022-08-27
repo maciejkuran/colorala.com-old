@@ -17,7 +17,7 @@ export const generatePDF = () => {
     doc.html(wrapper, {
       margin: [60, 60, 115, 60],
       callback: function (doc) {
-        doc.save('colorala-My-Palette.pdf');
+        doc.save('colorala-My-Library.pdf');
       },
       x: 10,
       y: 10,
