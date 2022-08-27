@@ -1,0 +1,287 @@
+//Business theme styles
+.business-theme-desktop {
+  h5 {
+    font-size: 4.5rem;
+  }
+  h6 {
+    font-size: 2.8rem;
+    font-weight: 600;
+  }
+
+  a {
+    color: var(--color-black);
+    font-weight: 600;
+  }
+}
+
+.business-theme-desktop--nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ul {
+    display: flex;
+
+    li {
+      margin: 0 1rem;
+    }
+  }
+  img {
+    max-width: 10rem;
+  }
+}
+
+.business-theme-desktop--header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  background-color: #f2f5f5;
+  padding: 5rem;
+  border-radius: 12px;
+
+  img {
+    max-width: 50rem;
+    border-radius: 12px;
+  }
+
+  div {
+    margin-right: 5rem;
+  }
+
+  button {
+    background-color: #262626;
+    color: var(--color-white);
+    padding: 1rem 3rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+  }
+}
+
+.business-theme-desktop-undefined--section {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h6 {
+    margin-bottom: 2rem;
+  }
+}
+
+.business-theme-desktop-undefined--section---wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.business-theme-desktop--div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f2f5f5;
+  padding: 3rem;
+  border-radius: 12px;
+}
+
+.business-theme-desktop--i {
+  font-size: 3rem;
+  color: #262626;
+  margin-bottom: 1.5rem;
+}
+
+.business-theme-desktop--section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80rem;
+  background-color: #262626;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
+  padding: 3rem;
+  border-radius: 12px;
+
+  img {
+    max-width: 40rem;
+    border-radius: 12px;
+  }
+
+  div {
+    margin-right: 4rem;
+    h6 {
+      color: var(--color-white);
+      margin-bottom: 2rem;
+    }
+
+    p {
+      color: #d1d1d1;
+    }
+  }
+}
+
+.business-theme-desktop--footer {
+  margin-top: 6rem;
+  padding: 1rem;
+  background-color: #262626;
+  position: absolute;
+  width: 100%;
+  left: 0;
+
+  h6 {
+    color: var(--color-white);
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 987.98px) {
+  .business-theme-desktop {
+    h5 {
+      font-size: 4rem;
+    }
+    h6 {
+      font-size: 2.8rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.6rem;
+    }
+
+    a {
+      color: var(--color-black);
+      font-weight: 600;
+    }
+
+    button {
+      font-size: 1.6rem;
+    }
+  }
+
+  .business-theme-desktop--header {
+    img {
+      max-width: 40rem;
+    }
+  }
+
+  .business-theme-desktop--section {
+    img {
+      max-width: 35rem;
+    }
+  }
+}
+
+@media (max-width: 877.98px) {
+  .business-theme-desktop {
+    h5 {
+      font-size: 3.5rem;
+    }
+  }
+
+  .business-theme-desktop--header {
+    padding: 3rem;
+
+    img {
+      max-width: 35rem;
+    }
+  }
+
+  .business-theme-desktop-undefined--section---wrapper {
+    column-gap: 2rem;
+  }
+
+  .business-theme-desktop--section {
+    img {
+      max-width: 31rem;
+    }
+  }
+}
+
+@media (max-width: 785.98px) {
+  .business-theme-desktop {
+    h5 {
+      font-size: 2.8rem;
+    }
+
+    h6 {
+      font-size: 2.2rem;
+    }
+
+    p {
+      font-size: 1.4rem;
+      line-height: 25px;
+    }
+    button {
+      font-size: 1.6rem;
+    }
+
+    a {
+      font-size: 1.6rem;
+    }
+  }
+
+  .business-theme-desktop--header {
+    img {
+      max-width: 28rem;
+    }
+  }
+
+  .business-theme-desktop--div {
+    padding: 2rem;
+  }
+
+  .business-theme-desktop--section {
+    img {
+      max-width: 28rem;
+    }
+  }
+
+  .business-theme-desktop--footer {
+    h6 {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media (max-width: 679.98px) {
+  .business-theme-desktop {
+    h5 {
+      font-size: 2.5rem;
+    }
+
+    h6 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 20px;
+    }
+    button {
+      font-size: 1.2rem;
+      padding: 0.7rem 1.5rem;
+      margin-top: 1rem;
+    }
+
+    a {
+      font-size: 1.4rem;
+    }
+  }
+
+  .business-theme-desktop--header img {
+    max-width: 25rem;
+  }
+
+  .business-theme-desktop--section img {
+    max-width: 24rem;
+  }
+
+  .business-theme-desktop--footer h6 {
+    font-size: 1.2rem;
+  }
+}

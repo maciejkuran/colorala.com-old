@@ -110,7 +110,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-  max-width: 170rem;
+  max-width: 100%;
   margin: auto;
 
   img {
@@ -136,6 +136,10 @@ footer {
 .tools-popup-btn {
   color: var(--color-black);
   font-weight: 600;
+
+  i {
+    pointer-events: all;
+  }
 }
 
 .tools-container {
@@ -210,6 +214,7 @@ footer {
   position: absolute;
   overflow-y: scroll;
   background-color: var(--color-lightgrey);
+  border: var(--color-lightgrey) solid 5px;
   border-radius: 12px;
   padding: 3rem;
   max-width: 60rem;
@@ -230,6 +235,9 @@ footer {
   padding: 0;
   margin-top: 0;
   margin-left: 1.5rem;
+  position: absolute;
+  right: 2%;
+  top: 2%;
 }
 
 .close-my-palette-btn:hover {
@@ -352,7 +360,8 @@ footer {
   transform: translate(3rem, 0rem);
   color: var(--color-white);
   background-color: black;
-  padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+  line-height: 20px;
+  padding: 0.1rem 0.5rem 0.1rem 0.5rem;
   border-radius: 12px;
 }
 
@@ -868,11 +877,28 @@ footer {
 //'wcp' stands for 'website color preview'
 
 .wcp-header {
-  @extend .pre-made-colors-header;
+  margin-left: 2rem;
+
+  .h1 {
+    font-size: 2rem;
+    line-height: 25px;
+
+    span {
+      color: red;
+      font-size: 1.3rem;
+    }
+  }
+
+  .h2 {
+    font-size: 1.3rem;
+    color: var(--color-middlegrey);
+    display: hide;
+  }
 }
 
 .wcp-nav {
   margin-left: 2rem;
+  margin-top: 0.5rem;
 
   button {
     font-size: 3.5rem;
@@ -882,12 +908,57 @@ footer {
     color: var(--color-darkgrey);
     transition: 500ms;
   }
+
+  .action-label-info-popup {
+    margin-left: 0.5rem;
+    line-height: 20px;
+    padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+    transform: translateY(4rem);
+  }
+
+  .action-label-info-popup-active {
+    display: inline;
+  }
+}
+////////////////
+.wcp-action-buttons {
+  display: flex;
+  align-items: center;
+}
+.device-switch {
+  min-width: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .action-label-info-popup {
+    transform: translateY(3rem);
+  }
+
+  .mobile-view-label {
+    transform: translate(3.5rem, 3rem);
+  }
+}
+
+.active-view {
+  color: red;
+}
+////////////////
+
+.wcp-mega-container {
+  position: absolute;
+  z-index: 3;
 }
 
 .wcp-settings-container {
   background-color: var(--color-lightgrey);
-  max-width: 39rem;
-  max-height: 62vh;
+  min-width: 39rem;
+  max-height: 70vh;
   overflow-y: scroll;
   display: grid;
   grid-template-columns: repeat(1fr);
@@ -896,6 +967,10 @@ footer {
   border-radius: 12px;
   transform: translateX(-50rem);
   transition: all 0.5s ease-in-out;
+  position: relative;
+  filter: drop-shadow(0 0 0.8rem rgb(186, 186, 186));
+  z-index: 3;
+  border: 5px solid var(--color-lightgrey);
 }
 
 .wcp-settings-container--active {
@@ -921,14 +996,12 @@ footer {
 
     .color-picker {
       position: absolute;
-      transform: translate(14rem, -3rem);
-      line-height: 24px;
+      transform: translate(12rem, -3rem);
     }
 
     .your-palette-label {
       position: absolute;
-      transform: translate((11rem, -3rem));
-      line-height: 24px;
+      transform: translate((9rem, -3rem));
     }
 
     button {
@@ -966,7 +1039,7 @@ footer {
   border-radius: 12px;
   max-width: 40rem;
   max-height: 30rem;
-  // position: absolute;
+  border: 5px solid var(--color-lightgrey);
   z-index: 2;
   overflow-y: scroll;
 
@@ -1022,12 +1095,14 @@ footer {
 
 .wcp-instructions-container {
   position: absolute;
+  filter: drop-shadow(0 0 0.7rem rgb(149, 149, 149));
   max-width: 37rem;
   background-color: var(--color-lightgrey);
   padding: 2rem;
   border-radius: 12px;
   transform: translateX(-45rem);
   transition: all 0.5s ease-in-out;
+  z-index: 3;
 
   h4 {
     margin-bottom: 1rem;

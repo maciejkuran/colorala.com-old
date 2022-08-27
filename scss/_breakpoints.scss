@@ -325,6 +325,7 @@
 
   .my-palette {
     min-width: 30rem;
+    padding: 1rem;
   }
 
   .close-my-palette-btn {
@@ -402,6 +403,60 @@
   .github-icon {
     font-size: 3.5rem;
   }
+
+  .wcp-header {
+    margin-left: 1rem;
+
+    h2 {
+      display: none;
+    }
+  }
+
+  .wcp-nav {
+    margin-left: 1rem;
+  }
+
+  .pcr-app[data-theme='classic'] {
+    max-width: 29rem;
+  }
+
+  .wcp-mega-container {
+    min-width: 95%;
+  }
+  .wcp-settings-container {
+    min-width: 0;
+    max-width: 35rem;
+    padding: 0.5rem;
+  }
+
+  .wcp-setting {
+    max-width: 26rem;
+    min-width: 100%;
+  }
+
+  .wcp-setting-internal-container {
+    p {
+      font-size: 1.4rem;
+    }
+  }
+
+  .wcp-setting div input {
+    max-width: 8rem;
+  }
+
+  .wcp-my-library-container {
+    padding: 0.5rem;
+  }
+
+  .wcp-my-library-colors-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .wcp-my-library-color-wrapper {
+    p {
+      font-size: 1rem;
+    }
+  }
 }
 
 @media (max-width: 368.98px) {
@@ -455,5 +510,9 @@
     max-width: 60rem;
     max-height: 37rem;
     transform: translate(1rem, 5rem);
+  }
+
+  .pcr-app[data-theme='classic'] {
+    max-width: 26rem;
   }
 }
