@@ -67,3 +67,25 @@ const applyColorFromPicker = e => {
 };
 
 saveBtns.forEach(btn => btn.addEventListener('click', applyColorFromPicker));
+
+//Hiding picker when user scrolls
+const pickerContainers = document.querySelectorAll('.pcr-app');
+const settingsContainer = document.querySelector('.wcp-settings-container');
+
+let prevScroll;
+const hidePicker = e => {
+  let target = e.target;
+  let curScroll = target.scrollTop;
+
+  if (curScroll > prevScroll || curScroll < prevScroll) {
+    pickerContainers.forEach(cont => {
+      if (cont.classList.contains('visible')) {
+        cont.classList.remove('visible');
+      }
+    });
+  }
+
+  prevScroll = curScroll;
+};
+
+settingsContainer?.addEventListener('scroll', hidePicker);
