@@ -129,6 +129,7 @@ const showInfoPopup = e => {
   if (!mediaQueryMobile.matches) {
     let target = e.target;
     let popup = target.previousElementSibling;
+
     popup.classList.add('action-label-info-popup-active');
   }
 };
