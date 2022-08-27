@@ -68,7 +68,7 @@ class appNav extends HTMLElement {
       <div class="my-palette hide">
         <div class="flex-my-palette">
           <button class="export-btn">
-            <i class="fa-solid fa-file-export export-icon"></i>Export palette
+            <i class="fa-solid fa-file-export export-icon"></i>Export library
             to PDF
           </button>
           <button class="close close-my-palette-btn">
