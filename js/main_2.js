@@ -13,6 +13,7 @@ import { counter } from './main_1.js';
 import { displayCounter } from './main_1.js';
 import { copyToClipboard } from './main_1.js';
 import { copyHEXfromPalette } from './main_1.js';
+import { initTooltip } from './main_1.js';
 
 ////Inserting palettes to DOM;
 const palettesContainer = document.querySelector(
@@ -30,10 +31,10 @@ const insertPalettes = allPalettes => {
       div.style.backgroundColor = `${color}`;
       div.innerHTML = `<div class="single-color-internal-wrapper">
       <p class="hex-label">${color}</p>
-      <button class="copy-hex-btn">
+      <button data-tooltip="Copy" class="copy-hex-btn action-button">
         <i class="fa-solid fa-copy copy-icon"></i>
       </button>
-      <button class="add-pre-clr-to-palette-btn">
+      <button data-tooltip="Add to Library" class="add-pre-clr-to-palette-btn action-button">
         <i class="fa-solid fa-heart heart"></i>
       </button>
     </div>`;
@@ -44,6 +45,15 @@ const insertPalettes = allPalettes => {
 };
 
 insertPalettes(palettes);
+initTooltip();
+
+//////////////////
+// const actionBtns = document.querySelectorAll('.action-button');
+// actionBtns.forEach(btn =>
+//   btn.addEventListener('mouseenter', e => {
+//     console.log(e.target);
+//   })
+// );
 
 ////Show and hide bar (hex code and btns) on single palette's color hover
 const initBar = () => {
