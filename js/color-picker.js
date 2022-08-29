@@ -4,10 +4,10 @@
 ////COLOR PICKERS FOR COLOR PALETTE GENERATOR
 
 //Displaying color pickr functionality in DOM
-const pickrLabels = document.querySelectorAll('.color-picker');
+const pickerPlacementsHTML = document.querySelectorAll('.clr-picker-placement');
 
 export const insertClrPickers = () => {
-  pickrLabels.forEach(label => {
+  pickerPlacementsHTML.forEach(label => {
     const colorPicker = document.createElement('button');
     label.after(colorPicker);
 
@@ -42,6 +42,18 @@ export const insertClrPickers = () => {
 };
 
 insertClrPickers();
+
+//Setting attributes
+const pickrDivs = document.querySelectorAll('.pickr');
+
+const setAttributes = () => {
+  pickrDivs.forEach(div => {
+    div.classList.add('action-button');
+    div.setAttribute('data-tooltip', 'Color Picker');
+  });
+};
+
+setAttributes();
 
 //Applying color to DOM from color picker
 const saveBtns = document.querySelectorAll('.pcr-save');
