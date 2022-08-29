@@ -285,3 +285,138 @@
     font-size: 1.2rem;
   }
 }
+
+/////////Mobile
+.business-theme-mobile {
+  h5 {
+    font-size: 3.2rem;
+  }
+
+  h6 {
+    font-size: 2.2rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+    line-height: 25px;
+  }
+
+  button {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+}
+.business-theme-mobile--nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  img {
+    max-width: 11rem;
+  }
+
+  .ri-menu-line {
+    color: var(--color-black);
+    font-size: 2.5rem;
+  }
+
+  div {
+    position: absolute;
+    top: 75%;
+    right: 0;
+    padding: 1rem;
+    background-color: #e3e3e3;
+
+    a {
+      color: var(--color-black);
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+  }
+}
+
+.business-theme-mobile--header {
+  margin-top: 3rem;
+  background-color: #f2f5f5;
+  padding: 1.5rem;
+  border-radius: 12px;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 12px;
+    margin-top: 1rem;
+  }
+
+  button {
+    color: var(--color-white);
+    background-color: #262626;
+    padding: 1.3rem 4rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+  }
+}
+
+.business-theme-mobile-undefined--section {
+  margin-top: 3rem;
+
+  h6 {
+    text-align: center;
+  }
+}
+
+.business-theme-mobile-undefined--section---wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.business-theme-mobile--div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f5f5;
+  padding: 1.5rem;
+  margin: 1.5rem;
+  border-radius: 12px;
+}
+
+.business-theme-mobile--section {
+  background-color: #262626;
+  margin-top: 3rem;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 4rem;
+
+  img {
+    max-width: 100%;
+    border-radius: 12px;
+    margin-top: 2rem;
+  }
+
+  h6 {
+    color: var(--color-white);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: #d1d1d1;
+  }
+}
+
+.business-theme-mobile--footer {
+  background-color: #262626;
+  position: absolute;
+  max-width: 100%;
+  padding: 0;
+  left: 0;
+  min-width: 100%;
+
+  h6 {
+    font-size: 1.5rem;
+    color: var(--color-white);
+    text-align: center;
+    padding: 0.5rem;
+  }
+}
