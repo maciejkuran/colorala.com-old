@@ -181,3 +181,57 @@ const hideElement = (el, elClassnameActive, iClassname, iClassNameActive) => {
     document.querySelector(iClassname).classList.toggle(iClassNameActive);
   }
 };
+
+////Switching device views
+const viewBtns = document.querySelectorAll('.view-btn');
+const devices = document.querySelectorAll('.wcp-device');
+
+const switchView = e => {
+  removeDeviceViews();
+  removePrevActiveBtn();
+  let target = e.target;
+
+  let targetViewtype = target.dataset.viewtype;
+  let displaySection = document.querySelector(
+    `section[data-viewtype="${targetViewtype}"]`
+  );
+
+  displaySection.classList.add('view-active');
+  target.classList.add('active-view-btn');
+};
+
+const removeDeviceViews = () => {
+  devices.forEach(device => device.classList.remove('view-active'));
+};
+
+const removePrevActiveBtn = () => {
+  let previousActiveBtn = [...viewBtns].filter(btn =>
+    btn.classList.contains('active-view-btn')
+  );
+
+  previousActiveBtn[0].classList.remove('active-view-btn');
+};
+
+viewBtns.forEach(btn => btn.addEventListener('click', switchView));
+
+//Hide laptop container if max-width: 588.98px;
+const mediaQuery = window.matchMedia('(max-width: 588.98px)');
+const laptopContainer = document.querySelector('.wcp-laptop-view-container');
+const mobileContainer = document.querySelector('.wcp-mobile-view-container');
+
+const hideLaptopContainer = () => {
+  if (mediaQuery.matches) {
+    laptopContainer.classList.remove('view-active');
+    mobileContainer.classList.add('view-active');
+
+    //Removing active btns from all viewBtns
+    viewBtns.forEach(btn => btn.classList.remove('active-view-btn'));
+    //prettier-ignore
+    //Adding active style to viewBtn that matches attribute value with mobileContainer
+    document.querySelector(`button[data-viewtype="${mobileContainer.dataset.viewtype}"]`).classList.add('active-view-btn');
+  }
+};
+
+// Adjust when DOM is loaded and when user resizes window
+window.addEventListener('resize', hideLaptopContainer);
+document.addEventListener('DOMContentLoaded', hideLaptopContainer);
