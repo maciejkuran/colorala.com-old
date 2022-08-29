@@ -359,7 +359,7 @@ footer {
   display: none;
   top: 0;
   left: 0;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 400;
   color: var(--color-white);
   background-color: var(--color-black);
@@ -901,16 +901,18 @@ footer {
   button {
     font-size: 3.5rem;
   }
-
-  button:hover {
-    color: var(--color-darkgrey);
-    transition: 500ms;
-  }
 }
 ////////////////
 .wcp-action-buttons {
   display: flex;
   align-items: center;
+
+  .wcp-hamburger-btn:hover,
+  .instruction-btn:hover,
+  reset-btn:hover {
+    color: var(--color-darkgrey);
+    transition: 500ms;
+  }
 }
 .device-switch {
   min-width: 30rem;
@@ -926,12 +928,20 @@ footer {
   .mobile-view-label {
     transform: translate(3.5rem, 3rem);
   }
-}
 
-.active-view {
-  color: red;
+  .view-btn:hover {
+    color: rgba(255, 0, 0, 0.394);
+    transition: 500ms;
+  }
+
+  .active-view-btn {
+    color: red;
+  }
+
+  .active-view-btn:hover {
+    color: red;
+  }
 }
-////////////////
 
 .wcp-mega-container {
   position: absolute;

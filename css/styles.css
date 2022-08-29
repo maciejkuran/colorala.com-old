@@ -640,7 +640,7 @@ footer p a {
   display: none;
   top: 0;
   left: 0;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 400;
   color: var(--color-white);
   background-color: var(--color-black);
@@ -1241,11 +1241,6 @@ footer p a {
 .wcp-nav button {
   font-size: 3.5rem;
 }
-.wcp-nav button:hover {
-  color: var(--color-darkgrey);
-  -webkit-transition: 500ms;
-  transition: 500ms;
-}
 
 .wcp-action-buttons {
   display: -webkit-box;
@@ -1254,6 +1249,13 @@ footer p a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+.wcp-action-buttons .wcp-hamburger-btn:hover,
+.wcp-action-buttons .instruction-btn:hover,
+.wcp-action-buttons reset-btn:hover {
+  color: var(--color-darkgrey);
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }
 
 .device-switch {
@@ -1278,8 +1280,15 @@ footer p a {
   -webkit-transform: translate(3.5rem, 3rem);
           transform: translate(3.5rem, 3rem);
 }
-
-.active-view {
+.device-switch .view-btn:hover {
+  color: rgba(255, 0, 0, 0.394);
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+.device-switch .active-view-btn {
+  color: red;
+}
+.device-switch .active-view-btn:hover {
   color: red;
 }
 
@@ -1484,6 +1493,7 @@ footer p a {
 }
 
 .wcp-laptop-view-container {
+  display: none;
   max-width: 120rem;
   margin: 0 1rem;
   border-radius: 12px;
@@ -1522,25 +1532,18 @@ footer p a {
   position: relative;
   overflow-y: scroll;
   max-height: 73vh;
-  background-color: #e3e3e3;
-  padding: 1rem;
 }
 .universal-theme--container a:hover {
   pointer-events: none;
 }
 
 @media (max-width: 588.98px) {
-  .wcp-laptop-view-container {
-    display: none;
-  }
-  .laptop-view-btn {
-    display: none;
-  }
-  .mobile-view-btn {
+  .view-btn {
     display: none;
   }
 }
 .wcp-mobile-view-container {
+  display: none;
   position: relative;
   width: 330px;
   height: 660px;
@@ -1598,6 +1601,16 @@ footer p a {
   .wcp-mobile-view-container {
     margin-top: 1rem;
   }
+}
+.view-active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  display: inline;
+}
+
+.business-theme-desktop {
+  background-color: #e3e3e3;
+  padding: 0.5rem;
 }
 .business-theme-desktop h5 {
   font-size: 4.5rem;
