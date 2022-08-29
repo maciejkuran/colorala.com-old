@@ -64,13 +64,10 @@ const insertSettings = () => {
                 type="text"
                 placeholder="${el.placeholder}"
               />
-              <p class="action-label-info-popup your-palette-label">
-                Your palette
-              </p>
-              <button class="action-button wcp-open-palette-btn">
+              <button data-tooltip="Your Library" class="action-button wcp-open-palette-btn clr-picker-placement">
                 <i class="fa-solid fa-heart-circle-plus"></i>
               </button>
-              <p class="action-label-info-popup color-picker">Color picker</p>
+      
             </div>
           </div>`;
     settingsContainer.append(internalContainer);
