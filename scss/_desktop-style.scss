@@ -352,21 +352,19 @@ footer {
   }
 }
 
-.action-label-info-popup {
+////New class to the el that is responsible for displaying tooltip
+.div-tooltip {
+  z-index: 99;
+  position: fixed;
   display: none;
+  top: 0;
+  left: 0;
   font-size: 0.9rem;
-  font-weight: 500;
-  position: absolute;
-  transform: translate(3rem, 0rem);
+  font-weight: 400;
   color: var(--color-white);
-  background-color: black;
-  line-height: 20px;
-  padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+  background-color: var(--color-black);
+  padding: 0.3rem;
   border-radius: 12px;
-}
-
-.action-label-info-popup-active {
-  display: flex;
 }
 
 .color {
@@ -908,17 +906,6 @@ footer {
     color: var(--color-darkgrey);
     transition: 500ms;
   }
-
-  .action-label-info-popup {
-    margin-left: 0.5rem;
-    line-height: 20px;
-    padding: 0.1rem 0.5rem 0.1rem 0.5rem;
-    transform: translateY(4rem);
-  }
-
-  .action-label-info-popup-active {
-    display: inline;
-  }
 }
 ////////////////
 .wcp-action-buttons {
@@ -935,10 +922,6 @@ footer {
   top: 3%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  .action-label-info-popup {
-    transform: translateY(3rem);
-  }
 
   .mobile-view-label {
     transform: translate(3.5rem, 3rem);
