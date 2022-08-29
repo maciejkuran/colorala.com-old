@@ -48,13 +48,15 @@ const lockUnlockColorBtns = document.querySelectorAll('.lock-unlock-color-btn');
 
 const lockColor = e => {
   let target = e.target;
-  let grandParent = e.target.parentElement.parentElement.parentElement;
 
-  if (target.className === 'ri-lock-unlock-fill') {
-    target.classList.replace('ri-lock-unlock-fill', 'ri-lock-fill');
+  let grandParent = e.target.parentElement.parentElement;
+  let targetIcon = target.children[0];
+
+  if (targetIcon.className === 'ri-lock-unlock-fill') {
+    targetIcon.classList.replace('ri-lock-unlock-fill', 'ri-lock-fill');
     grandParent.classList.add('locked');
   } else {
-    target.classList.replace('ri-lock-fill', 'ri-lock-unlock-fill');
+    targetIcon.classList.replace('ri-lock-fill', 'ri-lock-unlock-fill');
     grandParent.classList.remove('locked');
   }
 };
@@ -115,33 +117,46 @@ document.addEventListener('keydown', e => {
   }
 });
 
-////IMPLEMENTING GUIDE INFO-POPUPS ON 'MOUSEHOOVER' OVER BTNS
-//Adding additional class to color picker library btn
-document
-  .querySelectorAll('.pickr')
-  .forEach(btn => btn.classList.add('action-button'));
+////IMPLEMENTING TOOLTIPS ON 'MOUSEHOOVER' OVER BTNS
 
-const actionBtns = document.querySelectorAll('.action-button');
-const popups = document.querySelectorAll('.action-label-info-popup ');
-const mediaQueryMobile = window.matchMedia('(max-width: 700px)');
+export const initTooltip = () => {
+  const actionBtns = document.querySelectorAll('.action-button');
+  const divTooltip = document.querySelector('.div-tooltip');
+  const mediaQueryMobile = window.matchMedia('(max-width: 700px)');
 
-const showInfoPopup = e => {
-  if (!mediaQueryMobile.matches) {
+  let run;
+  const showTooltip = e => {
+    divTooltip.style.display = 'none';
     let target = e.target;
-    let popup = target.previousElementSibling;
+    let targetAttr = target.dataset.tooltip;
+    //Target coords
+    let targetTop = target.getBoundingClientRect().top + 'px';
+    let targetLeft = target.getBoundingClientRect().left + 30 + 'px';
+    //Let div tooltip display targetAttribute and add styles to it
+    // tooltip is displayed with delay
+    run = setTimeout(() => {
+      if (!mediaQueryMobile.matches && divTooltip) {
+        divTooltip.textContent = targetAttr;
+        divTooltip.style.top = targetTop;
+        divTooltip.style.left = targetLeft;
+        divTooltip.style.display = 'inline';
+      }
+    }, 700);
+  };
+  //clear timeout if 'mouseleave' and set back style
+  const hideTooltip = e => {
+    clearTimeout(run);
+    setTimeout(() => {
+      divTooltip.style.display = 'none';
+    }, 0);
+  };
 
-    popup.classList.add('action-label-info-popup-active');
-  }
+  actionBtns.forEach(btn => btn.addEventListener('mouseenter', showTooltip));
+
+  actionBtns.forEach(btn => btn.addEventListener('mouseleave', hideTooltip));
 };
 
-const hideInfoPopup = e => {
-  popups.forEach(popup =>
-    popup.classList.remove('action-label-info-popup-active')
-  );
-};
-
-actionBtns.forEach(btn => btn.addEventListener('mouseenter', showInfoPopup));
-actionBtns.forEach(btn => btn.addEventListener('mouseleave', hideInfoPopup));
+initTooltip();
 
 ////COPY TO CLIPBOARD
 const copyHEXbtns = document.querySelectorAll('.copy-hex-btn');
