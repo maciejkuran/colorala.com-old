@@ -55,6 +55,7 @@ const setAttributes = () => {
 
 setAttributes();
 
+//-----Color Palette Generator--------
 //Applying color to DOM from color picker
 const saveBtns = document.querySelectorAll('.pcr-save');
 const results = document.querySelectorAll('.pcr-result');
@@ -80,6 +81,7 @@ const applyColorFromPicker = e => {
 
 saveBtns.forEach(btn => btn.addEventListener('click', applyColorFromPicker));
 
+//---------WCP - Website Color Preview---------------
 //Hiding picker when user scrolls
 const pickerContainers = document.querySelectorAll('.pcr-app');
 const settingsContainer = document.querySelector('.wcp-settings-container');
@@ -101,3 +103,32 @@ const hidePicker = e => {
 };
 
 settingsContainer?.addEventListener('scroll', hidePicker);
+
+//Setting color from manual picker - selected color will be displayed in the input field
+const hexInputs = document.querySelectorAll('.hex-code-input');
+
+const applyColorToWCP = e => {
+  let target = e.target;
+  let hex = target.parentElement.children[0].value;
+  let clickedIndex = [...saveBtns].map(btn => [...saveBtns].indexOf(target))[0];
+  if (hexInputs[clickedIndex]) hexInputs[clickedIndex].value = hex;
+};
+
+saveBtns.forEach(btn => btn.addEventListener('click', applyColorToWCP));
+
+//Close library if color picker is clicked
+const pickerBtns = document.querySelectorAll('.pcr-button');
+const libraryContainers = document.querySelectorAll(
+  '.wcp-my-library-container'
+);
+
+const closeLibraryIfPicker = e => {
+  const heartIcons = document.querySelectorAll('.fa-heart-circle-plus');
+
+  if (libraryContainers) {
+    libraryContainers.forEach(cont => cont.classList.add('hide'));
+    heartIcons.forEach(heart => heart.classList.remove('icon-active'));
+  }
+};
+
+pickerBtns.forEach(btn => btn.addEventListener('click', closeLibraryIfPicker));
