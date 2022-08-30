@@ -38,8 +38,8 @@ class appNav extends HTMLElement {
               alt="colors generator colorala"
             />
             <div>
-              <h4>Colors Generator!</h4>
-              <p>Generate colors and add to your custom palette!</p>
+              <h4>Color Palette Generator!</h4>
+              <p>Generate colors and add to your library!</p>
             </div>
           </div>
         </a>
