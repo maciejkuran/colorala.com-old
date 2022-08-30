@@ -297,3 +297,27 @@ const selectElOnClick = e => {
 bodyThemes.forEach(theme =>
   theme.addEventListener('click', selectElOnClick, true)
 );
+
+////Selecting color from library and displaying in input field
+const hexCodeInputs = document.querySelectorAll('.hex-code-input');
+
+//Here the handler listens to all input changes and takes action if any
+// hexCodeInputs.forEach(input => input.addEventListener('change', somefunction));
+
+const librarySelectBtns = document.querySelectorAll(
+  '.wcp-my-library-select-btn'
+);
+
+const selectColorFromLibrary = e => {
+  let target = e.target;
+  let getHEX = target.previousElementSibling.textContent;
+  let closestInput = target.parentElement.closest(
+    '.wcp-setting-internal-container'
+  ).children[0].children[1].children[0];
+
+  closestInput.value = getHEX;
+};
+
+librarySelectBtns.forEach(btn =>
+  btn.addEventListener('click', selectColorFromLibrary)
+);
