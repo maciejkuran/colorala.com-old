@@ -6,10 +6,11 @@
 const elements = [];
 
 const Element = class {
-  constructor(name, classname, placeholder) {
+  constructor(name, classname, placeholder, styleProperty) {
     this.name = name;
     this.classname = classname;
     this.placeholder = placeholder;
+    this.styleProperty = styleProperty;
 
     elements.push(this);
   }
@@ -31,26 +32,37 @@ const Element = class {
   }
 };
 
-const element_1 = new Element('<body>', '.user-choice--body', '#E3E3E3');
-const element_2 = new Element('<h1>', '.user-choice--h1', '#000000');
-const element_3 = new Element('<h2>', '.user-choice--h2', '#000000');
-const element_4 = new Element('<h3>', '.user-choice--h3', '#FFFFFF');
-const element_5 = new Element('<p>', '.user-choice--p', '#000000');
-const element_6 = new Element('<a>', '.user-choice--a', '#000000');
-const element_7 = new Element('<header>', '.user-choice--header', '#F2F5F5');
-const element_8 = new Element('<button>', '.user-choice--button', '#262626');
+const element_1 = new Element(
+  '<body>',
+  '.user-choice--body',
+  '#E3E3E3',
+  'background-color'
+);
+const element_2 = new Element('<h1>', '.user-choice--h1', '#000000', 'color');
+const element_3 = new Element('<h2>', '.user-choice--h2', '#000000', 'color');
+const element_4 = new Element('<h3>', '.user-choice--h3', '#FFFFFF', 'color');
+const element_5 = new Element('<p>', '.user-choice--p', '#000000', 'color');
+const element_6 = new Element('<a>', '.user-choice--a', '#000000', 'color');
 //prettier-ignore
-const element_9 = new Element('<section>', '.user-choice--section','#262626');
+const element_7 = new Element('<header>','.user-choice--header',
+'#F2F5F5','background-color');
 //prettier-ignore
-const element_10 = new Element('.p-section', '.user-choice--p-section', '#D1D1D1');
-const element_11 = new Element('<div>', '.user-choice--div', '#F2F5F5');
-const element_12 = new Element('<i>', '.user-choice--i', '#262626');
-const element_13 = new Element('<footer>', '.user-choice--footer', '#262626');
+const element_8 = new Element('<button>','.user-choice--button','#262626','background-color');
+//prettier-ignore
+const element_9 = new Element('<section>', '.user-choice--section','#262626', 'background-color');
+//prettier-ignore
+const element_10 = new Element('.p-section', '.user-choice--p-section', '#D1D1D1', 'color');
+//prettier-ignore
+const element_11 = new Element('<div>','.user-choice--div','#F2F5F5',
+  'background-color');
+const element_12 = new Element('<i>', '.user-choice--i', '#262626', 'color');
+//prettier-ignore
+const element_13 = new Element('<footer>','.user-choice--footer','#262626','background-color');
 
 //// Inserting settings to DOM
 const settingsContainer = document.querySelector('.wcp-settings-container');
 
-const insertSettings = () => {
+const insertManualSettings = () => {
   elements.forEach(el => {
     const internalContainer = document.createElement('div');
     internalContainer.classList.add('wcp-setting-internal-container');
@@ -73,8 +85,46 @@ const insertSettings = () => {
     settingsContainer.append(internalContainer);
   });
 };
+//Inserting manual settings
+insertManualSettings();
 
-insertSettings();
+//Inserting popup settings
+const insertPopupSettings = () => {
+  const wcpSimulator = document.querySelector('.wcp-simulator');
+
+  elements.forEach(el => {
+    const popupContainer = document.createElement('div');
+    popupContainer.className = 'wcp-setting-popup-container hide';
+    popupContainer.innerHTML = `
+    <button class="close-setting-popup-btn">
+      <i class="ri-close-circle-fill"></i>
+    </button>
+    <div
+        data-classname="${el.classname}"
+        class="wcp-setting wcp-setting-popup">
+        <p>${el.name}</p>
+        <div>
+          <input
+            class="hex-code-input"
+            spellcheck="false"
+            type="text"
+            placeholder="${el.placeholder}"
+          />
+          <button
+            data-tooltip="Your Library"
+            class="action-button wcp-open-palette-btn clr-picker-placement"
+          >
+            <i class="fa-solid fa-heart-circle-plus"></i>
+          </button>
+        </div>
+      </div>
+    `;
+
+    wcpSimulator.after(popupContainer);
+  });
+};
+
+insertPopupSettings();
 
 ////Inserting user's color library
 
@@ -235,3 +285,15 @@ const hideLaptopContainer = () => {
 // Adjust when DOM is loaded and when user resizes window
 window.addEventListener('resize', hideLaptopContainer);
 document.addEventListener('DOMContentLoaded', hideLaptopContainer);
+
+///Selecting element from theme on el click
+const bodyThemes = document.querySelectorAll('.user-choice--body');
+
+const selectElOnClick = e => {
+  console.log(e.target);
+  e.target.style.border = '2px solid red';
+};
+
+bodyThemes.forEach(theme =>
+  theme.addEventListener('click', selectElOnClick, true)
+);
