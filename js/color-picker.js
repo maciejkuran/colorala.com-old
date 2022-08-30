@@ -116,7 +116,7 @@ const applyColorToWCP = e => {
 
 saveBtns.forEach(btn => btn.addEventListener('click', applyColorToWCP));
 
-//Close library if color picker is clicked
+//Close library containers if color picker is clicked, also remove active class from library btn icon
 const pickerBtns = document.querySelectorAll('.pcr-button');
 const libraryContainers = document.querySelectorAll(
   '.wcp-my-library-container'
