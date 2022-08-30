@@ -149,6 +149,7 @@ footer {
   border-radius: 12px;
   transform: translateY(5rem);
   z-index: 2;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .tool {
@@ -159,6 +160,7 @@ footer {
   background-color: var(--color-white);
   padding: 1.5rem;
   border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
   img {
     width: 6rem;
@@ -220,6 +222,7 @@ footer {
   max-width: 60rem;
   max-height: 40rem;
   transform: translate(0, 5rem);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .flex-my-palette {
@@ -643,6 +646,7 @@ footer {
 }
 
 .home-section-1-wrapper {
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -961,7 +965,7 @@ footer {
   transform: translateX(-50rem);
   transition: all 0.5s ease-in-out;
   position: relative;
-  filter: drop-shadow(0 0 0.8rem rgb(186, 186, 186));
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   z-index: 3;
   border: 5px solid var(--color-lightgrey);
 }
@@ -981,6 +985,10 @@ footer {
   justify-content: space-between;
   background-color: var(--color-lightgrey-2);
   border-radius: 12px;
+
+  p {
+    font-weight: 500;
+  }
 
   div {
     display: flex;
@@ -1025,9 +1033,48 @@ footer {
   }
 }
 
+.wcp-setting-popup-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-2ndlightgrey);
+  padding: 2.5rem;
+  max-width: 50rem;
+  max-height: 50rem;
+  border-radius: 12px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+  p {
+    font-size: 1.3rem;
+    margin-right: 1.6rem;
+    font-weight: 600;
+  }
+
+  .wcp-my-library-container {
+    position: absolute;
+  }
+}
+
+.wcp-setting-popup {
+  position: relative;
+
+  div {
+    max-width: 30rem;
+  }
+}
+
+.close-setting-popup-btn {
+  position: fixed;
+  top: 2%;
+  right: 2%;
+}
+
 .wcp-my-library-container {
   background-color: var(--color-lightgrey);
-  filter: drop-shadow(0 0 0.8rem rgb(149, 149, 149));
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   padding: 1rem;
   border-radius: 12px;
   max-width: 40rem;
