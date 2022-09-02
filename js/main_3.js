@@ -373,17 +373,12 @@ const popupContainers = document.querySelectorAll(
 
 const closePopupSettingContainer = e => {
   e.stopPropagation();
-  let target = e.target;
-  console.log(e.target);
 
   popupContainers.forEach(cont => cont.classList.add('hide'));
+  document
+    .querySelectorAll(`.${filteredAttribute}`)
+    .forEach(el => el.classList.remove('active-el'));
 };
 
-//closing on body click
-// document
-//   .querySelector('body')
-//   .addEventListener('click', closePopupSettingContainer);
-//closing on close btn click
-document
-  .querySelectorAll('.close-setting-popup-btn')
-  .forEach(btn => btn.addEventListener('click', closePopupSettingContainer));
+//prettier-ignore
+document.querySelectorAll('.close-setting-popup-btn').forEach(btn => btn.addEventListener('click', closePopupSettingContainer));
