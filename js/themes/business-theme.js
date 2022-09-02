@@ -21,7 +21,7 @@ class businessThemeLaptop extends HTMLElement {
     </div>
 
     <div class="business-theme-desktop--header user-choice--header">
-      <div>
+      <div class="user-choice--body">
         <h5 class="user-choice--h1">This is &lt;h1&gt;!</h5>
         <p class="user-choice--p">
           This is a paragraph. In the HTML any paragraph is marked as a
@@ -33,7 +33,7 @@ class businessThemeLaptop extends HTMLElement {
       <img src="./img/new york city img.jpg" alt="" />
     </div>
 
-    <div class="business-theme-desktop-undefined--section">
+    <div class="business-theme-desktop-undefined--section user-choice--body">
       <h6 class="user-choice--h2">This is &lt;h2&gt;!</h6>
       <div class="business-theme-desktop-undefined--section---wrapper">
         <div class="business-theme-desktop--div user-choice--div">
