@@ -1306,6 +1306,7 @@ footer p a {
 }
 
 .wcp-settings-container {
+  position: absolute;
   background-color: var(--color-lightgrey);
   min-width: 39rem;
   max-height: 70vh;
@@ -1317,9 +1318,8 @@ footer p a {
   border-radius: 12px;
   -webkit-transform: translateX(-50rem);
           transform: translateX(-50rem);
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  position: relative;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
   -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
           box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   z-index: 3;
@@ -1329,6 +1329,7 @@ footer p a {
 .wcp-settings-container--active {
   -webkit-transform: translateX(0);
           transform: translateX(0);
+  position: relative;
 }
 
 .wcp-setting-internal-container {
@@ -1525,6 +1526,10 @@ footer p a {
 
 .ri-information-fill--active {
   color: red;
+}
+
+.active-el {
+  border: 2px solid red;
 }
 
 .wcp-simulator {
@@ -2066,17 +2071,25 @@ footer p a {
 
 .business-theme-mobile--footer {
   background-color: #262626;
-  position: absolute;
-  max-width: 100%;
+  min-width: 100%;
   padding: 0;
   left: 0;
-  min-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .business-theme-mobile--footer h6 {
   font-size: 1.5rem;
   color: var(--color-white);
   text-align: center;
   padding: 0.5rem;
+  max-width: 20rem;
 }
 
 @media (max-width: 1310.98px) {

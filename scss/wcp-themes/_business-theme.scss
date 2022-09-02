@@ -412,16 +412,18 @@
 
 .business-theme-mobile--footer {
   background-color: #262626;
-  position: absolute;
-  max-width: 100%;
+  min-width: 100%;
   padding: 0;
   left: 0;
-  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   h6 {
     font-size: 1.5rem;
     color: var(--color-white);
     text-align: center;
     padding: 0.5rem;
+    max-width: 20rem;
   }
 }
