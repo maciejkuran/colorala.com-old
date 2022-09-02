@@ -95,12 +95,12 @@ const insertPopupSettings = () => {
   elements.forEach(el => {
     const popupContainer = document.createElement('div');
     popupContainer.className = 'wcp-setting-popup-container hide';
+    popupContainer.setAttribute('data-classname', el.classname);
     popupContainer.innerHTML = `
     <button class="close-setting-popup-btn">
       <i class="ri-close-circle-fill"></i>
     </button>
     <div
-        data-classname="${el.classname}"
         class="wcp-setting wcp-setting-popup">
         <p>${el.name}</p>
         <div>
@@ -316,17 +316,6 @@ librarySelectBtns.forEach(btn =>
   btn.addEventListener('click', selectColorFromLibrary)
 );
 
-////Selecting element from theme on el click
-const bodyThemes = document.querySelectorAll('.user-choice--body');
-
-const selectElOnClick = e => {
-  e.target.style.border = '2px solid red';
-};
-
-bodyThemes.forEach(theme =>
-  theme.addEventListener('click', selectElOnClick, true)
-);
-
 ////Changing el style when user choosed a color
 // --this function is a callback to selectColorFromLibrary() function--
 export const changeElColor = (input, classname, styleProperty) => {
@@ -335,9 +324,66 @@ export const changeElColor = (input, classname, styleProperty) => {
   });
 };
 
-//Here the handler listens to all input changes and takes action if any
-// hexCodeInputs.forEach(input => {
-//   input.addEventListener('change', e => {
-//     console.log(e.target);
-//   });
-// });
+////Displaying popup setting container on theme element click
+const bodyThemes = document.querySelectorAll('.user-choice--body');
+
+let popupContainer, filteredAttribute;
+
+const displaySettingPopup = e => {
+  removeHighlight(filteredAttribute);
+  popupContainer?.classList.add('hide');
+  let targetAttributes = e.target.getAttribute('class');
+  //As some elements contain more than one class that I am interested in, I wanna filter classes and retrieve that one desired;
+  filteredAttribute = targetAttributes
+    ?.split(' ')
+    .filter(classname => classname.includes('user'))
+    .join('');
+
+  popupContainer = document.querySelector(
+    `.wcp-setting-popup-container[data-classname=".${filteredAttribute}"]`
+  );
+
+  if (!popupContainer) return;
+  if (popupContainer) {
+    popupContainer.classList.remove('hide');
+    addHighlight(filteredAttribute);
+  }
+};
+
+bodyThemes.forEach(theme =>
+  theme.addEventListener('click', displaySettingPopup, true)
+);
+
+//Adding highlight (red border) to clicked theme element
+const addHighlight = classname => {
+  const elements = document.querySelectorAll(`.${classname}`);
+  elements.forEach(el => el.classList.add('active-el'));
+};
+
+//Remove highlight (red border)
+const removeHighlight = classname => {
+  const elements = document.querySelectorAll(`.${classname}`);
+  elements.forEach(el => el.classList.remove('active-el'));
+};
+
+//Closing popup setting container on body click if !device container
+const popupContainers = document.querySelectorAll(
+  '.wcp-setting-popup-container'
+);
+
+const closePopupSettingContainer = e => {
+  e.stopPropagation();
+  let target = e.target;
+  console.log(e.target);
+
+  popupContainers.forEach(cont => cont.classList.add('hide'));
+};
+
+//closing on body click
+// document
+//   .querySelector('body')
+//   .addEventListener('click', closePopupSettingContainer);
+//closing on close btn click
+document
+  .querySelectorAll('.close-setting-popup-btn')
+  .forEach(btn => btn.addEventListener('click', closePopupSettingContainer));
