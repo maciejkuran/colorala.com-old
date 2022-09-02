@@ -289,8 +289,6 @@ window.addEventListener('resize', hideLaptopContainer);
 document.addEventListener('DOMContentLoaded', hideLaptopContainer);
 
 ////Selecting color from library and displaying in input field
-const hexCodeInputs = document.querySelectorAll('.hex-code-input');
-
 const librarySelectBtns = document.querySelectorAll(
   '.wcp-my-library-select-btn'
 );
@@ -330,7 +328,9 @@ const bodyThemes = document.querySelectorAll('.user-choice--body');
 let popupContainer, filteredAttribute;
 
 const displaySettingPopup = e => {
+  e.preventDefault();
   removeHighlight(filteredAttribute);
+
   popupContainer?.classList.add('hide');
   let targetAttributes = e.target.getAttribute('class');
   //As some elements contain more than one class that I am interested in, I wanna filter classes and retrieve that one desired;
@@ -362,8 +362,12 @@ const addHighlight = classname => {
 
 //Remove highlight (red border)
 const removeHighlight = classname => {
-  const elements = document.querySelectorAll(`.${classname}`);
-  elements.forEach(el => el.classList.remove('active-el'));
+  if (!classname || classname === undefined) {
+    return;
+  } else {
+    const elements = document.querySelectorAll(`.${classname}`);
+    elements.forEach(el => el.classList.remove('active-el'));
+  }
 };
 
 //Closing popup setting container on body click if !device container
