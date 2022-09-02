@@ -7,17 +7,11 @@ class businessThemeLaptop extends HTMLElement {
     <div class="business-theme-desktop user-choice--body">
     <div class="business-theme-desktop--nav">
       <img src="./img/Brand logo.png" alt="" />
-      <ul>
-        <li>
-          <a class="user-choice--a" href="">About &lt;a&gt;</a>
-        </li>
-        <li>
-          <a class="user-choice--a" href="">Services</a>
-        </li>
-        <li>
-          <a class="user-choice--a" href="">Contact</a>
-        </li>
-      </ul>
+      <div class="user-choice--a">
+      <a class="user-choice--a" href="">About &lt;a&gt;</a>
+      <a class="user-choice--a" href="">Services</a>
+      <a class="user-choice--a" href="">Contact</a>
+      </div>
     </div>
 
     <div class="business-theme-desktop--header user-choice--header">
@@ -38,7 +32,7 @@ class businessThemeLaptop extends HTMLElement {
       <div class="business-theme-desktop-undefined--section---wrapper">
         <div class="business-theme-desktop--div user-choice--div">
           <i
-            class="fa-solid fa-circle-info business-theme-desktop--i user-choice--i"
+            class="ri-information-fill business-theme-desktop--i user-choice--i"
           ></i>
           <p class="business-theme--p user-choice--p">
             This is a &lt;p&gt; tag and it's all wrapped in a
@@ -47,7 +41,7 @@ class businessThemeLaptop extends HTMLElement {
         </div>
         <div class="business-theme-desktop--div user-choice--div">
           <i
-            class="fa-solid fa-circle-info business-theme-desktop--i user-choice--i"
+            class="ri-information-fill business-theme-desktop--i user-choice--i"
           ></i>
           <p class="business-theme--p user-choice--p">
             This is a &lt;p&gt; tag and it's all wrapped in a
@@ -56,7 +50,7 @@ class businessThemeLaptop extends HTMLElement {
         </div>
         <div class="business-theme-desktop--div user-choice--div">
           <i
-            class="fa-solid fa-circle-info business-theme-desktop--i user-choice--i"
+            class="ri-information-fill business-theme-desktop--i user-choice--i"
           ></i>
           <p class="business-theme--p user-choice--p">
             This is a &lt;p&gt; tag and it's all wrapped in a
@@ -101,17 +95,11 @@ class businessThemeMobile extends HTMLElement {
                 <i class="ri-menu-line user-choice--i"></i>
               </button>
               <div class="business-theme-list--nav hide">
-                <ul>
-                  <li>
-                    <a class="user-choice--a" href="#">About &lt;a&gt;</a>
-                  </li>
-                  <li>
-                    <a class="user-choice--a" href="#">Services</a>
-                  </li>
-                  <li>
-                    <a class="user-choice--a" href="#">Contact</a>
-                  </li>
-                </ul>
+              <div>
+                <a class="user-choice--a" href="">About &lt;a&gt;</a>
+                <a class="user-choice--a" href="">Services</a>
+                <a class="user-choice--a" href="">Contact</a>
+              </div>
               </div>
             </div>
 
@@ -132,7 +120,7 @@ class businessThemeMobile extends HTMLElement {
               <div class="business-theme-mobile-undefined--section---wrapper">
                 <div class="business-theme-mobile--div user-choice--div">
                   <i
-                    class="fa-solid fa-circle-info business-theme-desktop--i user-choice--i"
+                    class="ri-information-fill business-theme-desktop--i user-choice--i"
                   ></i>
                   <p class="business-theme--p user-choice--p">
                     This is a &lt;p&gt; tag and it's all wrapped in a
@@ -142,7 +130,7 @@ class businessThemeMobile extends HTMLElement {
 
                 <div class="business-theme-mobile--div user-choice--div">
                   <i
-                    class="fa-solid fa-circle-info business-theme-desktop--i user-choice--i"
+                    class="ri-information-fill business-theme-desktop--i user-choice--i"
                   ></i>
                   <p class="business-theme--p user-choice--p">
                     This is a &lt;p&gt; tag and it's all wrapped in a
@@ -152,7 +140,7 @@ class businessThemeMobile extends HTMLElement {
 
                 <div class="business-theme-mobile--div user-choice--div">
                   <i
-                    class="fa-solid fa-circle-info business-theme-desktop--i user-choice--i"
+                    class="ri-information-fill business-theme-desktop--i user-choice--i"
                   ></i>
                   <p class="business-theme--p user-choice--p">
                     This is a &lt;p&gt; tag and it's all wrapped in a
@@ -163,7 +151,7 @@ class businessThemeMobile extends HTMLElement {
             </div>
 
             <div class="business-theme-mobile--section user-choice--section">
-              <div>
+              <div class="user-choice--section">
                 <h6 class="user-choice--h3">This is &lt;h3&gt;!</h6>
                 <p class="user-choice--p-section">
                   This is a &lt;p&gt; tag with a class <br />
@@ -191,7 +179,7 @@ customElements.define('business-theme-mobile', businessThemeMobile);
 const hamburgerBtn = document.querySelector('.business-theme-mobile-hamb-btn');
 const navContainer = document.querySelector('.business-theme-list--nav');
 
-const toggleNav = () => {
+const toggleNav = e => {
   navContainer.classList.toggle('hide');
 };
 
