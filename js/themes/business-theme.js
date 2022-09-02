@@ -21,7 +21,7 @@ class businessThemeLaptop extends HTMLElement {
     </div>
 
     <div class="business-theme-desktop--header user-choice--header">
-      <div class="user-choice--body">
+      <div class="user-choice--header">
         <h5 class="user-choice--h1">This is &lt;h1&gt;!</h5>
         <p class="user-choice--p">
           This is a paragraph. In the HTML any paragraph is marked as a
