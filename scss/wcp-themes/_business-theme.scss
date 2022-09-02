@@ -2,6 +2,7 @@
 .business-theme-desktop {
   background-color: #e3e3e3;
   padding: 0.5rem;
+  position: relative;
 
   h5 {
     font-size: 4.5rem;
@@ -129,16 +130,17 @@
 
 .business-theme-desktop--footer {
   margin-top: 6rem;
-  padding: 1rem;
+  padding: 1.5rem;
   background-color: #262626;
-  position: absolute;
-  width: 100%;
-  left: 0;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   h6 {
     color: var(--color-white);
     font-size: 2rem;
-    text-align: center;
+    max-width: 20rem;
   }
 }
 
