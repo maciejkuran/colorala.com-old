@@ -6,6 +6,7 @@
 
   h5 {
     font-size: 4.5rem;
+    max-width: 32rem;
   }
   h6 {
     font-size: 2.8rem;
@@ -23,10 +24,8 @@
   justify-content: space-between;
   align-items: center;
 
-  ul {
-    display: flex;
-
-    li {
+  div {
+    a {
       margin: 0 1rem;
     }
   }
@@ -71,6 +70,10 @@
 
   h6 {
     margin-bottom: 2rem;
+  }
+
+  i {
+    font-size: 4rem;
   }
 }
 
@@ -311,6 +314,7 @@
     font-weight: 500;
   }
 }
+
 .business-theme-mobile--nav {
   display: flex;
   justify-content: space-between;
@@ -324,19 +328,27 @@
   .ri-menu-line {
     color: var(--color-black);
     font-size: 2.5rem;
+    pointer-events: none;
   }
 
-  div {
+  .business-theme-list--nav {
     position: absolute;
     top: 100%;
     right: 0;
     padding: 1rem;
     background-color: #e3e3e3;
 
+    div {
+      display: flex;
+      flex-direction: column;
+      max-width: 15rem;
+    }
+
     a {
       color: var(--color-black);
       font-size: 1.6rem;
       font-weight: 600;
+      margin: 0.7rem 0;
     }
   }
 }
@@ -368,6 +380,10 @@
 
   h6 {
     text-align: center;
+  }
+
+  i {
+    font-size: 4rem;
   }
 }
 
@@ -403,6 +419,7 @@
   h6 {
     color: var(--color-white);
     margin-bottom: 1rem;
+    max-width: 15rem;
   }
 
   p {
