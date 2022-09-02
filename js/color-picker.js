@@ -106,12 +106,21 @@ settingsContainer?.addEventListener('scroll', hidePicker);
 
 //Setting color from manual picker - selected color will be displayed in the input field
 const hexInputs = document.querySelectorAll('.hex-code-input');
+import { changeElColor } from './main_3.js';
 
 const applyColorToWCP = e => {
   let target = e.target;
   let hex = target.parentElement.children[0].value;
   let clickedIndex = [...saveBtns].map(btn => [...saveBtns].indexOf(target))[0];
   if (hexInputs[clickedIndex]) hexInputs[clickedIndex].value = hex;
+
+  //prettier-ignore
+  let classname = hexInputs[clickedIndex].parentElement.parentElement.dataset.classname;
+  //prettier-ignore
+  let styleProperty = hexInputs[clickedIndex].parentElement.parentElement.dataset.styleproperty;
+
+  //Change elements color in DOM
+  changeElColor(hexInputs[clickedIndex].value, classname, styleProperty);
 };
 
 saveBtns.forEach(btn => btn.addEventListener('click', applyColorToWCP));
