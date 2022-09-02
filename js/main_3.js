@@ -67,7 +67,7 @@ const insertManualSettings = () => {
     const internalContainer = document.createElement('div');
     internalContainer.classList.add('wcp-setting-internal-container');
     internalContainer.innerHTML = `
-    <div data-classname="${el.classname}" class="wcp-setting">
+    <div data-styleproperty="${el.styleProperty}" data-classname="${el.classname}" class="wcp-setting">
             <p>${el.name}</p>
             <div>
               <input
@@ -147,6 +147,8 @@ const insertColors = () => {
     <div class="wcp-my-library-colors-container">
     </div>`;
     cont.after(libraryContainer);
+
+    if (library === null) return;
 
     //Insert colors to DOM
     library.forEach(color => {
@@ -286,23 +288,8 @@ const hideLaptopContainer = () => {
 window.addEventListener('resize', hideLaptopContainer);
 document.addEventListener('DOMContentLoaded', hideLaptopContainer);
 
-///Selecting element from theme on el click
-const bodyThemes = document.querySelectorAll('.user-choice--body');
-
-const selectElOnClick = e => {
-  console.log(e.target);
-  e.target.style.border = '2px solid red';
-};
-
-bodyThemes.forEach(theme =>
-  theme.addEventListener('click', selectElOnClick, true)
-);
-
 ////Selecting color from library and displaying in input field
 const hexCodeInputs = document.querySelectorAll('.hex-code-input');
-
-//Here the handler listens to all input changes and takes action if any
-// hexCodeInputs.forEach(input => input.addEventListener('change', somefunction));
 
 const librarySelectBtns = document.querySelectorAll(
   '.wcp-my-library-select-btn'
@@ -316,8 +303,41 @@ const selectColorFromLibrary = e => {
   ).children[0].children[1].children[0];
 
   closestInput.value = getHEX;
+
+  let styleProperty =
+    closestInput.parentElement.parentElement.dataset.styleproperty;
+  let classname = closestInput.parentElement.parentElement.dataset.classname;
+
+  //Change elements color in DOM
+  changeElColor(closestInput.value, classname, styleProperty);
 };
 
 librarySelectBtns.forEach(btn =>
   btn.addEventListener('click', selectColorFromLibrary)
 );
+
+////Selecting element from theme on el click
+const bodyThemes = document.querySelectorAll('.user-choice--body');
+
+const selectElOnClick = e => {
+  e.target.style.border = '2px solid red';
+};
+
+bodyThemes.forEach(theme =>
+  theme.addEventListener('click', selectElOnClick, true)
+);
+
+////Changing el style when user choosed a color
+// --this function is a callback to selectColorFromLibrary() function--
+export const changeElColor = (input, classname, styleProperty) => {
+  document.querySelectorAll(`${classname}`).forEach(el => {
+    el.style[styleProperty] = input;
+  });
+};
+
+//Here the handler listens to all input changes and takes action if any
+// hexCodeInputs.forEach(input => {
+//   input.addEventListener('change', e => {
+//     console.log(e.target);
+//   });
+// });
