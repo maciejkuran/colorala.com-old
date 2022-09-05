@@ -280,6 +280,9 @@ export const insertDynamicElements = content => {
 
 //Display counter in DOM
 export const displayCounter = () => {
+  if (counter() === 0)
+    colorCounterLabel.textContent = `${counter()} colors in your library! 😌`;
+
   if (counter() === 1)
     colorCounterLabel.textContent = `${counter()} color in your library! 😀`;
 
@@ -342,7 +345,7 @@ export const displayStatus = (el, classname) => {
 export const hideStatus = (el, classname) => {
   const hide = setTimeout(() => {
     el.classList.remove(classname);
-  }, 1100);
+  }, 700);
 };
 
 //Highlighting heart when clicked on btn
@@ -359,6 +362,9 @@ export const highlightHeart = el => {
 };
 
 ////REMOVING COLOR FROM PALETTE
+import { updateWCPLibraries } from './main_3.js';
+import { informIfNoColors, getColors } from './main_3.js';
+
 const deleteItemFromPalette = e => {
   e.stopPropagation();
 
@@ -366,11 +372,15 @@ const deleteItemFromPalette = e => {
   const container = btn.parentElement;
 
   if (btn.className === 'remove-color-my-palette-btn') {
+    //This function updates 'colors in library setting' - WCP
+    updateWCPLibraries(btn);
+    ////////////////
     container.remove();
     removeFromLocalStorage(container);
   }
-
   displayCounter();
+  //WCP - Website Color Preview
+  informIfNoColors(getColors());
 };
 
 // Event handler
