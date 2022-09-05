@@ -128,8 +128,24 @@ insertPopupSettings();
 
 ////Inserting user's color library
 
+//If no colors in library - inform user what to do
+export const informIfNoColors = library => {
+  const notificationLabels = document.querySelectorAll(
+    '.library-no-colors-notification'
+  );
+
+  notificationLabels.forEach(label => {
+    if (library === null || library.length === 0) {
+      label.textContent =
+        '🔴 Your library is empty. Use color picker or other colorala tools to get the colors you want!';
+    } else {
+      label.textContent = '';
+    }
+  });
+};
+
 //Retreiving colors from user's local storage
-const getColors = () => {
+export const getColors = () => {
   const userColors = JSON.parse(localStorage.getItem('myPalette'));
   return userColors;
 };
@@ -144,6 +160,7 @@ const insertColors = () => {
     libraryContainer.className = 'wcp-my-library-container hide';
     libraryContainer.innerHTML = `
     <h4>👇 Your Library</h4>
+    <p class="library-no-colors-notification"></p>
     <div class="wcp-my-library-colors-container">
     </div>`;
     cont.after(libraryContainer);
@@ -153,18 +170,36 @@ const insertColors = () => {
     //Insert colors to DOM
     library.forEach(color => {
       const colorWrapper = document.createElement('div');
+
       colorWrapper.classList.add('wcp-my-library-color-wrapper');
       colorWrapper.innerHTML = `
      <div style="background-color: ${color}"></div>
       <p>${color}</p>
      <button class="wcp-my-library-select-btn">select</button>`;
-      libraryContainer.children[1].prepend(colorWrapper);
+      libraryContainer.children[2].prepend(colorWrapper);
     });
   });
+
+  informIfNoColors(library);
 };
 
 insertColors();
 
+//Update 'setting colors library' if user removed color from library. This function is executed in main_1.js file - deleteItemFromPalette();
+export const updateWCPLibraries = btn => {
+  const wcpColorsContainers = document.querySelectorAll(
+    '.wcp-my-library-colors-container'
+  );
+
+  wcpColorsContainers?.forEach(cont => {
+    if (btn.className === 'remove-color-my-palette-btn') {
+      let clickedIndex = [
+        ...document.querySelectorAll('.remove-color-my-palette-btn'),
+      ].indexOf(btn);
+      cont.children[clickedIndex].remove();
+    }
+  });
+};
 ////Toggling settings container
 const hamburgerBtn = document.querySelector('.wcp-hamburger-btn');
 
