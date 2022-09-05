@@ -112,15 +112,15 @@ const applyColorToWCP = e => {
   let target = e.target;
   let hex = target.parentElement.children[0].value;
   let clickedIndex = [...saveBtns].map(btn => [...saveBtns].indexOf(target))[0];
-  if (hexInputs[clickedIndex]) hexInputs[clickedIndex].value = hex;
+  if (hexInputs[clickedIndex] && hexInputs) hexInputs[clickedIndex].value = hex;
 
   //prettier-ignore
-  let classname = hexInputs[clickedIndex].parentElement.parentElement.dataset.classname;
+  let classname = hexInputs[clickedIndex]?.parentElement.parentElement.dataset.classname;
   //prettier-ignore
-  let styleProperty = hexInputs[clickedIndex].parentElement.parentElement.dataset.styleproperty;
+  let styleProperty = hexInputs[clickedIndex]?.parentElement.parentElement.dataset.styleproperty;
 
   //Change elements color in DOM
-  changeElColor(hexInputs[clickedIndex].value, classname, styleProperty);
+  changeElColor(hexInputs[clickedIndex]?.value, classname, styleProperty);
 };
 
 saveBtns.forEach(btn => btn.addEventListener('click', applyColorToWCP));

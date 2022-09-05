@@ -82,7 +82,7 @@ const insertManualSettings = () => {
       
             </div>
           </div>`;
-    settingsContainer.append(internalContainer);
+    settingsContainer?.append(internalContainer);
   });
 };
 //Inserting manual settings
@@ -120,7 +120,7 @@ const insertPopupSettings = () => {
       </div>
     `;
 
-    wcpSimulator.after(popupContainer);
+    wcpSimulator?.after(popupContainer);
   });
 };
 
@@ -177,7 +177,7 @@ const openSettings = e => {
   settingsContainer.classList.toggle('wcp-settings-container--active');
 };
 
-hamburgerBtn.addEventListener('click', openSettings);
+hamburgerBtn?.addEventListener('click', openSettings);
 
 ////Toggling my library colors container
 const libraryBtns = document.querySelectorAll('.wcp-open-palette-btn');
@@ -224,7 +224,7 @@ const openInstruction = e => {
   target.children[0].classList.toggle('ri-information-fill--active');
 };
 
-instructionBtn.addEventListener('click', openInstruction);
+instructionBtn?.addEventListener('click', openInstruction);
 
 ////Hiding wcp-nav containers
 const hideElement = (el, elClassnameActive, iClassname, iClassNameActive) => {
@@ -272,9 +272,9 @@ const laptopContainer = document.querySelector('.wcp-laptop-view-container');
 const mobileContainer = document.querySelector('.wcp-mobile-view-container');
 
 const hideLaptopContainer = () => {
-  if (mediaQuery.matches) {
-    laptopContainer.classList.remove('view-active');
-    mobileContainer.classList.add('view-active');
+  if (mediaQuery.matches && laptopContainer) {
+    laptopContainer?.classList.remove('view-active');
+    mobileContainer?.classList.add('view-active');
 
     //Removing active btns from all viewBtns
     viewBtns.forEach(btn => btn.classList.remove('active-view-btn'));
