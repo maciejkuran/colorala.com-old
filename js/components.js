@@ -96,17 +96,10 @@ class fromCreatorPopup extends HTMLElement {
     <h3>Dear Community,</h3>
     <p>
       Thank you 💗 for using my app. I created it with you in mind 🥰.
-      Colors complement our lives. They make us feel comfortable and
-      confident. You can use my app to build a color palette for a website,
-      but it doesn't exclude other projects.
-    </p>
-    <p>
-      You can <b>develop this application directly with me</b> or send your
-      <b>suggestions for the improvement/development of other features</b>.
-    </p>
-    <p>Become a member of colorala and develop this project with me.</p>
-    <a href="mailto:maciejkuran@gmail.com">contact me 📧</a>
-    <p><i>Maciej Kuran-Janowski</i></p>
+    <p>Help me to develop this app further!</p>
+    <p>I want to remain objective and meet your expectations. Therefore, feel free to submit your request via <a target="_blank" href="https://github.com/maciejkuran/colorala.com/issues">GitHub -> issues.</a></p>
+    <p>New features or something else?</p>
+    <p>All requests are considered important.</p>
   </div>`;
   }
 }
