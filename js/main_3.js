@@ -1,6 +1,6 @@
 'use strict';
 
-/////////'WEBSITE COLORS PREVIEW' functionality
+/////////WCP - 'WEBSITE COLORS PREVIEW' functionality
 
 ////Creating a class and its instances (for displaying dynamically settings and then finding certain elements in the HTML for user's further modification)
 const elements = [];
@@ -96,12 +96,12 @@ const insertPopupSettings = () => {
     const popupContainer = document.createElement('div');
     popupContainer.className = 'wcp-setting-popup-container hide';
     popupContainer.setAttribute('data-classname', el.classname);
+    popupContainer.setAttribute('data-styleproperty', el.styleProperty);
     popupContainer.innerHTML = `
     <button class="close-setting-popup-btn">
       <i class="ri-close-circle-fill"></i>
     </button>
-    <div
-        class="wcp-setting wcp-setting-popup">
+    <div class="wcp-setting wcp-setting-popup" data-classname="${el.classname}" data-styleproperty="${el.styleProperty}">
         <p>${el.name}</p>
         <div>
           <input
@@ -331,18 +331,44 @@ const librarySelectBtns = document.querySelectorAll(
 const selectColorFromLibrary = e => {
   let target = e.target;
   let getHEX = target.previousElementSibling.textContent;
-  let closestInput = target.parentElement.closest(
+
+  //I did long DOM traversing in order to locate closestInput when 'select' btn is clicked. As the path is different between 'manual settings' and 'popup settings', I had to include if conditions, to avoid errors and let JS find seperately inputs
+
+  //'inputManualSett' stands for input in manual settings
+  let inputManualSett = target.parentElement?.closest(
     '.wcp-setting-internal-container'
-  ).children[0].children[1].children[0];
+  )?.children[0]?.children[1]?.children[0];
 
-  closestInput.value = getHEX;
+  //'inputPopupSett' stands for input in popup settings
+  let inputPopupSett =
+    target.parentElement?.parentElement.parentElement?.closest(
+      '.wcp-setting-popup-container'
+    )?.children[1]?.children[1]?.children[0];
 
-  let styleProperty =
-    closestInput.parentElement.parentElement.dataset.styleproperty;
-  let classname = closestInput.parentElement.parentElement.dataset.classname;
+  if (inputManualSett) {
+    inputManualSett.value = getHEX;
 
-  //Change elements color in DOM
-  changeElColor(closestInput.value, classname, styleProperty);
+    let styleProperty =
+      inputManualSett.parentElement.parentElement.dataset.styleproperty;
+    let classname =
+      inputManualSett.parentElement.parentElement.dataset.classname;
+
+    //Change elements color in DOM
+    changeElColor(inputManualSett.value, classname, styleProperty);
+  }
+
+  if (inputPopupSett) {
+    inputPopupSett.value = getHEX;
+
+    let styleProperty =
+      inputPopupSett.parentElement.closest('.wcp-setting-popup').dataset
+        .styleproperty;
+    let classname =
+      inputPopupSett.parentElement.closest('.wcp-setting-popup').dataset
+        .classname;
+
+    changeElColor(inputPopupSett.value, classname, styleProperty);
+  }
 };
 
 librarySelectBtns.forEach(btn =>
@@ -357,7 +383,45 @@ export const changeElColor = (input, classname, styleProperty) => {
   });
 };
 
+////Changing element color if any change was made in the input field - if any user's activity is detected in the input field
+const inputFields = document.querySelectorAll('.hex-code-input');
+
+const changeClrOnInputChange = e => {
+  let target = e.target;
+  let classname = e.target.parentElement.parentElement.dataset.classname;
+
+  let styleProperty =
+    e.target.parentElement.parentElement.dataset.styleproperty;
+
+  changeElColor(target.value, classname, styleProperty);
+};
+
+inputFields.forEach(input =>
+  input.addEventListener('keyup', changeClrOnInputChange)
+);
+
 ////Displaying popup setting container on theme element click
+
+//Update 'popup input placeholder' if user made changes to 'manual setting input value'. Find related 'manual setting' to just clicked popup setting and update value of placeholder
+
+const updatePopupInput = (popupContainer, classname) => {
+  let locateRelatedDiv = document.querySelector(
+    `.wcp-setting-internal-container .wcp-setting[data-classname=".${classname}"]`
+  );
+
+  let locateInputInDiv = locateRelatedDiv.children[1].children[0]?.value;
+
+  let eTargetInput = popupContainer.children[1].children[1].children[0];
+
+  if (!locateInputInDiv) return;
+
+  if (!eTargetInput.value)
+    eTargetInput.setAttribute('placeholder', locateInputInDiv);
+
+  if (eTargetInput.value) eTargetInput.value = locateInputInDiv;
+};
+
+// displaying setting popup
 const bodyThemes = document.querySelectorAll('.user-choice--body');
 
 let popupContainer, filteredAttribute;
@@ -383,6 +447,8 @@ const displaySettingPopup = e => {
     popupContainer.classList.remove('hide');
     addHighlight(filteredAttribute);
   }
+
+  updatePopupInput(popupContainer, filteredAttribute);
 };
 
 bodyThemes.forEach(theme =>
