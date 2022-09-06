@@ -1538,6 +1538,10 @@ footer p a {
   font-weight: 500;
 }
 
+.hex-code-input {
+  text-transform: uppercase;
+}
+
 .wcp-simulator {
   display: -webkit-box;
   display: -ms-flexbox;
