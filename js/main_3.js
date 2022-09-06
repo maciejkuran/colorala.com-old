@@ -90,7 +90,7 @@ insertManualSettings();
 
 //Inserting popup settings
 const insertPopupSettings = () => {
-  const wcpSimulator = document.querySelector('.wcp-simulator');
+  const insertedAllPopups = document.querySelector('.inserted-popup-settings');
 
   elements.forEach(el => {
     const popupContainer = document.createElement('div');
@@ -120,7 +120,7 @@ const insertPopupSettings = () => {
       </div>
     `;
 
-    wcpSimulator?.after(popupContainer);
+    insertedAllPopups?.append(popupContainer);
   });
 };
 
@@ -210,6 +210,8 @@ const openSettings = e => {
   let target = e.target;
   target.children[0].classList.toggle('ri-menu-add-line--active');
   settingsContainer.classList.toggle('wcp-settings-container--active');
+
+  updateManualSettingInput();
 };
 
 hamburgerBtn?.addEventListener('click', openSettings);
@@ -402,7 +404,7 @@ inputFields.forEach(input =>
 
 ////Displaying popup setting container on theme element click
 
-//Update 'popup input placeholder' if user made changes to 'manual setting input value'. Find related 'manual setting' to just clicked popup setting and update value of placeholder
+//Update 'popup input' if user made changes to 'manual setting input value'. Find related 'manual setting' to just clicked popup setting and update value of placeholder
 
 const updatePopupInput = (popupContainer, classname) => {
   let locateRelatedDiv = document.querySelector(
@@ -421,7 +423,25 @@ const updatePopupInput = (popupContainer, classname) => {
   if (eTargetInput.value) eTargetInput.value = locateInputInDiv;
 };
 
-// displaying setting popup
+//Update 'manual settings input' if any changes were done on the side of popup setting
+const updateManualSettingInput = () => {
+  const manualSettingsInputs = document.querySelectorAll(
+    '.wcp-setting-internal-container input'
+  );
+
+  const popupSettingsInputs = document.querySelectorAll(
+    '.wcp-setting-popup input'
+  );
+
+  popupSettingsInputs.forEach((_, i) => {
+    if (popupSettingsInputs[i].value)
+      manualSettingsInputs[i].value = popupSettingsInputs[i].value;
+
+    if (!popupSettingsInputs[i].value) return;
+  });
+};
+
+// Displaying setting popup
 const bodyThemes = document.querySelectorAll('.user-choice--body');
 
 let popupContainer, filteredAttribute;
@@ -429,6 +449,7 @@ let popupContainer, filteredAttribute;
 const displaySettingPopup = e => {
   e.preventDefault();
   removeHighlight(filteredAttribute);
+  closeManualSettings();
 
   popupContainer?.classList.add('hide');
   let targetAttributes = e.target.getAttribute('class');
@@ -471,7 +492,7 @@ const removeHighlight = classname => {
   }
 };
 
-//Closing popup setting container on body click if !device container
+//Closing popup setting container on close btn click;
 const popupContainers = document.querySelectorAll(
   '.wcp-setting-popup-container'
 );
@@ -487,3 +508,23 @@ const closePopupSettingContainer = e => {
 
 //prettier-ignore
 document.querySelectorAll('.close-setting-popup-btn').forEach(btn => btn.addEventListener('click', closePopupSettingContainer));
+
+//Closing popup setting on manual settings hamburger btn click
+hamburgerBtn?.addEventListener('click', closePopupSettingContainer);
+
+//Close manual settings container if popup setting is opened
+const closeManualSettings = () => {
+  settingsContainer.classList.remove('wcp-settings-container--active');
+  document
+    .querySelector('.ri-menu-add-line')
+    .classList.remove('ri-menu-add-line--active');
+};
+
+////RESET EVERYTHING
+const resetBtn = document.querySelector('.reset-btn');
+
+const resetApp = () => {
+  location.reload();
+};
+
+resetBtn?.addEventListener('click', resetApp);
