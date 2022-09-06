@@ -94,7 +94,7 @@ class businessThemeMobile extends HTMLElement {
               <button class="business-theme-mobile-hamb-btn">
                 <i class="ri-menu-line user-choice--i"></i>
               </button>
-              <div class="business-theme-list--nav hide">
+              <div class="business-theme-list--nav user-choice--body hide">
               <div>
                 <a class="user-choice--a" href="">About &lt;a&gt;</a>
                 <a class="user-choice--a" href="">Services</a>
