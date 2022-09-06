@@ -568,6 +568,8 @@ footer {
 
 .close-from-creator-content-btn {
   position: absolute;
+  top: 3%;
+  right: 3%;
   margin: 0;
   padding: 0;
   border: none;
@@ -691,10 +693,15 @@ footer {
 
   button {
     margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .github-icon {
-    font-size: 5rem;
+    font-size: 3rem;
+    color: var(--color-white);
+    margin-left: 1rem;
   }
 }
 

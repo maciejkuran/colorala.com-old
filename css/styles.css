@@ -857,6 +857,8 @@ footer p a {
 
 .close-from-creator-content-btn {
   position: absolute;
+  top: 3%;
+  right: 3%;
   margin: 0;
   padding: 0;
   border: none;
@@ -1002,9 +1004,20 @@ footer p a {
 }
 .home-section-2 button {
   margin: 2rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .home-section-2 .github-icon {
-  font-size: 5rem;
+  font-size: 3rem;
+  color: var(--color-white);
+  margin-left: 1rem;
 }
 
 .what-is-new {
@@ -2549,5 +2562,9 @@ a,
   }
   .pcr-app[data-theme=classic] {
     max-width: 26rem;
+  }
+  .what-is-new {
+    bottom: -6rem;
+    text-align: center;
   }
 }
