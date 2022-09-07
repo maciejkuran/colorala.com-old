@@ -15,7 +15,7 @@ Creator: Maciej Kuran-Janowski
 
 ## Hi there!
 
-<p align="center"><img width="300" src="/img/Avatar Maciej Kuran-Janowski.png"></p>
+<p align="center"><img width="200" src="/img/Avatar Maciej Kuran-Janowski.png"></p>
 
 > Lots of work accomplished so far. I worked diligently to implement all functionalities. I want to remain objective and meet user expectations. Therefore, feel free to submit your request via `GitHub -> issues.`
 
