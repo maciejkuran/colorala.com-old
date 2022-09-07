@@ -2,13 +2,14 @@
 
 <p align="center"><img width="1000" src="/img/Colorala banner.jpg"></p>
 
-For designers, developers ... for everybody! 🤍
+<b>For designers, developers ... for everybody! 🤍</b>
 
 Create the Best Looking Color Palette by using `Color Palette Generator` or exploring hand-picked `Pre-made Color Palettes`.
 
 🔥 Check latest `Website Color Preview` tool where you can see live what your color scheme looks like!
 
 [colorala - LIVE APP](https://colorala.com)
+
 CURRENT VERSION: 2.0
 
 Creator: Maciej Kuran-Janowski
