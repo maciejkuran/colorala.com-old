@@ -28,7 +28,7 @@ Create the Best Looking Color Palette by using `Color Palette Generator` or expl
 
 ###### Modified application navbar
 
-- Navbar now is the same across all the pages
+> Navbar now is the same across all the pages
 
 1. Toggle tools container (list of available tools)
 2. User can access and export library colors everywhere on the site (preview library on red heart icon click)
