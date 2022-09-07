@@ -10,9 +10,9 @@ Create the Best Looking Color Palette by using `Color Palette Generator` or expl
 
 [colorala - LIVE APP](https://colorala.com)
 
-CURRENT VERSION: 2.0
+<b>Current version: 2.0</b>
 
-Creator: Maciej Kuran-Janowski
+<i>Creator: Maciej Kuran-Janowski</i>
 
 ## Hi there!
 
