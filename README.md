@@ -1,31 +1,126 @@
-<p align="center">
-  <img width="400" src="/img/Colorala logo.png">
-</p>
-
 # colorala.com
 
-The coolest free color palette generator! Create your beautiful color palette with colorala.
+<p align="center"><img width="1000" src="/img/Colorala banner.jpg"></p>
 
-Live app ❤ https://colorala.com
+For designers, developers ... for everybody! 🤍
 
-Version: 1.0
+Create the Best Looking Color Palette by using `Color Palette Generator` or exploring hand-picked `Pre-made Color Palettes`.
+
+🔥 Check latest `Website Color Preview` tool where you can see live what your color scheme looks like!
+
+[colorala - LIVE APP](https://colorala.com)
+CURRENT VERSION: 2.0
 
 Creator: Maciej Kuran-Janowski
 
-https://user-images.githubusercontent.com/103118542/178158450-751bed6e-3ce1-4d99-91a6-f4f534f5b37b.mp4
+## Hi there!
 
-## Dear Community
+<p align="center"><img width="300" src="/img/Avatar Maciej Kuran-Janowski.png"></p>
 
-Thank you 💗 for using my app. I created it with you in mind 🥰. Colors complement our lives. They make us feel comfortable and confident. You can use my app to build a color palette for a website, but it doesn't exclude other projects.
+> Lots of work accomplished so far. I worked diligently to implement all functionalities. I want to remain objective and meet user expectations. Therefore, feel free to submit your request via `GitHub -> issues.`
 
-## Contributing
+# Documentation
 
-- You can develop this application directly with me or send your suggestions for the improvement/development of other features.
-- If you have experienced errors in the operation of the application, please send information.
-- Become the colorala team member and let's develop this project together!
+> Documentation is a general overview of the changes made. Colorala is an application that I intend to regularly improve and enhance with new functionality. I will announce all changes at this time on GitHub. In case of growing documentation, I may create a special place for documentation on colorala.com website.
 
-<b>contact me</b> 📧
-maciejkuran@gmail.com
+## v.2.0
+
+###### Modified application navbar
+
+- Navbar now is the same across all the pages
+
+1. Toggle tools container (list of available tools)
+2. User can access and export library colors everywhere on the site (preview library on red heart icon click)
+3. GitHub icon added
+
+###### Modified home page
+
+1. Modified top section
+
+- added buttons that link to colorala tools
+
+2. New sections added
+
+- section, which features new tool `Website Color Preview`
+- section, which introduces the creator and provides the message
+
+###### Modified Color Palette Generator Functionalities
+
+1. Algorithm that checks current user library colors
+
+- algorithm checks the library colors, everytime a user adds a new color. If picked color is already there, error notification is returned.
+  > I implemented this functionality to avoid duplicates in the library.
+
+2. Propert notifications are displayed in UI if `added to library`, `already added` or `copied to clipboard`
+
+###### Tooltips - appearing across all colorala tools
+
+> Tooltips were implemented in v.1.0. However it required massive fixes
+
+1. Tooltip has a `setTimeout` method that will run after 700ms and is set on `mouseenter` event handler attached to a certain element
+
+- if user `mouseleave` before 700ms, tooltip is not going to be displayed - `clearTimeout`
+- if user `mouseenter` over 700ms and then `mouseleave`, tooltip is immediately off
+
+###### 😍 NEW Tool! Pre-made Color Palettes
+
+> Explore hand-picked color palettes
+
+1. Dynamically retrieved, hand-picked color palettes
+
+- each created palette is an `instance` of `class Palette`
+- `class Palette` contains properties `this.type` and `this.colors`
+
+2. Filter palettes
+
+- choose between `All`, `Dark`, `Light`, `Mix`
+
+- all newly created palettes are pushed to `palettes` array
+- filtering takes place based on `this.type` property which each palette has defined
+
+3. Hidden options bar - `hex code`, `copy`, `add to library`
+
+- options bar only shows if user `mouseenter`
+
+4. Notifications are displayed if `added to library`, `already added` or `copied to clipboard`
+
+###### 😍 NEW Tool BETA VERSION! Website Color Preview!
+
+> Please note, that it is currently a beta version. This tool will be further developed, and new functionalities will be added in new versions. However, the current functionalities have been tested and are working properly. Feel free to use it! 🔥
+
+1. One theme available
+
+- in beta version there's only `business theme` available
+
+2. Laptop and mobile preview
+
+- switch preview between devices
+
+3. Access to your library colors
+   > user library is read via `localStorage.getItem`. User can access all the colors.
+
+- library colors automatically update in `settings` if any got removed from library (navbar -> library preview -> remove)
+
+4. Toggle settings container
+   > this settings container I call `manual settings`. This is a list of all the settings responsible for changing color styles to individual theme elements `body`, `h1`, `header` etc. When color is picked, style will be dynamically applied to specific theme el.
+
+- user can manually input color
+- user can select color straight from library
+- user can use color picker to pick a color
+
+5. Popup settings
+   > `popup setting` is the opposite to `manual setting`. `Popup setting` is activated when user clicks directly on theme element. The element itself gets a highlight 'red border`, and setting window automatically gets popped up.
+
+- `popup setting` has the same options as `manual setting` (access to library, color picker or manually providing color in input field)
+- when `popup setting` is on, `manual settings` become off, and vice versa
+- applied HEX color code is auto filled in both: `manual setting input` and `popup setting input`
+
+6. Toggle instructions container
+
+   > available next to `hamburger icon` - `manual settings`
+
+7. Reset
+   > available next to `instructions btn`. When `reset` is clicked, it will reload the page and all changes will be lost
 
 ## Features v.1.0
 
@@ -45,23 +140,19 @@ maciejkuran@gmail.com
 
 ## License
 
-The material appearing on the colorala.com website is protected by copyright.
+The material appearing on the colorala.com website is protected by © copyright.
 
 Excluding:
 
 - pickr library by simonwep (simonwep.github.io/pickr);
 - jsPDF library by parallax (github.com/parallax/jsPDF);
 - icons (fontawesome.com, remixicon.com);
-- lottie animations (lottiefiles.com)
+- lottie animation (lottiefiles.com) presented on the home page (author: julien bulle )
 
 The creator of the colorala.com application is Maciej Kuran-Janowski.
 www.maciejkuran.com
 
 You may not copy the source code, reproduce or create derivative works for commercial as well as non-commercial purposes - unless you obtain direct permission.
 
-You may use the source code only for learning, private purposes, without publishing anywhere and claiming it as your product.
-
-<b>colorala.com is a project wishing to engage web developers. I remain open to the proposal of cooperation. Any developer's contribution will be appreciated and highlighted as a contributor.</b>
-
-To discuss further development of the application, please contact:
+Reach me via email 😀:
 maciejkuran@gmail.com
