@@ -116,7 +116,7 @@ class businessThemeMobile extends HTMLElement {
             </div>
 
             <div class="business-theme-mobile-undefined--section">
-              <h6>This is &lt;h2&gt;!</h6>
+              <h6 class="user-choice--h2">This is &lt;h2&gt;!</h6>
               <div class="business-theme-mobile-undefined--section---wrapper">
                 <div class="business-theme-mobile--div user-choice--div">
                   <i
