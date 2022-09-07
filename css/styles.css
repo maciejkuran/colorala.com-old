@@ -67,6 +67,7 @@ h3 {
 h4 {
   font-size: 1.8rem;
   color: var(--color-black);
+  font-weight: 600;
 }
 
 p {
@@ -1570,6 +1571,7 @@ footer p a {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-top: 5rem;
+  padding: 1rem;
 }
 .page-not-found-content h1,
 .page-not-found-content p {
