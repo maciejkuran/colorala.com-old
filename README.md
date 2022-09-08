@@ -128,7 +128,7 @@ Create the Best Looking Color Palette by using `Color Palette Generator` or expl
 
 #### 6. Toggle instructions container
 
-> available next to `hamburger icon` - `manual settings`
+> available next to `hamburger icon (manual settings)`
 
 #### 7. Reset
 
