@@ -158,7 +158,7 @@ class appFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `<footer>
     <div class="footer-links">
-      <a class="from-creator-btn" href="">From Creator 😀</a>
+      <a href="">From Creator 😀</a>
       <a href="/privacy-policy">Privacy Policy</a>
     </div>
     <p>
