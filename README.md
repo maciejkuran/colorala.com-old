@@ -38,29 +38,29 @@ Create the Best Looking Color Palette by using `Color Palette Generator` or expl
 
 ### 🟢 Modified home page
 
-1. Modified top section
+#### 1. Modified top section
 
 - added buttons that link to colorala tools
 
-2. New sections added
+#### 2. New sections added
 
 - section, which features new tool `Website Color Preview`
 - section, which introduces the creator and provides the message
 
 ### 🟢 Modified Color Palette Generator Functionalities
 
-1. Algorithm that checks current user library colors
+#### 1. Algorithm that checks current user library colors
 
 - algorithm checks the library colors, everytime a user adds a new color. If picked color is already there, error notification is returned.
   > I implemented this functionality to avoid duplicates in the library.
 
-2. Propert notifications are displayed in UI if `added to library`, `already added` or `copied to clipboard`
+#### 2. Propert notifications are displayed in UI if `added to library`, `already added` or `copied to clipboard`
 
 ### 🟢 Tooltips - appearing across all colorala tools
 
 > Tooltips were implemented in v.1.0. However it required massive fixes
 
-1. Tooltip has a `setTimeout` method that will run after 700ms and is set on `mouseenter` event handler attached to a certain element
+#### 1. Tooltip has a `setTimeout` method that will run after 700ms and is set on `mouseenter` event handler attached to a certain element
 
 - if user `mouseleave` before 700ms, tooltip is not going to be displayed - `clearTimeout`
 - if user `mouseenter` over 700ms and then `mouseleave`, tooltip is immediately off
@@ -73,62 +73,66 @@ Create the Best Looking Color Palette by using `Color Palette Generator` or expl
 
 > Explore hand-picked color palettes
 
-1. Dynamically retrieved, hand-picked color palettes
+#### 1. Dynamically retrieved, hand-picked color palettes
 
 - each created palette is an `instance` of `class Palette`
 - `class Palette` contains properties `this.type` and `this.colors`
 
-2. Filter palettes
+#### 2. Filter palettes
 
 - choose between `All`, `Dark`, `Light`, `Mix`
 
 - all newly created palettes are pushed to `palettes` array
 - filtering takes place based on `this.type` property which each palette has defined
 
-3. Hidden options bar - `hex code`, `copy`, `add to library`
+#### 3. Hidden options bar - `hex code`, `copy`, `add to library`
 
 - options bar only shows if user `mouseenter`
 
-4. Notifications are displayed if `added to library`, `already added` or `copied to clipboard`
+#### 4. Notifications are displayed if `added to library`, `already added` or `copied to clipboard`
 
 ### 🟢🆕 Website Color Preview! - \*BETA
 
 > Please note, that it is currently a beta version. This tool will be further developed, and new functionalities will be added in new versions. However, the current functionalities have been tested and are working properly. Feel free to use it! 🔥
 
-1. One theme available
+#### 1. One theme available
 
 - in beta version there's only `business theme` available
 
-2. Laptop and mobile preview
+#### 2. Laptop and mobile preview
 
 - switch preview between devices
 - laptop preview is NOT displayed if `window.matchMedia('(max-width: 588.98px)')`- preview switcher becomes hidden and only mobile view is on
 
-3. Access to your library colors
-   > user library is read via `localStorage.getItem`. User can access all the colors.
+#### 3. Access to your library colors
+
+> user library is read via `localStorage.getItem`. User can access all the colors.
 
 - library colors automatically update in `settings` if any got removed from library (navbar -> library preview -> remove)
 
-4. Toggle settings container
-   > this settings container I call `manual settings`. This is a list of all the settings responsible for changing color styles to individual theme elements `body`, `h1`, `header` etc. When color is picked, style will be dynamically applied to specific theme el.
+#### 4. Toggle settings container
+
+> this settings container I call `manual settings`. This is a list of all the settings responsible for changing color styles to individual theme elements `body`, `h1`, `header` etc. When color is picked, style will be dynamically applied to specific theme el.
 
 - user can manually input color
 - user can select color straight from library
 - user can use color picker to pick a color
 
-5. Popup settings
-   > `popup setting` is the opposite to `manual setting`. `Popup setting` is activated when user clicks directly on theme element. The element itself gets a highlight 'red border`, and setting window automatically gets popped up.
+#### 5. Popup settings
+
+> `popup setting` is the opposite to `manual setting`. `Popup setting` is activated when user clicks directly on theme element. The element itself gets a highlight 'red border`, and setting window automatically gets popped up.
 
 - `popup setting` has the same options as `manual setting` (access to library, color picker or manually providing color in input field)
 - when `popup setting` is on, `manual settings` become off, and vice versa
 - applied HEX color code is auto filled in both: `manual setting input` and `popup setting input`
 
-6. Toggle instructions container
+#### 6. Toggle instructions container
 
-   > available next to `hamburger icon` - `manual settings`
+> available next to `hamburger icon` - `manual settings`
 
-7. Reset
-   > available next to `instructions btn`. When `reset` is clicked, it will reload the page and all changes will be lost
+#### 7. Reset
+
+> available next to `instructions btn`. When `reset` is clicked, it will reload the page and all changes will be lost
 
 ## v.1.0
 
