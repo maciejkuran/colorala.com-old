@@ -128,7 +128,7 @@ Create the Best Looking Color Palette by using `Color Palette Generator` or expl
 7. Reset
    > available next to `instructions btn`. When `reset` is clicked, it will reload the page and all changes will be lost
 
-## Features v.1.0
+## v.1.0
 
 - Generating 4 random colors (HEXA) at once (press 'space' or button);
 - Manual color picker (HEXA, RGBA, HSLA, HSVA, CMYK );
