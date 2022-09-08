@@ -1,6 +1,6 @@
 # colorala.com
 
-<p align="center"><img width="1000" src="/img/Colorala banner.jpg"></p>
+<p align="center"><img width="1000" src="/img/Colorala banner 2.jpg"></p>
 
 <b>For designers, developers ... for everybody! 🤍</b>
 
