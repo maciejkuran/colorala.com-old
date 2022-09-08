@@ -63,6 +63,10 @@ Create the Best Looking Color Palette by using `Color Palette Generator` or expl
 - if user `mouseleave` before 700ms, tooltip is not going to be displayed - `clearTimeout`
 - if user `mouseenter` over 700ms and then `mouseleave`, tooltip is immediately off
 
+###### 🟢 Color picker - appearing across all colorala tools
+
+> Color values are only displayed in HEXA (RGBA, HSLA, HSVA, CMYK is no longer supported). For now, there's no validation/conversion so if you decide to input manually color value, please provide HEXA value.
+
 ###### 🟢 😍 NEW Tool! Pre-made Color Palettes
 
 > Explore hand-picked color palettes
@@ -96,6 +100,7 @@ Create the Best Looking Color Palette by using `Color Palette Generator` or expl
 2. Laptop and mobile preview
 
 - switch preview between devices
+- laptop preview is NOT displayed if `window.matchMedia('(max-width: 588.98px)')`- preview switcher becomes hidden and only mobile view is on
 
 3. Access to your library colors
    > user library is read via `localStorage.getItem`. User can access all the colors.
