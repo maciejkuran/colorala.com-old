@@ -54,7 +54,7 @@ Create the Best Looking Color Palette by using `Color Palette Generator` or expl
 - algorithm checks the library colors, everytime a user adds a new color. If picked color is already there, error notification is returned.
   > I implemented this functionality to avoid duplicates in the library.
 
-#### 2. Propert notifications are displayed in UI if `added to library`, `already added` or `copied to clipboard`
+#### 2. Proper notifications are displayed in UI if `added to library`, `already added` or `copied to clipboard`
 
 ### 🟢 Tooltips - appearing across all colorala tools
 
@@ -87,7 +87,7 @@ Create the Best Looking Color Palette by using `Color Palette Generator` or expl
 
 #### 3. Hidden options bar - `hex code`, `copy`, `add to library`
 
-- options bar only shows if user `mouseenter`
+- options bar only shows if user `mouseenter` and hides when `mouseleave`
 
 #### 4. Notifications are displayed if `added to library`, `already added` or `copied to clipboard`
 
