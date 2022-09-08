@@ -41,6 +41,11 @@
   .pre-made-palettes-container {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  .primary-button,
+  .secondary-button {
+    font-size: 1.6rem;
+  }
 }
 
 @media (max-width: 1199.98px) {

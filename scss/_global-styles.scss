@@ -83,6 +83,7 @@ a {
 
 i {
   pointer-events: none;
+  color: var(--color-black);
 }
 
 a:hover {
@@ -98,6 +99,7 @@ button {
   -webkit-appearance: none;
   background: transparent;
   font-size: 2rem;
+  color: var(--color-black);
 }
 
 .primary-button {

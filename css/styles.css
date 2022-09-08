@@ -84,6 +84,7 @@ a {
 
 i {
   pointer-events: none;
+  color: var(--color-black);
 }
 
 a:hover {
@@ -100,6 +101,7 @@ button {
   -webkit-appearance: none;
   background: transparent;
   font-size: 2rem;
+  color: var(--color-black);
 }
 
 .primary-button, .secondary-button {
@@ -332,10 +334,6 @@ footer p a {
   font-size: 1.3rem;
 }
 
-.from-creator-btn {
-  color: var(--color-anthracite);
-}
-
 .highlight {
   color: var(--color-darkblue);
   font-weight: 600;
@@ -543,6 +541,19 @@ footer p a {
   background-color: white;
   padding: 0.5rem;
   border-radius: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .color-wrapper-my-palette .divider-my-palette, .wcp-my-library-color-wrapper .divider-my-palette {
   display: -webkit-box;
@@ -555,12 +566,16 @@ footer p a {
 .color-wrapper-my-palette p, .wcp-my-library-color-wrapper p {
   font-size: 1rem;
   font-weight: 500;
+  margin-right: 1rem;
 }
 
 .remove-color-my-palette-btn, .copy-hex-my-palette-btn {
   border: none;
   font-size: 1.3rem;
   padding: 0;
+  margin-right: auto;
+}
+.remove-color-my-palette-btn i, .copy-hex-my-palette-btn i {
   color: red;
 }
 
@@ -728,6 +743,10 @@ footer p a {
 .intro-app-mobile button {
   font-size: 1.5rem;
   padding: 1rem 5rem 1rem 5rem;
+}
+
+.ri-lock-unlock-fill {
+  color: var(--color-anthracite);
 }
 
 .ri-lock-unlock-fill,
@@ -999,6 +1018,10 @@ footer p a {
 }
 .home-section-2 h4 {
   color: red;
+}
+.home-section-2 h3 {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 .home-section-2 p {
   max-width: 50rem;
@@ -2195,6 +2218,10 @@ footer p a {
   }
   .pre-made-palettes-container {
     grid-template-columns: repeat(4, 1fr);
+  }
+  .primary-button,
+.secondary-button {
+    font-size: 1.6rem;
   }
 }
 @media (max-width: 1199.98px) {
