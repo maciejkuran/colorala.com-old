@@ -26,7 +26,7 @@ Create the Best Looking Color Palette by using `Color Palette Generator` or expl
 
 ## v.2.0
 
-###### 🟢 Modified application navbar
+### 🟢 Modified application navbar
 
 > Navbar now is the same across all the pages
 
@@ -34,7 +34,7 @@ Create the Best Looking Color Palette by using `Color Palette Generator` or expl
 2. User can access and export library colors everywhere on the site (preview library on red heart icon click)
 3. GitHub icon added
 
-###### 🟢 Modified home page
+### 🟢 Modified home page
 
 1. Modified top section
 
@@ -45,7 +45,7 @@ Create the Best Looking Color Palette by using `Color Palette Generator` or expl
 - section, which features new tool `Website Color Preview`
 - section, which introduces the creator and provides the message
 
-###### 🟢 Modified Color Palette Generator Functionalities
+### 🟢 Modified Color Palette Generator Functionalities
 
 1. Algorithm that checks current user library colors
 
@@ -54,7 +54,7 @@ Create the Best Looking Color Palette by using `Color Palette Generator` or expl
 
 2. Propert notifications are displayed in UI if `added to library`, `already added` or `copied to clipboard`
 
-###### 🟢 Tooltips - appearing across all colorala tools
+### 🟢 Tooltips - appearing across all colorala tools
 
 > Tooltips were implemented in v.1.0. However it required massive fixes
 
@@ -63,11 +63,11 @@ Create the Best Looking Color Palette by using `Color Palette Generator` or expl
 - if user `mouseleave` before 700ms, tooltip is not going to be displayed - `clearTimeout`
 - if user `mouseenter` over 700ms and then `mouseleave`, tooltip is immediately off
 
-###### 🟢 Color picker - appearing across all colorala tools
+### 🟢 Color picker - appearing across all colorala tools
 
 > Color values are only displayed in `HEXA` (RGBA, HSLA, HSVA, CMYK is no longer supported). For now, there's no validation/conversion so if you decide to input manually color value, please provide HEXA value.
 
-###### 🟢🆕 Pre-made Color Palettes
+### 🟢🆕 Pre-made Color Palettes
 
 > Explore hand-picked color palettes
 
@@ -89,7 +89,7 @@ Create the Best Looking Color Palette by using `Color Palette Generator` or expl
 
 4. Notifications are displayed if `added to library`, `already added` or `copied to clipboard`
 
-###### 🟢🆕 Website Color Preview! - \*BETA
+### 🟢🆕 Website Color Preview! - \*BETA
 
 > Please note, that it is currently a beta version. This tool will be further developed, and new functionalities will be added in new versions. However, the current functionalities have been tested and are working properly. Feel free to use it! 🔥
 
