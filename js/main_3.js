@@ -64,9 +64,11 @@ const element_13 = new Element('<footer>','.user-choice--footer','#262626','back
 const simulatorOnDelay = () => {
   const simulatorContainer = document.querySelector('.wcp-simulator');
 
-  setTimeout(() => {
-    simulatorContainer.style.opacity = '1';
-  }, 400);
+  if (simulatorContainer) {
+    setTimeout(() => {
+      simulatorContainer.style.opacity = '1';
+    }, 400);
+  }
 };
 
 document.addEventListener('DOMContentLoaded', simulatorOnDelay);
