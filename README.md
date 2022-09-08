@@ -67,7 +67,7 @@ Create the Best Looking Color Palette by using `Color Palette Generator` or expl
 
 > Color values are only displayed in `HEXA` (RGBA, HSLA, HSVA, CMYK is no longer supported). For now, there's no validation/conversion so if you decide to input manually color value, please provide HEXA value.
 
-###### 🟢 😍 NEW Tool! Pre-made Color Palettes
+###### 🟢🆕 Pre-made Color Palettes
 
 > Explore hand-picked color palettes
 
@@ -89,7 +89,7 @@ Create the Best Looking Color Palette by using `Color Palette Generator` or expl
 
 4. Notifications are displayed if `added to library`, `already added` or `copied to clipboard`
 
-###### 🟢 😍 NEW Tool BETA VERSION! Website Color Preview!
+###### 🟢🆕 Website Color Preview! - \*BETA
 
 > Please note, that it is currently a beta version. This tool will be further developed, and new functionalities will be added in new versions. However, the current functionalities have been tested and are working properly. Feel free to use it! 🔥
 
