@@ -59,6 +59,18 @@ const element_12 = new Element('<i>', '.user-choice--i', '#262626', 'color');
 //prettier-ignore
 const element_13 = new Element('<footer>','.user-choice--footer','#262626','background-color');
 
+////Load wcp-simulator (preview screen) with delay - fixing bug that showed on mobile. When script loads, it showed for a sec. laptop version and then hided so now I set initially opacity 0  and when DOMContentloads, after 0.4 s. opacity changes to 1;
+
+const simulatorOnDelay = () => {
+  const simulatorContainer = document.querySelector('.wcp-simulator');
+
+  setTimeout(() => {
+    simulatorContainer.style.opacity = '1';
+  }, 400);
+};
+
+document.addEventListener('DOMContentLoaded', simulatorOnDelay);
+
 //// Inserting settings to DOM
 const settingsContainer = document.querySelector('.wcp-settings-container');
 
