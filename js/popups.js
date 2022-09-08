@@ -12,7 +12,7 @@ const displayFromCreatorContent = e => {
   backgroundOverlay.classList.remove('hide');
 };
 
-fromCreatorOpenBtn.addEventListener('click', displayFromCreatorContent);
+fromCreatorOpenBtn?.addEventListener('click', displayFromCreatorContent);
 
 const closeFromCreatorContent = classname => {
   fromCreatorContent.classList.add(classname);
