@@ -84,7 +84,6 @@ a {
 
 i {
   pointer-events: none;
-  color: var(--color-black);
 }
 
 a:hover {
@@ -398,7 +397,7 @@ footer p a {
   border-radius: 12px;
   -webkit-transform: translateY(5rem);
           transform: translateY(5rem);
-  z-index: 2;
+  z-index: 4;
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
@@ -1348,6 +1347,7 @@ footer p a {
   min-width: 39rem;
   max-height: 70vh;
   overflow-y: scroll;
+  overflow-x: hidden;
   display: grid;
   grid-template-columns: repeat(1fr);
   row-gap: 1.2rem;
@@ -1602,6 +1602,7 @@ footer p a {
 }
 
 .wcp-simulator {
+  opacity: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2548,7 +2549,7 @@ a,
     max-width: 29rem;
   }
   .wcp-mega-container {
-    min-width: 95%;
+    min-width: 94%;
   }
   .wcp-settings-container {
     min-width: 0;
@@ -2563,10 +2564,11 @@ a,
     font-size: 1.4rem;
   }
   .wcp-setting div input {
-    max-width: 8rem;
+    max-width: 10rem;
   }
   .wcp-my-library-container {
     padding: 0.5rem;
+    max-height: 20rem;
   }
   .wcp-my-library-colors-container {
     grid-template-columns: repeat(3, 1fr);
