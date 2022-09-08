@@ -30,9 +30,9 @@ Create the Best Looking Color Palette by using `Color Palette Generator` or expl
 
 > Navbar now is the same across all the pages
 
-<b>1.</b> Toggle tools container (list of available tools)
-<b>2.</b> User can access and export library colors everywhere on the site (preview library on red heart icon click)
-<b>3.</b> GitHub icon added
+1. Toggle tools container (list of available tools)
+2. User can access and export library colors everywhere on the site (preview library on red heart icon click)
+3. GitHub icon added
 
 ###### 🟢 Modified home page
 
