@@ -22,7 +22,7 @@ Create the Best Looking Color Palette by using `Color Palette Generator` or expl
 
 # Documentation
 
-> Documentation is a general overview of the changes made. Colorala is an application that I intend to regularly improve and enhance with new functionality. I will announce all changes at this time on GitHub. In case of growing documentation, I may create a special place for documentation on colorala.com website.
+> Documentation is a general overview of the changes made. Colorala is the project that I intend to regularly improve and enhance with new functionality. I will announce all changes at this time on GitHub. In case of growing documentation, I may create a special place for documentation on colorala.com website.
 
 ## v.2.0
 
