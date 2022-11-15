@@ -4,7 +4,8 @@
 
 > Please note that this is an old repo of the colorala.com application. The current repo for this project remains `/colorala.com`. I refactored the entire application code from scratch, taking inspiration from the MVC architecture pattern.
 
-[Current colorala.com repo](https://github.com/maciejkuran/colorala.com)
-[colorala.com - LIVE APP](https://colorala.com)
+❤ [Current colorala.com repo](https://github.com/maciejkuran/colorala.com)
 
-<i>Creator: Maciej Kuran-Janowski</i>
+❤ [colorala.com - LIVE APP](https://colorala.com)
+
+<i>Creator: Maciej Kuran-Janowski 😉</i>
