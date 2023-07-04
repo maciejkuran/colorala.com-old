@@ -6,6 +6,6 @@
 
 ❤ [Current colorala.com repo](https://github.com/maciejkuran/colorala.com)
 
-❤ [colorala.com - LIVE APP](https://colorala.com)
+❤ [colorala.com - LIVE APP](https://colorala.vercel.app/)
 
 <i>Creator: Maciej Kuran-Janowski 😉</i>
